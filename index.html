@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inicio - Implementación Talana</title>
+<meta name="description" content="Pro-City: somos tu partner estratégico en la transformación digital de tu empresa. Implementación Talana, externalización de gerencia de personas y capacitación.">
+<link rel="icon" href="https://pro-city.cl/wp-content/themes/pro-city/assets/images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#4458ce;
+    --azul-osc:#3a4bb5;
+    --azul-texto:#4055c8;
+    --naranjo:#f5a04a;
+    --naranjo-osc:#e88f34;
+    --lavanda:#d9def7;
+    --lavanda-claro:#eef1fc;
+    --durazno:#fbe0c1;
+    --gris:#5a5a6e;
+    --blanco:#ffffff;
+    --radio:10px;
+    --max:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,-apple-system,Segoe UI,sans-serif;
+    color:var(--gris);
+    background:var(--blanco);
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .contenedor{width:100%;max-width:var(--max);margin:0 auto;padding:0 24px;}
+
+  /* ---------- Botones ---------- */
+  .btn{
+    display:inline-block;
+    background:var(--naranjo);
+    color:#fff;
+    font-weight:700;
+    letter-spacing:.04em;
+    padding:14px 30px;
+    border-radius:var(--radio);
+    border:0;
+    cursor:pointer;
+    font-size:.95rem;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .btn:hover{background:var(--naranjo-osc);transform:translateY(-2px);}
+  .btn--mayus{text-transform:uppercase;}
+  .btn--borde{background:transparent;border:2px solid var(--naranjo);color:var(--naranjo);}
+  .btn--borde:hover{background:var(--naranjo);color:#fff;}
+
+  /* ---------- Header ---------- */
+  .header{
+    position:sticky;top:0;z-index:60;
+    background:#fff;
+    box-shadow:0 2px 14px rgba(68,88,206,.08);
+  }
+  .header__inner{
+    display:flex;align-items:center;gap:24px;
+    min-height:88px;
+  }
+  .logo{display:flex;align-items:center;}
+  .logo img{height:46px;width:auto;}
+  .logo__fallback{font-weight:800;font-size:1.5rem;color:var(--azul);letter-spacing:-.02em;}
+
+  .nav{display:flex;align-items:center;gap:26px;margin:0 auto;}
+  .nav a{
+    color:var(--azul-texto);font-weight:500;font-size:1.05rem;
+    position:relative;padding:4px 0;transition:color .2s;
+  }
+  .nav a:hover,.nav a.activo{color:var(--naranjo);}
+  .nav a::after{
+    content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+    background:var(--naranjo);transition:width .25s ease;
+  }
+  .nav a:hover::after{width:100%;}
+
+  .header__acciones{display:flex;align-items:center;gap:22px;}
+  .redes{display:flex;align-items:center;gap:12px;}
+  .redes a{color:var(--azul);display:flex;transition:color .2s, transform .2s;}
+  .redes a:hover{color:var(--naranjo);transform:translateY(-2px);}
+  .redes svg{width:19px;height:19px;fill:currentColor;}
+
+  .menu-btn{
+    display:none;background:none;border:0;cursor:pointer;
+    width:40px;height:40px;padding:8px;color:var(--azul);
+  }
+  .menu-btn span{display:block;height:3px;background:currentColor;border-radius:3px;margin:4px 0;}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:0;overflow:hidden;}
+  .hero__banda{
+    background:var(--azul);
+    padding:60px 0;
+    position:relative;
+    z-index:2;
+  }
+  .hero__banda::after{
+    /* extiende la banda azul hasta el borde derecho */
+    content:"";position:absolute;inset:0 -100vw 0 -100vw;background:var(--azul);z-index:-1;
+  }
+  .hero h1{
+    color:#fff;font-size:clamp(1.9rem,4.2vw,2.6rem);font-weight:800;
+    line-height:1.25;margin:0 0 30px;max-width:520px;
+  }
+  .hero__circulo{
+    position:absolute;right:-40px;top:38%;
+    width:min(46vw,640px);aspect-ratio:1;
+    background:var(--durazno);
+    border-radius:50%;
+    z-index:1;
+  }
+  .hero__partner{
+    position:relative;z-index:3;
+    display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;
+    padding:90px 0 100px;
+  }
+  .hero__partner p{
+    color:var(--azul-texto);font-size:clamp(1.15rem,2.1vw,1.55rem);
+    font-weight:700;line-height:1.45;text-align:right;margin:0;
+  }
+  .hero__ilustracion{max-width:420px;}
+
+  /* ---------- Secciones ---------- */
+  .seccion{padding:80px 0;}
+  .seccion--lavanda{background:var(--lavanda);}
+  .titulo{
+    color:var(--azul-texto);font-weight:800;text-transform:uppercase;
+    letter-spacing:.04em;font-size:1.35rem;margin:0 0 34px;
+  }
+  .titulo--centro{text-align:center;}
+
+  /* ---------- Servicios ---------- */
+  .servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .servicio{
+    position:relative;border-radius:6px;overflow:hidden;
+    min-height:300px;display:flex;align-items:flex-start;justify-content:center;
+    padding:26px 22px;
+    background:linear-gradient(160deg,#5c70d8 0%,#4458ce 55%,#37489f 100%);
+    box-shadow:0 12px 28px rgba(58,75,181,.22);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .servicio::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 25% 20%, rgba(255,255,255,.18), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(255,255,255,.12), transparent 40%),
+      repeating-linear-gradient(115deg, rgba(255,255,255,.05) 0 12px, transparent 12px 26px);
+    opacity:.9;
+  }
+  .servicio:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(58,75,181,.32);}
+  .servicio h3{
+    position:relative;z-index:2;
+    color:#fff;font-size:1.05rem;font-weight:700;text-transform:uppercase;
+    text-align:center;line-height:1.4;margin:0;letter-spacing:.03em;
+  }
+
+  /* ---------- Clientes ---------- */
+  .clientes{overflow:hidden;position:relative;}
+  .clientes__pista{
+    display:flex;gap:40px;width:max-content;
+    animation:desplazar 32s linear infinite;
+  }
+  .clientes:hover .clientes__pista{animation-play-state:paused;}
+  @keyframes desplazar{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .cliente{
+    flex:0 0 auto;width:140px;height:80px;
+    background:#fff;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--azul);font-weight:700;font-size:.95rem;
+    box-shadow:0 4px 14px rgba(68,88,206,.12);
+    opacity:.8;transition:opacity .25s ease, transform .25s ease;
+  }
+  .cliente:hover{opacity:1;transform:scale(1.05);}
+
+  /* ---------- Problemas / Soluciones ---------- */
+  .doble{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .lista{display:flex;flex-direction:column;gap:32px;}
+  .item{display:grid;grid-template-columns:76px 1fr;gap:20px;align-items:start;}
+  .item img{width:66px;height:auto;}
+  .item p{margin:0;font-size:.98rem;line-height:1.65;}
+  .item strong{color:var(--azul-texto);font-weight:700;}
+
+  /* ---------- Caso de éxito ---------- */
+  .caso{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;}
+  .caso h2{
+    color:var(--azul-texto);font-weight:800;text-transform:uppercase;
+    font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.35;margin:0 0 22px;
+  }
+  .caso p{margin:0 0 28px;font-size:1rem;}
+  .caso__video{
+    position:relative;border-radius:10px;overflow:hidden;
+    aspect-ratio:16/9;
+    background:linear-gradient(145deg,#4458ce,#2f3d8f);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 16px 34px rgba(47,61,143,.3);
+  }
+  .caso__play{
+    width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.92);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .25s ease, background .25s ease;
+  }
+  .caso__play:hover{transform:scale(1.1);background:#fff;}
+  .caso__play svg{width:26px;height:26px;fill:var(--azul);margin-left:4px;}
+
+  /* ---------- Somos Pro-City ---------- */
+  .somos{text-align:center;}
+  .somos p{
+    max-width:640px;margin:0 auto 44px;
+    color:var(--azul-texto);font-weight:600;font-size:1.15rem;
+  }
+  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .galeria div{
+    aspect-ratio:4/3;border-radius:10px;
+    background:linear-gradient(150deg,var(--lavanda),#b9c3f0);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--azul);font-weight:700;letter-spacing:.06em;font-size:.85rem;
+    text-transform:uppercase;
+  }
+
+  /* ---------- Contacto / Footer ---------- */
+  .contacto{background:var(--azul);color:#fff;padding:70px 0 50px;}
+  .contacto__grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .contacto h2{
+    font-size:1.5rem;font-weight:800;text-transform:uppercase;
+    letter-spacing:.05em;margin:0 0 24px;
+  }
+  .contacto__datos{display:flex;flex-direction:column;gap:14px;font-size:1.05rem;}
+  .contacto__datos a{display:inline-flex;align-items:center;gap:10px;transition:color .2s;}
+  .contacto__datos a:hover{color:var(--durazno);}
+  .contacto__datos svg{width:20px;height:20px;fill:currentColor;flex:0 0 auto;}
+  .contacto .redes a{color:#fff;}
+  .contacto .redes a:hover{color:var(--durazno);}
+  .contacto .redes{margin-top:26px;gap:16px;}
+  .contacto .redes svg{width:24px;height:24px;}
+  .contacto__logo{text-align:center;}
+  .contacto__logo img{margin:0 auto;max-width:230px;}
+  .contacto__logo .logo__fallback{color:#fff;font-size:2rem;}
+
+  .copy{
+    background:var(--azul-osc);color:rgba(255,255,255,.85);
+    text-align:center;padding:18px 24px;font-size:.85rem;
+  }
+
+  /* ---------- WhatsApp flotante ---------- */
+  .wa{
+    position:fixed;right:22px;bottom:22px;z-index:80;
+    width:60px;height:60px;border-radius:50%;
+    background:#25d366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(37,211,102,.45);
+    transition:transform .25s ease;
+  }
+  .wa:hover{transform:scale(1.08);}
+  .wa svg{width:32px;height:32px;fill:currentColor;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .hero__partner,.doble,.caso,.contacto__grid{grid-template-columns:1fr;gap:36px;}
+    .hero__partner p{text-align:left;}
+    .hero__ilustracion{margin:0 auto;}
+    .hero__circulo{top:auto;bottom:-10%;right:-25%;width:70vw;}
+    .servicios,.galeria{grid-template-columns:1fr;}
+    .contacto__logo{order:-1;}
+  }
+  @media (max-width:820px){
+    .menu-btn{display:block;}
+    .header__inner{justify-content:space-between;}
+    .nav{
+      position:absolute;top:100%;left:0;right:0;
+      background:#fff;flex-direction:column;align-items:flex-start;
+      gap:0;padding:0 24px;margin:0;
+      max-height:0;overflow:hidden;
+      box-shadow:0 12px 20px rgba(68,88,206,.12);
+      transition:max-height .3s ease, padding .3s ease;
+    }
+    .nav.abierto{max-height:340px;padding:14px 24px 22px;}
+    .nav a{width:100%;padding:11px 0;border-bottom:1px solid var(--lavanda-claro);}
+    .header__acciones .btn,.header__acciones .redes{display:none;}
+    .seccion{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="contenedor header__inner">
+    <a href="#inicio" class="logo" aria-label="Pro-City">
+      <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/logo.svg" alt="Pro-City"
+           onerror="this.outerHTML='<span class=\'logo__fallback\'>Pro-City</span>'">
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio" class="activo">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#blog">Blog</a>
+    </nav>
+
+    <div class="header__acciones">
+      <a href="#contacto" class="btn">Agenda una reunión</a>
+      <div class="redes">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 2.2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.7a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8zm0 9.7a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6zm7.5-9.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.5v17c0 .8.7 1.5 1.6 1.5h16.8c.9 0 1.6-.7 1.6-1.5v-17c0-.8-.7-1.5-1.6-1.5zM8 19H5V9.5h3V19zM6.5 8.2a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.5 2 3.5 4.5V19z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.8c-.2-.9-.9-1.5-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4c-.9.3-1.6.9-1.8 1.8C1 8.8 1 12 1 12s0 3.2.4 4.8c.2.9.9 1.5 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4c.9-.3 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8zM9.8 15.1V8.9l6 3.1-6 3.1z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__banda">
+    <div class="contenedor">
+      <h1>¿Estás listo para romper los esquemas automatizando tus procesos administrativos?</h1>
+      <a href="#contacto" class="btn btn--mayus">Contáctanos</a>
+    </div>
+  </div>
+
+  <div class="hero__circulo" aria-hidden="true"></div>
+
+  <div class="contenedor hero__partner">
+    <img class="hero__ilustracion"
+         src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/somos_partner.png"
+         alt="Equipo revisando procesos digitalizados">
+    <p>Somos tu partner estratégico, te acompañamos en cada uno de los procesos necesarios para la transformación digital de tu empresa.</p>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="seccion seccion--lavanda" id="servicios">
+  <div class="contenedor">
+    <h2 class="titulo">Servicios</h2>
+    <div class="servicios">
+      <article class="servicio"><h3>Externaliza tu gerencia de personas</h3></article>
+      <article class="servicio"><h3>Capacita a tus equipos de trabajo</h3></article>
+      <article class="servicio"><h3>Implementa Talana en tu organización</h3></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTES ============ -->
+<section class="seccion">
+  <div class="contenedor">
+    <h2 class="titulo titulo--centro">Ellos han confiado en nosotros:</h2>
+  </div>
+  <div class="clientes">
+    <div class="clientes__pista" id="pistaClientes"></div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMAS / SOLUCIONES ============ -->
+<section class="seccion" id="nosotros">
+  <div class="contenedor doble">
+    <div>
+      <h2 class="titulo">Problemas</h2>
+      <div class="lista">
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_01.png" alt="">
+          <p><strong>Pérdida de tiempo y dinero:</strong> Las gestiones repetitivas que no se conectan con las etapas de cada proceso, con el tiempo, se convierten en pérdidas que se podrían evitar.</p>
+        </div>
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_02.png" alt="">
+          <p><strong>Desconfianza:</strong> La poca transparencia y la falta de canales para dejar disponible la información se vuelve un problema.</p>
+        </div>
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_03.png" alt="">
+          <p><strong>Descentralización de información:</strong> La información tiende a estar en más de una plataforma u archivadores; y hay poca optimización de procesos en el flujo de trabajo y las tareas cotidianas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="titulo">Soluciones</h2>
+      <div class="lista">
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_04.png" alt="">
+          <p><strong>Ahorrar tiempo y costos:</strong> Automatizar la gestión diaria permite disminuir costos directos asociados a la operación.</p>
+        </div>
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_05.png" alt="">
+          <p><strong>Liderar con buenas prácticas:</strong> Nuestros asesores apoyan a sus equipos, llevándolos a trabajar en base a buenas prácticas que mejoran de los procesos.</p>
+        </div>
+        <div class="item">
+          <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/ico_06.png" alt="">
+          <p><strong>Automatizar:</strong> Utilizando una metodología ágil y moderna, apoyamos fuertemente la automatización de procedimientos administrativos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASO DE ÉXITO ============ -->
+<section class="seccion seccion--lavanda" id="blog">
+  <div class="contenedor caso">
+    <div>
+      <h2>Lideramos el proyecto tecnológico más grande de los últimos 10 años de ManpowerGroup Chile</h2>
+      <p>Manpower estaba buscando un sistema de gestión moderno para personas, remuneraciones y firma digital que permitiera optimizar los tiempos en la gestión administrativa de capital humano y como Pro-City acompañamos a la empresa en su transformación digital.</p>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="btn btn--mayus">Ver en YouTube &gt;</a>
+    </div>
+    <a class="caso__video" href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Ver el caso en YouTube">
+      <span class="caso__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SOMOS PRO-CITY ============ -->
+<section class="seccion somos">
+  <div class="contenedor">
+    <h2 class="titulo titulo--centro">Somos Pro-City</h2>
+    <p>Nos encanta verte feliz, por eso te apoyamos en cada momento de transición de tu empresa.</p>
+    <div class="galeria">
+      <div>Equipo Pro-City</div>
+      <div>Implementación</div>
+      <div>Capacitación</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<footer class="contacto" id="contacto">
+  <div class="contenedor contacto__grid">
+    <div>
+      <h2>Contáctanos</h2>
+      <div class="contacto__datos">
+        <a href="https://wa.me/56937669574" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2m0 1.8a8.2 8.2 0 0 1 6.5 13.2 8.2 8.2 0 0 1-10.8 2l-.4-.2-3 .8.8-2.9-.2-.4A8.2 8.2 0 0 1 12 3.8"/></svg>
+          Mándanos un WhatsApp
+        </a>
+        <a href="tel:+56937669574">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+          Háblanos al: +569 3766 9574
+        </a>
+        <a href="mailto:contacto@procity.live">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Escríbenos a: contacto@procity.live
+        </a>
+      </div>
+      <div class="redes">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 6.1a5.9 5.9 0 1 1 0 11.8 5.9 5.9 0 0 1 0-11.8zm0 9.7a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6zm7.5-9.9a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.5v17c0 .8.7 1.5 1.6 1.5h16.8c.9 0 1.6-.7 1.6-1.5v-17c0-.8-.7-1.5-1.6-1.5zM8 19H5V9.5h3V19zM6.5 8.2a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.5 2 3.5 4.5V19z"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.8c-.2-.9-.9-1.5-1.8-1.8C19.2 5 12 5 12 5s-7.2 0-8.8.4c-.9.3-1.6.9-1.8 1.8C1 8.8 1 12 1 12s0 3.2.4 4.8c.2.9.9 1.5 1.8 1.8C4.8 19 12 19 12 19s7.2 0 8.8-.4c.9-.3 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8zM9.8 15.1V8.9l6 3.1-6 3.1z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="contacto__logo">
+      <img src="https://pro-city.cl/wp-content/themes/pro-city/assets/images/logo-pro-city-blanco_1logo-pro-city-blanco.png"
+           alt="Pro-City"
+           onerror="this.outerHTML='<span class=\'logo__fallback\'>Pro-City</span>'">
+    </div>
+  </div>
+</footer>
+
+<div class="copy">2022 © Sitio diseñado y desarrollado por Estudio Ajolote</div>
+
+<a class="wa" href="https://wa.me/56937669574" target="_blank" rel="noopener" aria-label="¿Tienes alguna consulta? Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2"/></svg>
+</a>
+
+<script>
+  // Menú móvil
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', function () {
+    var abierto = nav.classList.toggle('abierto');
+    menuBtn.setAttribute('aria-expanded', abierto);
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') nav.classList.remove('abierto');
+  });
+
+  // Carrusel de clientes (15 marcas, duplicadas para el loop infinito)
+  var pista = document.getElementById('pistaClientes');
+  var marcas = [];
+  for (var i = 1; i <= 15; i++) marcas.push(i);
+  var html = marcas.concat(marcas).map(function (n) {
+    return '<div class="cliente">' + n + '</div>';
+  }).join('');
+  pista.innerHTML = html;
+
+  // Resaltar el link activo según la sección visible
+  var enlaces = [].slice.call(document.querySelectorAll('.nav a'));
+  var observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (entrada) {
+      if (!entrada.isIntersecting) return;
+      enlaces.forEach(function (a) {
+        a.classList.toggle('activo', a.getAttribute('href') === '#' + entrada.target.id);
+      });
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['inicio', 'nosotros', 'servicios', 'blog'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) observador.observe(el);
+  });
+</script>
+</body>
+</html>
