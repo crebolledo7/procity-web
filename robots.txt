@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sin contenido duplicado ni parametros de tracking
+Disallow: /*?srsltid=
+Disallow: /*?utm_
+
+Sitemap: https://pro-city.cl/sitemap.xml
