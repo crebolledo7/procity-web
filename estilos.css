@@ -96,17 +96,56 @@
   .chip{padding:8px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.45);font-size:14px;font-weight:500;color:var(--white)}
 
   /* ---- LOGOS CLIENTES ---- */
-  .logos{background:var(--white);padding:44px 0;border-bottom:1px solid var(--line)}
-  .logos-inner{display:flex;align-items:center;justify-content:flex-start;gap:12px 40px;flex-wrap:wrap}
-  .logos small{width:100%;text-align:left;text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:900;color:var(--soft);margin-bottom:10px}
-  img.client{height:62px;width:auto;display:block;transition:.2s}
+  .logos{background:var(--white);padding:56px 0;border-bottom:1px solid var(--line)}
+  .logos small{display:block;text-align:left;text-transform:none;letter-spacing:0;
+    font-size:20px;font-weight:900;color:var(--black);line-height:1.2;margin-bottom:34px}
+
+  /* Tres topes de alto segun la proporcion del logo, para que todos ocupen
+     una superficie parecida. Con un tope unico, un logo apaisado (ratio 3.2)
+     ocupa el doble de superficie que uno cuadrado del mismo alto: por eso
+     Manpower y Domino se veian chicos al lado de Mutual o Plaenge.
+     El nivel de cada logo se asigna en el HTML segun su archivo.
+     El tope de ancho evita que los muy apaisados (Plaenge es 10:1) se coman
+     el espacio de los vecinos en la cinta. */
+  img.client{max-height:54px;max-width:170px;width:auto;height:auto;
+    object-fit:contain;display:block;transition:.2s}
+  img.client-medio{max-height:68px}   /* ratio 1.40 a 2.40: TVN, Cemco, Manpower, Domino, Molino */
+  img.client-alto{max-height:82px}    /* ratio bajo 1.40: Aguas Pacifico, Club de Polo, Comercial Castro */
   img.client:hover{transform:scale(1.06)}
-  .logos{padding:56px 0}
-  .logos-inner{gap:26px 44px;align-items:center}
-  .logos small{width:auto;max-width:190px;text-align:left;text-transform:none;letter-spacing:0;font-size:20px;font-weight:900;color:var(--black);margin:0;line-height:1.2}
+
+  /* Carrusel de logos: cinta continua que avanza hacia la derecha.
+     animaciones.js duplica la lista dentro de la pista y le pone is-loop; la
+     animacion corre de -50% a 0, o sea exactamente una tanda, asi que el
+     reinicio cae sobre un fotograma identico y no se ve el salto.
+     La separacion va como margin-right de cada logo y NO como gap del flex:
+     con gap, media pista no coincide con una tanda completa (queda medio
+     espacio de diferencia) y el ciclo pega un tiron.
+     Sin JavaScript o con prefers-reduced-motion no se agrega is-loop y la
+     cinta queda quieta pero arrastrable, con los 21 logos alcanzables. */
+  /* min-width:0 es imprescindible: en nosotros.html la cinta vive dentro de
+     una columna de .two-col y, con el min-width:auto que traen los items de
+     grid, la pista de 8.800 px estiraba la columna y sacaba scroll horizontal
+     a la pagina entera. */
+  /* El difuminado de los bordes va en porcentaje, no en pixeles: en la columna
+     angosta de nosotros.html un fade fijo de 80px se comia un tercio de la
+     cinta. */
+  .logos-carrusel{overflow-x:auto;scrollbar-width:none;min-width:0;max-width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+  .logos-carrusel::-webkit-scrollbar{display:none}
+  .logos-carrusel:has(.is-loop){overflow:hidden}
+  .logos-track{display:flex;align-items:center;width:max-content;padding:6px 0}
+  .logos-track>img.client{flex:0 0 auto;margin-right:64px}
+  .logos-track.is-loop{animation:pc-logos 64s linear infinite}
+  .logos-carrusel:hover .logos-track.is-loop{animation-play-state:paused}
+  @keyframes pc-logos{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @media(prefers-reduced-motion:reduce){.logos-track.is-loop{animation:none}}
 
   /* ---- BLOQUES CLAROS ---- */
   .enemy{background:var(--bg)}
+  /* Va dentro de .wrap, no sobre el. Cuando compartia elemento con .wrap su
+     margin:0 pisaba el margin:0 auto y el bloque se despegaba a la izquierda
+     del viewport, fuera de la grilla del resto de la pagina. */
   .enemy-inner{max-width:62ch;margin:0;text-align:left}
   .enemy h2{margin-bottom:26px}
   .enemy p{margin-bottom:18px}
@@ -260,6 +299,10 @@
 
   /* ---- VARIOS ---- */
   .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  /* Un item de grid trae min-width:auto, asi que crece hasta el ancho minimo
+     de su contenido y se lleva la columna por delante. Con la cinta de logos
+     dentro (8.800 px de pista) eso sacaba scroll horizontal en nosotros.html. */
+  .two-col>*{min-width:0}
   .panel{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:36px}
   .panel h3{color:var(--black);margin-bottom:16px;font-size:24px;font-weight:900}
   .panel p{font-size:16px}
@@ -269,13 +312,152 @@
   .val h4{font-size:20px;margin-bottom:6px;color:var(--black);font-weight:500}
   .val p{font-size:16px}
 
+  /* ---- RUTA DE IMPLEMENTACION (carta gantt simplificada) ---- */
+  /* Doce columnas = doce semanas, el techo del rango "2 a 3 meses". Cada barra
+     se posiciona con --ini/--fin, que son numeros de semana, asi que mover una
+     etapa es cambiar dos numeros en el HTML y no tocar el CSS. */
+  .ruta{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--white)}
+  .ruta-cab{display:grid;grid-template-columns:minmax(230px,1.1fr) 3fr;
+    background:var(--bg);border-bottom:1px solid var(--line)}
+  .ruta-cab>span{padding:14px 20px;font-size:12px;font-weight:900;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--body)}
+  .ruta-meses{display:grid;grid-template-columns:repeat(3,1fr)}
+  .ruta-meses span{padding:14px 10px;text-align:center;border-left:1px solid var(--line);
+    font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--body)}
+  .ruta-fila{display:grid;grid-template-columns:minmax(230px,1.1fr) 3fr;
+    border-bottom:1px solid var(--line);align-items:center}
+  .ruta-fila:last-child{border-bottom:0}
+  .ruta-tarea{padding:18px 20px}
+  .ruta-tarea strong{display:block;color:var(--black);font-weight:500;font-size:17px;margin-bottom:4px}
+  .ruta-tarea span{display:block;font-size:14px;color:var(--body);line-height:1.45}
+  .ruta-barras{display:grid;grid-template-columns:repeat(12,1fr);align-items:center;
+    padding:14px 12px;gap:0;position:relative;min-height:64px}
+  /* lineas de mes al fondo, para leer la duracion de un vistazo */
+  .ruta-barras::before{content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(90deg,transparent,transparent calc(33.333% - 1px),
+      var(--line) calc(33.333% - 1px),var(--line) 33.333%)}
+  .barra{grid-column:var(--ini)/var(--fin);position:relative;z-index:1;
+    background:var(--blue);color:var(--white);border-radius:99px;
+    padding:9px 14px;font-size:13px;font-weight:500;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis;text-align:center}
+  .barra.hito{background:var(--orange)}
+  /* Para lo que dura un dia: una sola columna, con el texto justo. */
+  .barra.punto{padding:9px 8px;font-size:12px}
+  .barra.suave{background:#DDE3F7;color:var(--blue)}
+
+  @media(max-width:820px){
+    /* En pantalla chica la grilla de semanas no se lee: la etapa pasa a
+       tarjeta y la duracion se dice con palabras. */
+    .ruta-cab{display:none}
+    .ruta-fila{grid-template-columns:1fr}
+    .ruta-tarea{padding:18px 20px 0}
+    .ruta-barras{grid-template-columns:1fr;min-height:0;padding:12px 20px 18px}
+    .ruta-barras::before{display:none}
+    .barra{grid-column:1/2 !important;justify-self:start;white-space:normal}
+  }
+
+  /* ---- BLOG ---- */
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:26px}
+  .post-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);
+    border-radius:var(--r);padding:30px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .post-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.09);border-color:var(--blue)}
+  .post-card .post-tag{display:inline-block;align-self:flex-start;font-size:12px;font-weight:900;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--blue);
+    border:1px solid var(--blue);border-radius:99px;padding:5px 12px;margin-bottom:18px}
+  .post-card h3{font-size:21px;line-height:1.28;margin-bottom:14px;color:var(--black)}
+  /* El nombre del cliente dentro del titular: solo cambia de color, hereda el
+     peso 500 del h3 para no pesar mas que el resto de la frase. */
+  .post-card h3 .empresa{color:var(--orange)}
+  .post-card p{font-size:16px;color:var(--body);margin-bottom:20px;flex:1}
+  .post-meta{font-size:14px;color:var(--body);opacity:.75}
+  .post-card .leer{margin-top:16px;font-weight:500;color:var(--blue)}
+
+  /* Cuerpo del articulo: medida de lectura corta, que es lo unico que hace
+     legible un texto largo. El resto del sitio usa 62ch; aca 68ch porque el
+     cuerpo va en una sola columna sin nada al lado. */
+  /* Logo del cliente en la cabecera de un caso. Los archivos de logo vienen
+     con fondo blanco (no llevan transparencia), asi que sobre el azul del hero
+     van dentro de una placa blanca: puestos directos se verian como un
+     rectangulo blanco recortado. */
+  .post-logo{display:flex;justify-content:center;margin-bottom:28px}
+  .post-logo span{display:flex;align-items:center;justify-content:center;background:var(--white);
+    border-radius:var(--r);padding:20px 28px;box-shadow:0 10px 30px rgba(0,0,0,.14)}
+  .post-logo img{max-height:76px;max-width:200px;width:auto;height:auto;object-fit:contain;display:block}
+  /* Un escudo vertical necesita mas alto que un logotipo apaisado para tener
+     la misma presencia: a 76 px de alto el del Club de Polo mide 56 de ancho
+     y se pierde. Va con archivo propio en alta resolucion. */
+  .post-logo img.logo-alto{max-height:140px;max-width:160px}
+  .post-head{max-width:68ch}
+  /* El bloque centrado va mas ancho que la medida de lectura del cuerpo: con
+     68ch el titular se parte en cinco lineas y queda apretado bajo el logo. */
+  .post-head.centrado{max-width:52rem;margin-left:auto;margin-right:auto;text-align:center}
+  /* .hero h1 topea en 15ch y h1 alinea a la izquierda: ambos hay que soltarlos
+     aca, si no el titular del caso queda angosto y descolgado bajo el logo. */
+  .post-head.centrado h1{max-width:100%;text-align:center}
+  .post-head.centrado .hero-sub{max-width:46ch;margin-left:auto;margin-right:auto}
+
+  /* En la tarjeta del indice el fondo ya es blanco, asi que el logo va suelto. */
+  .post-card .card-logo{display:flex;align-items:center;justify-content:center;
+    height:78px;margin-bottom:20px}
+  .post-card .card-logo img{max-height:48px;max-width:170px;width:auto;height:auto;
+    object-fit:contain;display:block}
+  .post-card .card-logo img.logo-alto{max-height:78px;max-width:110px}
+  .post-body{max-width:68ch;font-size:18px}
+  .post-body p{margin-bottom:22px}
+  .post-body h2{font-size:26px;margin:44px 0 18px;color:var(--black)}
+  .post-body h3{font-size:20px;margin:32px 0 14px;color:var(--black)}
+  .post-body ul,.post-body ol{margin:0 0 22px 22px}
+  .post-body li{margin-bottom:11px}
+  .post-body blockquote{margin:30px 0;padding:20px 26px;background:var(--bg);
+    border-left:3px solid var(--blue);font-style:italic;color:var(--black)}
+  .post-body blockquote cite{display:block;margin-top:10px;font-style:normal;
+    font-size:15px;color:var(--body)}
+  .post-body a{color:var(--blue);text-decoration:underline}
+  .post-nav{display:flex;flex-wrap:wrap;gap:16px;margin-top:56px;padding-top:30px;
+    border-top:1px solid var(--line)}
+
   /* ---- FOOTER ---- */
   footer{background:var(--black);color:rgba(255,255,255,.72);padding:80px 0 32px;font-size:16px}
-  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.2)}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.2)}
   footer .foothead{color:var(--white);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:20px;font-weight:900}
   footer a:hover{color:var(--white)}
   .foot-links{display:flex;flex-direction:column;gap:11px}
   .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:14px;color:rgba(255,255,255,.5)}
+
+  /* Redes sociales: el icono es el enlace, asi que el nombre de la red va en
+     aria-label para quien navega con lector de pantalla. */
+  .social{display:flex;gap:12px;margin-top:14px}
+  .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+    border-radius:50%;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);
+    transition:background .2s,color .2s,transform .2s}
+  .social a:hover{background:var(--blue);color:var(--white);transform:translateY(-2px)}
+  .social svg{width:18px;height:18px;fill:currentColor;display:block}
+
+  /* ---- BOTON FLOTANTE DE WHATSAPP ---- */
+  /* El globo con la pregunta aparece solo despues de unos segundos para no
+     saltarle encima al visitante apenas entra. En pantallas chicas se esconde
+     y queda solo el boton redondo, que ahi es lo unico que cabe sin tapar
+     contenido. */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:12px;
+    text-decoration:none;font-family:var(--font)}
+  .wa-float .wa-btn{display:flex;align-items:center;justify-content:center;width:58px;height:58px;
+    border-radius:50%;background:#25D366;color:#fff;flex:0 0 auto;
+    box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s,box-shadow .2s}
+  .wa-float:hover .wa-btn{transform:scale(1.06);box-shadow:0 12px 30px rgba(0,0,0,.3)}
+  .wa-float .wa-btn svg{width:30px;height:30px;fill:currentColor;display:block}
+  .wa-float .wa-globo{background:var(--white);color:var(--black);font-size:15px;font-weight:500;
+    padding:11px 16px;border-radius:22px;border:1px solid var(--line);white-space:nowrap;
+    box-shadow:0 6px 20px rgba(0,0,0,.12);opacity:0;transform:translateX(10px);
+    animation:pc-wa-globo .45s ease 2.4s forwards}
+  @keyframes pc-wa-globo{to{opacity:1;transform:translateX(0)}}
+  @media(prefers-reduced-motion:reduce){
+    .wa-float .wa-globo{animation:none;opacity:1;transform:none}
+  }
+  @media(max-width:700px){
+    .wa-float{right:16px;bottom:16px}
+    .wa-float .wa-globo{display:none}
+    .wa-float .wa-btn{width:54px;height:54px}
+  }
   .foot-logo{display:block;margin-bottom:18px}
   .foot-logo img{display:block;width:160px;height:auto}
   .slogan{color:var(--white);font-weight:500;font-size:20px;margin-bottom:14px;font-style:italic}
@@ -290,6 +472,57 @@
   @media(max-width:980px){
     .case-grid,.two-col,.magnet,.founder{grid-template-columns:1fr;gap:36px}
     .foot-grid{grid-template-columns:1fr;gap:36px}
+    .logos-track>img.client{margin-right:52px}
+  }
+  @media(max-width:560px){
+    .logos-track>img.client{margin-right:40px}
+    img.client{max-height:46px}
+    img.client-medio{max-height:58px}
+    img.client-alto{max-height:70px}
+  }
+
+  /* ---- Testimonios en video ---- */
+  /* min(420px,100%) evita que la columna quede mas ancha que la pantalla
+     en moviles angostos y provoque scroll horizontal */
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:24px}
+  .testi{border:1px solid var(--line);border-radius:var(--r);background:var(--white);
+    overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+  .testi:hover{border-color:var(--blue)}
+  .testi .vid{aspect-ratio:16/9;background:#000;border-bottom:1px solid var(--line)}
+  .testi .vid iframe{width:100%;height:100%;border:0;display:block}
+  .testi-body{padding:26px 28px 30px}
+  .testi-body .name{margin-bottom:4px}
+  .testi-body .meta{margin-bottom:14px}
+  .testi-body p{font-size:16px}
+
+  /* ============================================================
+     ANIMACIONES AL HACER SCROLL — las activa animaciones.js
+     El estado oculto vive bajo html.js-anim: sin JavaScript la
+     pagina se ve completa y Google la indexa igual.
+     ============================================================ */
+  html.js-anim .reveal{opacity:0;will-change:opacity,transform;
+    transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  html.js-anim .reveal.from-left{transform:translateX(-24px)}
+  html.js-anim .reveal.from-below{transform:translateY(20px)}
+  html.js-anim .reveal.is-in{opacity:1;transform:none}
+
+  /* Bloque de conversion: se levanta cuando queda a la vista */
+  .cta{transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s ease}
+  html.js-anim .cta.is-live{transform:translateY(-5px);box-shadow:0 20px 54px rgba(66,92,199,.3)}
+  .quiz-box{transition:border-color .55s ease,box-shadow .55s ease}
+  html.js-anim .quiz-box.is-live{border-color:rgba(255,255,255,.75);
+    box-shadow:0 0 0 1px rgba(255,255,255,.18),0 18px 50px rgba(0,0,0,.45)}
+
+  /* Un pulso del boton del header al dejar atras el hero */
+  @keyframes pc-nudge{0%,100%{transform:none}32%{transform:scale(1.07)}64%{transform:scale(.985)}}
+  html.js-anim .nav .btn-primary.is-nudge{animation:pc-nudge .8s cubic-bezier(.16,1,.3,1)}
+
+  /* Si el sistema pide menos movimiento, no se anima nada */
+  @media(prefers-reduced-motion:reduce){
+    html.js-anim .reveal{opacity:1!important;transform:none!important;transition:none}
+    html.js-anim .cta.is-live{transform:none;box-shadow:none}
+    html.js-anim .quiz-box.is-live{box-shadow:none}
+    html.js-anim .nav .btn-primary.is-nudge{animation:none}
   }
   @media(max-width:900px){
     body{font-size:17px}

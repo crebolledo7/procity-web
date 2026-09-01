@@ -9,8 +9,11 @@ index.html        Home — implementación y migración sin descuadres
 planes.html       Cinco planes cerrados
 servicios.html    Migración, históricos, paralelo, payroll, integraciones
 nosotros.html     Equipo y trayectoria
+blog.html         Índice del blog
+blog-*.html       Artículos: tres casos de cliente y seis guías
 estilos.css       Sistema visual compartido
-img/clientes/     16 logos de clientes
+animaciones.js    Aparición al hacer scroll, contadores y carrusel de logos
+img/clientes/     21 logos de clientes
 robots.txt        Directivas de rastreo
 sitemap.xml       Mapa del sitio
 GUIA-SEO.md       Guía de implementación en WordPress
@@ -29,7 +32,9 @@ python -m http.server 8322
 
 Los enlaces internos son **relativos** (`planes.html`, `servicios.html`, `nosotros.html`) para que el sitio funcione como archivos estáticos y en GitHub Pages.
 
-`/blog` y `/agenda` todavía no existen en este repo: apuntan a `https://pro-city.cl/blog/` y `https://pro-city.cl/agenda/`.
+El blog vive dentro de este repo (`blog.html` y las `blog-*.html`); los tres casos de cliente vienen del blog anterior de `pro-city.cl`, que se da de baja.
+
+`/agenda` todavía no existe acá: apunta a `https://pro-city.cl/agenda/`.
 
 Los `<link rel="canonical">`, `og:url`, JSON-LD y `sitemap.xml` **sí** usan las URLs absolutas de producción (`https://pro-city.cl/planes/`, etc.), que es lo correcto para SEO. Al montar en WordPress hay que volver los enlaces internos a rutas absolutas — ver `GUIA-SEO.md`.
 
@@ -57,7 +62,7 @@ Detalle completo de estrategia, URLs y pasos de publicación en [`GUIA-SEO.md`](
 - [ ] Reemplazar los seis `[XX]` por cifras reales — `index.html` (3) y `nosotros.html` (3): años de experiencia, migraciones acompañadas, empresas acompañadas, liquidaciones validadas y % de proyectos entregados en fecha.
 - [ ] Quitar la nota interna visible en `nosotros.html` ("Nota para Cristóbal…") y confirmar la cita del fundador.
 - [ ] Decidir si los metadatos (title, description, JSON-LD) llevan tildes; hoy van sin ellas y el cuerpo sí las lleva.
-- [ ] Confirmar que los 16 clientes se pueden nombrar públicamente.
+- [ ] Confirmar que los 21 clientes se pueden nombrar públicamente.
 - [ ] Validar la frase de escasez del topbar o eliminarla.
 - [ ] Sacar los logos de base64 a archivos `.webp` (hoy inflan cada HTML).
 - [ ] Regenerar los PNG de logo en `#425CC7` o corregir el manual (los oficiales están en `#385CC7`).

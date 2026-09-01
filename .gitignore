@@ -11,3 +11,9 @@ desktop.ini
 # Dependencias / build (por si más adelante se agregan)
 node_modules/
 dist/
+
+# Fuentes originales de logos (no se usan en el sitio, quedan solo de respaldo local)
+img/clientes/originales/
+
+# Log de servidor local de pruebas
+server.log
