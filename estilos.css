@@ -536,3 +536,12 @@
     .quiz-box,.magnet,.panel{padding:28px}
     .plan,.tier,.svc,.pain-card{padding:26px}
   }
+
+  /* ---- AVISO DE COOKIES ---- */
+  .cookie-note{position:fixed;left:0;right:0;bottom:0;z-index:999;background:var(--black);color:var(--white);
+    padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;
+    font-size:13.5px;font-weight:500}
+  .cookie-note p{margin:0;max-width:60ch}
+  .cookie-note button{background:var(--white);color:var(--black);border:none;border-radius:999px;
+    padding:8px 20px;font-family:var(--font);font-weight:500;font-size:13.5px;cursor:pointer;white-space:nowrap}
+  .cookie-note[hidden]{display:none}
