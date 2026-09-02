@@ -545,3 +545,134 @@
   .cookie-note button{background:var(--white);color:var(--black);border:none;border-radius:999px;
     padding:8px 20px;font-family:var(--font);font-weight:500;font-size:13.5px;cursor:pointer;white-space:nowrap}
   .cookie-note[hidden]{display:none}
+
+  /* ============================================================
+     COTIZADOR DE PLANES — captura de leads (nivel 4 de consciencia)
+     Bloque agregado al final a proposito: no toca ninguna regla de
+     arriba, solo suma. Reutiliza las variables de :root (colores,
+     tipografia, --r, --max) para que el modal, la barra sticky y el
+     exit-intent se vean parte del mismo sitio.
+     ============================================================ */
+
+  .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* Botones apilados al cierre de una tarjeta de plan/nivel: primaria
+     "Cotiza este plan" (solida) + secundaria (borde/ghost). */
+  .plan .cta-wrap{display:flex;flex-direction:column;gap:10px}
+  .tier-cta{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+
+  /* ---- OVERLAY Y MODAL ---- */
+  .cotizador-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.6);
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  .cotizador-overlay[hidden]{display:none}
+  .cotizador-modal{background:var(--white);border-radius:var(--r);max-width:600px;width:100%;
+    max-height:92vh;display:flex;flex-direction:column;position:relative;
+    box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .cotizador-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--line);background:var(--white);font-size:15px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;color:var(--black);z-index:2;
+    font-family:var(--font)}
+  .cotizador-close:hover{border-color:var(--orange);color:var(--orange)}
+  .cotizador-close:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  .cotizador-head{padding:32px 56px 20px 32px;border-bottom:1px solid var(--line);flex-shrink:0}
+  .cotizador-head h3{font-size:22px;color:var(--black);font-weight:900;margin-top:4px;line-height:1.2}
+  .cotizador-progress{height:3px;background:var(--line);margin-top:18px;overflow:hidden}
+  .cotizador-progress i{display:block;height:100%;background:var(--orange);width:33%;transition:.3s}
+  .cotizador-body{padding:28px 32px 32px;overflow-y:auto}
+
+  .cotizador-step{display:none}
+  .cotizador-step.on{display:block}
+  .cotizador-step-label{font-size:12.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--soft);margin-bottom:20px}
+
+  .cotizador-field{margin-bottom:22px}
+  .cotizador-field label,.cotizador-q{display:block;font-weight:500;color:var(--black);
+    font-size:15.5px;margin-bottom:10px}
+  .cotizador-field .opt{font-weight:300;color:var(--soft);font-size:13.5px}
+  .cotizador-field input[type=text],.cotizador-field input[type=email],.cotizador-field input[type=tel]{
+    width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);
+    font-family:var(--font);font-size:16px;font-weight:300;background:var(--white)}
+  .cotizador-field input:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+
+  .cotizador-opts{display:flex;flex-wrap:wrap;gap:8px}
+  .cotizador-opt{position:relative;cursor:pointer}
+  .cotizador-opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+  .cotizador-opt span{display:inline-block;padding:10px 16px;border:1px solid var(--line);
+    border-radius:999px;font-size:14.5px;font-weight:500;color:var(--body);
+    transition:.15s;cursor:pointer}
+  .cotizador-opt input:checked+span{background:var(--blue);border-color:var(--blue);color:var(--white)}
+  .cotizador-opt input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+  .cotizador-opt:hover span{border-color:var(--blue)}
+
+  .cotizador-consent{display:flex;gap:10px;align-items:flex-start;margin-bottom:18px;
+    font-size:13.5px;color:var(--body)}
+  .cotizador-consent input{margin-top:3px;flex-shrink:0}
+  .cotizador-consent label{display:inline;font-weight:300;color:var(--body);font-size:13.5px;margin:0}
+
+  .cotizador-error{color:#B3261E;font-size:14px;font-weight:500;margin:8px 0;min-height:1em}
+  .cotizador-back{background:none;border:0;color:var(--blue);font-weight:500;cursor:pointer;
+    padding:0;margin-bottom:18px;font-size:14.5px;font-family:var(--font)}
+  .cotizador-back:hover{text-decoration:underline}
+  .cotizador-micro{font-size:13.5px;color:var(--soft);margin-top:14px;text-align:center}
+  .cotizador-actions{margin-top:8px}
+
+  /* honeypot: fuera de pantalla, no display:none (algunos bots lo ignoran) */
+  .cotizador-hp{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden}
+
+  .cotizador-thanks h3{font-size:26px;color:var(--black);margin-bottom:14px;font-weight:900}
+  .cotizador-thanks p{margin-bottom:14px}
+  .cotizador-next-steps{margin:0 0 26px 20px;font-size:15px;color:var(--body)}
+  .cotizador-next-steps li{margin-bottom:8px}
+  .cotizador-escalera{background:var(--bg);border-radius:var(--r);padding:20px;margin-bottom:22px}
+  .cotizador-escalera p{margin-bottom:12px;color:var(--black)}
+  .cotizador-lead-magnet{border:1px dashed var(--line);border-radius:var(--r);padding:18px;margin-bottom:8px}
+  .cotizador-lead-magnet p{margin-bottom:10px;font-size:14.5px}
+
+  @media(max-width:768px){
+    .cotizador-overlay{padding:0}
+    .cotizador-modal{max-width:none;width:100%;height:100%;max-height:none;border-radius:0}
+    .cotizador-head{padding:26px 52px 18px 22px}
+    .cotizador-body{padding:22px 22px 24px;flex:1}
+    /* boton de envio siempre visible: se pega abajo del modal cuando el
+       contenido del paso es mas alto que la pantalla */
+    .cotizador-step.on .cotizador-actions:last-of-type{position:sticky;bottom:-24px;
+      background:var(--white);margin:16px -22px -24px;
+      padding:14px 22px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  }
+
+  /* ---- BARRA DE CONVERSION (planes.html) ---- */
+  .pc-sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--black);
+    color:var(--white);display:flex;align-items:center;justify-content:center;gap:16px;
+    flex-wrap:wrap;padding:14px 20px;font-size:14.5px;font-weight:500;
+    transform:translateY(110%);transition:transform .3s ease;box-shadow:0 -8px 24px rgba(0,0,0,.18)}
+  .pc-sticky-bar.is-visible{transform:translateY(0)}
+  .pc-sticky-bar.is-visible.is-hidden-modal{transform:translateY(110%)}
+  .pc-sticky-bar span{white-space:nowrap}
+  .pc-sticky-bar .btn{padding:10px 20px;font-size:14.5px}
+  body.pc-sticky-padding{padding-bottom:76px}
+  @media(min-width:900px){
+    /* top:0 + translateY(-100%) oculta la barra completa sin importar su
+       alto real (a diferencia de top:78px + un porcentaje fijo, que dejaba
+       un borde visible). Cuando esta visible se desplaza 78px hacia abajo
+       para quedar bajo el header. */
+    .pc-sticky-bar{top:0;bottom:auto;transform:translateY(-100%);
+      box-shadow:0 8px 24px rgba(0,0,0,.18)}
+    .pc-sticky-bar.is-visible{transform:translateY(78px)}
+    .pc-sticky-bar.is-visible.is-hidden-modal{transform:translateY(-100%)}
+    body.pc-sticky-padding{padding-bottom:0}
+  }
+
+  /* ---- EXIT-INTENT (planes.html) ---- */
+  .pc-exit-overlay{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.6);
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  .pc-exit-modal{background:var(--white);border-radius:var(--r);max-width:460px;width:100%;
+    padding:36px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+  .pc-exit-modal h3{font-size:21px;color:var(--black);margin-bottom:12px;font-weight:900;
+    padding-right:24px;line-height:1.3}
+  .pc-exit-modal p{font-size:15px;margin-bottom:18px}
+  .pc-exit-modal .form-row{margin-top:0}
+
+  /* ---- SALIDA DE BAJO COMPROMISO (planes.html) ---- */
+  .low-commit .panel h3{margin-bottom:10px}
+  .low-commit .panel p{margin-bottom:0}

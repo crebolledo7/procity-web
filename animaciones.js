@@ -97,14 +97,18 @@
 
   /* ---------- 2. contadores ------------------------------------------ */
 
-  // Acepta "5", "50+", "80 mil", "95%", "1.284". Conserva el texto que
-  // rodea al numero y respeta el punto como separador de miles.
+  // Acepta "5", "50+", "80 mil", "95%", "1.284", "98.4%". Conserva el texto
+  // que rodea al numero. Un punto seguido de 1 o 2 digitos se interpreta
+  // como decimal (ej. "98.4"); seguido de 3 digitos, como separador de
+  // miles (ej. "1.284"), igual que el resto de las cifras del sitio.
   function partir(texto) {
     var m = /^(\D*)([\d.]+)(.*)$/.exec(texto.trim());
     if (!m) return null;
     var crudo = m[2];
-    var agrupado = crudo.indexOf('.') !== -1;
-    var valor = parseInt(crudo.replace(/\./g, ''), 10);
+    var partes = crudo.split('.');
+    var esDecimal = partes.length === 2 && partes[1].length > 0 && partes[1].length <= 2;
+    var agrupado = !esDecimal && crudo.indexOf('.') !== -1;
+    var valor = esDecimal ? parseFloat(crudo) : parseInt(crudo.replace(/\./g, ''), 10);
     if (!isFinite(valor) || valor <= 0) return null;
     return { antes: m[1], valor: valor, despues: m[3], agrupado: agrupado };
   }
