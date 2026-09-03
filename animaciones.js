@@ -73,7 +73,6 @@
   marcar(DESDE_ABAJO, 'from-below');
 
   // Escalonado: las tarjetas hermanas entran una detras de otra.
-  var yaVisto = Object.create(null);
   var grupos = document.querySelectorAll('.svc-grid, .steps, .pain-grid, .stats, .plans, .tiers, .faq');
   for (var g = 0; g < grupos.length; g++) {
     var hijos = grupos[g].children;

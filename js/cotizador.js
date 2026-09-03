@@ -185,7 +185,7 @@
   var overlay = null;
   var currentPlanSlug = '';
   var currentPlanLabel = '';
-  var cotizadorOpenTime = 0;
+  var step2ShownTime = 0;
   var lastTrigger = null;
 
   function modalTemplate() {
@@ -333,7 +333,11 @@
   }
 
   function saveStep1(data) {
-    try { sessionStorage.setItem(STEP1_KEY, JSON.stringify(data)); } catch (e) {}
+    // Se guarda junto con el plan que se estaba cotizando: si despues se
+    // abre el cotizador para OTRO plan, prefillStep1() no debe rellenar
+    // respuestas que correspondian a un contexto distinto.
+    var conPlan = Object.assign({ plan: currentPlanSlug }, data);
+    try { sessionStorage.setItem(STEP1_KEY, JSON.stringify(conPlan)); } catch (e) {}
   }
 
   function prefillStep1() {
@@ -342,6 +346,7 @@
     if (!raw) return;
     var data;
     try { data = JSON.parse(raw); } catch (e) { return; }
+    if (data.plan !== currentPlanSlug) return; // guardado para otro plan: no rellenar
     ['trabajadores', 'razones_sociales', 'sistema_actual', 'plazo'].forEach(function (name) {
       if (!data[name]) return;
       var radios = document.querySelectorAll('input[name="' + name + '"]');
@@ -377,6 +382,7 @@
       plazo: data.plazo
     });
     goStep(2);
+    step2ShownTime = Date.now();
     var nombreInput = document.getElementById('cotizadorNombre');
     if (nombreInput) nombreInput.focus();
   }
@@ -388,8 +394,13 @@
 
     var hp = document.getElementById('cotizadorWebsite');
     var esBot = !!(hp && hp.value.trim());
-    var elapsed = Date.now() - cotizadorOpenTime;
-    var muyRapido = elapsed < 3000; // menos de ~3s desde que se abrió: sospechoso
+    // Se mide desde que se MUESTRA el paso 2 (no desde que se abre el
+    // modal): si el paso 1 llega prellenado de una visita anterior
+    // (prefillStep1) o el navegador autocompleta el paso 2, un humano
+    // real puede cruzar el modal completo en menos de 3s. Medir solo el
+    // tiempo en el paso 2 evita marcar esos casos como sospechosos.
+    var elapsed = Date.now() - step2ShownTime;
+    var muyRapido = elapsed < 3000;
 
     var nombre = document.getElementById('cotizadorNombre').value.trim();
     var email = document.getElementById('cotizadorEmail').value.trim();
@@ -420,14 +431,23 @@
       empresa: empresa,
       consiente: consiente,
       page: location.pathname,
-      ts: new Date().toISOString()
+      ts: new Date().toISOString(),
+      revisar_posible_bot: muyRapido // señal blanda: se envia igual, no se descarta el lead
     };
 
-    if (esBot || muyRapido) {
-      console.warn('cotizador: envío bloqueado por antispam (honeypot o tiempo mínimo de llenado).', { esBot: esBot, elapsedMs: elapsed });
+    // Solo el honeypot (campo oculto relleno) es señal dura de bot: un
+    // usuario real jamas completa un input aria-hidden/tabindex=-1. El
+    // heuristico de tiempo es blando (autocompletado o paso 1 prellenado
+    // pueden dar falsos positivos) asi que NUNCA descarta el lead solo,
+    // para no perder envios reales en silencio.
+    if (esBot) {
+      console.warn('cotizador: envío bloqueado por antispam (honeypot).', { esBot: esBot });
       try { sessionStorage.removeItem(STEP1_KEY); } catch (ex) {}
       showThanks();
       return;
+    }
+    if (muyRapido) {
+      console.warn('cotizador: envío marcado como posible bot por tiempo, pero se envía igual.', { elapsedMs: elapsed });
     }
 
     var submitBtn = document.getElementById('cotizadorSubmit');
@@ -490,7 +510,7 @@
     document.getElementById('cotizadorError2').textContent = '';
     prefillStep1();
 
-    cotizadorOpenTime = Date.now();
+    step2ShownTime = 0;
     lastTrigger = triggerEl || document.activeElement;
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -572,6 +592,13 @@
     }
     computeThreshold();
     window.addEventListener('resize', computeThreshold);
+    // Recalcula cuando terminan de cargar fuentes/imagenes: si Montserrat
+    // llega tarde, el layout puede moverse despues de la medicion inicial
+    // y dejar el umbral desactualizado hasta el proximo resize.
+    window.addEventListener('load', computeThreshold);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(computeThreshold);
+    }
 
     var ticking = false;
     function onScroll() {
