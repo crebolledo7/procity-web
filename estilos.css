@@ -194,6 +194,17 @@
   .plan .price small{display:block;font-weight:300;color:var(--soft);font-size:13.5px;margin-top:4px}
   .plan .cta-wrap{margin-top:auto}
 
+  /* ---- GRILLA DE "NUESTROS PLANES" (home): el mas contratado va al
+     centro y a color; el resto queda atenuado en blanco y negro para
+     que el ojo vaya directo al plan recomendado. Escenado solo con
+     .plans-home para no afectar las tarjetas de planes.html, que no
+     usan este patron de "uno destacado entre varios". ---- */
+  .plans-home .plan.featured{box-shadow:0 18px 44px rgba(66,92,199,.14)}
+  .plans-home .plan:not(.featured) .sub{color:var(--soft)}
+  .plans-home .plan:not(.featured) li::before{background:rgba(0,0,0,.28)}
+  .plans-home .plan:not(.featured) .btn-primary{background:var(--black);border-color:var(--black)}
+  .plans-home .plan:not(.featured) .btn-primary:hover{background:#222;border-color:#222}
+
   /* ---- NIVELES ---- */
   .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
   .tier{border:1px solid var(--line);border-radius:var(--r);padding:32px;background:var(--white)}
