@@ -5,4 +5,8 @@ Allow: /
 Disallow: /*?srsltid=
 Disallow: /*?utm_
 
+# Propuestas comerciales: precio y datos de un cliente puntual, no son
+# contenido publico
+Disallow: /propuestas/
+
 Sitemap: https://pro-city.cl/sitemap.xml
