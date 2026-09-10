@@ -167,7 +167,7 @@ Verificar en el Test de Resultados Enriquecidos de Google y en Schema.org Valida
 
 En orden de impacto:
 
-1. ~~**Landings por servicio.**~~ **Hecho para las cuatro principales** (BUK, Talana, Rex+ y migración). Quedan pendientes las de servicios individuales: confección de históricos, paralelo, payroll externalizado e integraciones. Cada una es una URL más apuntando a una búsqueda con intención de compra clarísima, y una candidata más a sitelink.
+1. ~~**Landings por servicio.**~~ **Hecho para cinco:** BUK, Talana, Rex+, migración e integraciones/automatización (`integraciones-automatizacion.html`, publicada para captar "integraciones", "automatización de procesos", "digitalización" y "creación de sistemas", que no tenían página propia). Quedan pendientes: confección de históricos, paralelo y payroll externalizado. Cada una es una URL más apuntando a una búsqueda con intención de compra clarísima, y una candidata más a sitelink.
 2. **Blog respondiendo preguntas reales.** "¿Por qué mi impuesto único no cuadra con el F29?", "¿Puedo cambiar de sistema de remuneraciones a mitad de año?", "¿Qué es un paralelo de remuneraciones?". Este es el camino directo a aparecer en People Also Ask.
 3. **Reseñas en Google.** Fintual y FitFood muestran calificación porque tienen perfil de empresa con reseñas. Vale la pena crear o reclamar el perfil de Google Business y pedirles reseña a los clientes que quedaron contentos.
 4. **Velocidad de carga.** Los logos van embebidos en base64 para que el demo sea un archivo único; en producción deben ser archivos `.webp` normales.
