@@ -59,11 +59,18 @@ Detalle completo de estrategia, URLs y pasos de publicación en [`GUIA-SEO.md`](
 
 ## Pendientes antes de publicar
 
-- [ ] Reemplazar los seis `[XX]` por cifras reales — `index.html` (3) y `nosotros.html` (3): años de experiencia, migraciones acompañadas, empresas acompañadas, liquidaciones validadas y % de proyectos entregados en fecha.
-- [ ] Quitar la nota interna visible en `nosotros.html` ("Nota para Cristóbal…") y confirmar la cita del fundador.
+Auditoría revisada el 2026-09-15 — lo que sigue son decisiones de negocio, no de código:
+
+- [ ] Confirmar el plazo real de entrega de propuesta: `index.html` dice "3 días hábiles", las landings de servicio dicen "5 días hábiles".
+- [ ] Confirmar la cifra real de "% de proyectos entregados en fecha": `index.html` muestra 98.4%, `GUIA-SEO.md` documenta 95%.
+- [ ] Decidir si "Pro-City Holding" es una cuarta línea de negocio o se funde en Migración Limpia (`planes.html` dice "tres líneas" pero muestra cuatro tarjetas).
+- [ ] Decidir si "Horas de asesoría a demanda" se mantiene por hora o se reempaqueta como alcance cerrado (choca con "sin bolsas de horas" del resto del copy).
+- [ ] Redactar la cita textual de cada testimonio en `nosotros.html` (los 4 videos ya están, falta la frase de cada cliente) y confirmar la cita del fundador.
 - [ ] Decidir si los metadatos (title, description, JSON-LD) llevan tildes; hoy van sin ellas y el cuerpo sí las lleva.
 - [ ] Confirmar que los 21 clientes se pueden nombrar públicamente.
 - [ ] Validar la frase de escasez del topbar o eliminarla.
-- [ ] Sacar los logos de base64 a archivos `.webp` (hoy inflan cada HTML).
 - [ ] Regenerar los PNG de logo en `#425CC7` o corregir el manual (los oficiales están en `#385CC7`).
 - [ ] Foto o video del fundador.
+- [ ] Antes de conectar el cotizador en producción: generar el `TOKEN_SECRETO` real en `apps-script/enviar-propuestas.gs` (el script ya rechaza el valor de ejemplo).
+
+Resueltos en esta pasada: los seis `[XX]` ya no están, la nota interna de `nosotros.html` se quitó, los tres logos de marca (favicon, header, footer) se sacaron de base64 a `img/marca/*.png` (~40 KB menos por página), se agregó `loading="lazy"` a los 42 logos de clientes del carrusel, el JSON-LD de navegación ahora incluye "Inicio" (5 secciones), y `aria-current="page"` quedó consistente en todas las páginas.

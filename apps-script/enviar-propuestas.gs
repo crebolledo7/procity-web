@@ -131,6 +131,10 @@ function doPost(e) {
     return responder(false, "JSON inválido");
   }
 
+  if (TOKEN_SECRETO === "CAMBIA-ESTA-CLAVE-POR-UNA-TUYA") {
+    return responder(false, "TOKEN_SECRETO no configurado: sigue el paso 2 de DESPLIEGUE antes de usar este script");
+  }
+
   if (datos.token !== TOKEN_SECRETO) {
     return responder(false, "token inválido");
   }
