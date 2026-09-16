@@ -25,6 +25,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
+  [id]{scroll-margin-top:96px}
   body{font-family:var(--font);font-weight:300;font-size:18px;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;text-align:left}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   a{color:inherit;text-decoration:none}
@@ -69,6 +70,13 @@
   .nav-links button:hover,.nav-links a[data-nav]:hover{color:var(--black)}
   .nav-links button.active,.nav-links a[data-nav].active{color:var(--orange);border-bottom-color:var(--orange)}
   .menu-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--black);line-height:1}
+
+  /* ---- SUBMENU DE NAV ---- */
+  .nav-item{position:relative;display:flex;align-items:center}
+  .nav-dropdown{position:absolute;top:100%;left:-14px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 16px 40px rgba(0,0,0,.1);padding:10px;margin-top:6px;min-width:280px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.15s;z-index:70}
+  .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:none}
+  .nav-dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--body);border:0}
+  .nav-dropdown a:hover{background:var(--bg);color:var(--black)}
 
   /* ---- BOTONES ---- */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 32px;border-radius:999px;font-family:var(--font);font-weight:500;font-size:18px;border:2px solid transparent;cursor:pointer;transition:.18s;text-align:center;line-height:1.2}
@@ -545,6 +553,9 @@
     .nav-links button,.nav-links a[data-nav]{text-align:left;padding:14px 0;border-bottom:1px solid var(--line)}
     .nav-links .btn{justify-content:center;margin-top:14px}
     .menu-toggle{display:block}
+    .nav-item{flex-direction:column;align-items:stretch}
+    .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;margin:0 0 8px;padding:0 0 0 16px;min-width:0}
+    .nav-dropdown a{padding:10px 0;border-bottom:0}
     section{padding:64px 0}
     .hero{padding:72px 0 64px}
     .cta{padding:44px 28px;margin:0 16px 64px}

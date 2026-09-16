@@ -53,7 +53,7 @@
     <nav class="nav-links">
       <a data-nav="inicio" href="index.html">Inicio</a>
       <a data-nav="planes" href="planes.html">Planes</a>
-      <a data-nav="servicios" href="servicios.html" aria-current="page" class="active">Servicios</a>
+      <div class="nav-item has-sub"><a data-nav="servicios" href="servicios.html" aria-current="page" class="active">Servicios</a><div class="nav-dropdown"><a href="servicios.html#migrar">Migración e implementación</a><a href="servicios.html#cuadrar">Históricos, paralelo e integraciones</a><a href="servicios.html#operar">Payroll externalizado</a><a href="servicios.html#proteger">Servicios legales</a><a href="servicios.html#adoptar">Capacitación y adopción</a><a href="integraciones-automatizacion.html">Integraciones y automatización</a><a href="integraciones-automatizacion.html#rh-connect">RH Connect</a></div></div>
       <a data-nav="nosotros" href="nosotros.html">Nosotros</a>
       <a data-nav="blog" href="blog.html">Blog</a>
       <a class="btn btn-primary" href="https://calendar.app.google/4k6nLR3WYzGfWJeJ6" target="_blank" rel="noopener">Agenda tu diagnóstico</a>
@@ -77,7 +77,7 @@
 
       <h2 class="sr-head">Nuestros servicios de remuneraciones, agrupados en cuatro momentos</h2>
 
-      <div class="svc-group">
+      <div class="svc-group" id="migrar">
         <div class="svc-group-head"><span class="verb">Migrar</span><h3>Poner en marcha la plataforma</h3></div>
         <p class="intro">Lideramos el proyecto de punta a punta: no entregamos un manual, ejecutamos la migración contigo. Si aún no eliges plataforma, parte por el <a href="migracion-remuneraciones.html"><strong>método de migración de remuneraciones</strong></a>.</p>
         <div class="svc-grid">
@@ -88,7 +88,7 @@
         </div>
       </div>
 
-      <div class="svc-group">
+      <div class="svc-group" id="cuadrar">
         <div class="svc-group-head"><span class="verb">Cuadrar</span><h3>La capa de control</h3></div>
         <p class="intro">Es la parte que casi nadie hace bien y la razón por la que las migraciones fallan. Es también donde somos más fuertes.</p>
         <div class="svc-grid">
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="svc-group">
+      <div class="svc-group" id="operar">
         <div class="svc-group-head"><span class="verb">Operar</span><h3>Que el mes cierre igual</h3></div>
         <p class="intro">Si prefieres no tener equipo interno de remuneraciones, o necesitas respaldo mientras lo formas.</p>
         <div class="svc-grid">
@@ -150,7 +150,7 @@
       </div>
 
 
-      <div class="svc-group">
+      <div class="svc-group" id="proteger">
         <div class="svc-group-head"><span class="verb">Proteger</span><h3>Servicios legales para empresas</h3></div>
         <p class="intro">Un equipo jurídico multidisciplinario dentro de Pro-City. Nace del mismo lugar que el resto: conocemos la operación por dentro, así que el consejo legal llega aterrizado al proceso real.</p>
         <div class="svc-grid">
@@ -163,7 +163,7 @@
         </div>
       </div>
 
-      <div class="svc-group">
+      <div class="svc-group" id="adoptar">
         <div class="svc-group-head"><span class="verb">Adoptar</span><h3>Que la inversión se use</h3></div>
         <p class="intro">Un sistema bien configurado que nadie usa es un costo. Medimos la adopción, no la asumimos.</p>
         <div class="svc-grid">
