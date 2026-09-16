@@ -73,13 +73,10 @@
 
   /* ---- SUBMENU DE NAV ---- */
   .nav-item{position:relative;display:flex;align-items:center}
-  .nav-dropdown{position:absolute;top:100%;left:-14px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 16px 40px rgba(0,0,0,.12);padding:12px;margin-top:14px;min-width:300px;display:flex;flex-direction:column;gap:3px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.15s;z-index:70}
-  .nav-dropdown::before{content:"";position:absolute;top:-7px;left:26px;width:12px;height:12px;background:var(--white);border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+  .nav-dropdown{position:absolute;top:100%;left:-14px;background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 45px rgba(0,0,0,.12);padding:10px;margin-top:10px;min-width:260px;display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.15s;z-index:70}
   .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:none}
-  .nav-dropdown a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:var(--r);font-size:14px;font-weight:500;color:var(--body);border:0;transition:.15s}
-  .nav-dropdown a:hover{background:var(--bg);color:var(--black)}
-  .nav-dropdown .verb{flex-shrink:0;padding:5px 9px;font-size:10px}
-  .nav-dropdown-label{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--body);opacity:.55;padding:10px 10px 2px;margin-top:5px;border-top:1px solid var(--line)}
+  .nav-dropdown a{display:block;padding:12px 16px;border-radius:999px;font-size:15px;font-weight:500;color:var(--body);border:0;transition:.15s}
+  .nav-dropdown a:hover{background:rgba(66,92,199,.1);color:var(--blue)}
 
   /* ---- BOTONES ---- */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 32px;border-radius:999px;font-family:var(--font);font-weight:500;font-size:18px;border:2px solid transparent;cursor:pointer;transition:.18s;text-align:center;line-height:1.2}
@@ -558,9 +555,8 @@
     .menu-toggle{display:block}
     .nav-item{flex-direction:column;align-items:stretch}
     .nav-dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;margin:0 0 8px;padding:0 0 0 16px;min-width:0}
-    .nav-dropdown::before{display:none}
-    .nav-dropdown a{padding:10px 0;border-bottom:0}
-    .nav-dropdown-label{padding:10px 0 2px;margin-top:2px}
+    .nav-dropdown a{padding:10px 0;border-radius:0;border-bottom:0}
+    .nav-dropdown a:hover{background:none}
     section{padding:64px 0}
     .hero{padding:72px 0 64px}
     .cta{padding:44px 28px;margin:0 16px 64px}
