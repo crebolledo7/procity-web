@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta 2026031 · TEK CHILE S.A. · Pro-City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#425CC7; --orange:#E36C09; --white:#FFFFFF; --black:#000000;
+    --ink:#000000; --body:rgba(0,0,0,.66); --soft:rgba(0,0,0,.45);
+    --line:rgba(0,0,0,.12); --bg:#F4F4F6;
+    --font:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    --max:960px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font); font-weight:300; font-size:17px; color:var(--ink); background:var(--white); line-height:1.6; text-align:left; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  a{color:inherit}
+  strong,b{font-weight:500}
+  h1,h2,h3{text-align:left; letter-spacing:-.02em; font-weight:900}
+  h1{font-size:clamp(30px,5vw,46px); line-height:1.08; margin-bottom:16px}
+  h2{font-size:clamp(22px,3vw,30px); line-height:1.15; margin-bottom:28px}
+  h3{font-size:18px; font-weight:500; margin-bottom:8px}
+  p{color:var(--body); font-weight:300}
+  section{padding:56px 0; border-top:1px solid var(--line)}
+  .kicker{display:block; font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin-bottom:14px}
+  .barmark{display:flex; align-items:flex-end; gap:3px; height:20px}
+  .barmark i{display:block; width:4px; background:var(--blue)}
+  .marca{display:flex; align-items:center; gap:10px}
+  .marca b{font-size:15px; font-weight:900; letter-spacing:.06em}
+
+  header.top{background:var(--black); color:var(--white); padding:14px 0}
+  header.top .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px}
+  header.top .marca .barmark i{background:var(--white)}
+  header.top .marca b{color:var(--white)}
+  header.top .meta{font-size:12.5px; color:rgba(255,255,255,.7); text-align:right}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; font-weight:500; font-size:14.5px; padding:13px 22px; border-radius:4px; border:1.5px solid transparent}
+  .btn-primary{background:var(--orange); color:var(--white)}
+  .btn-outline{border-color:rgba(0,0,0,.25); color:var(--ink)}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+
+  .precio-box{background:var(--bg); border-radius:8px; padding:28px; margin-top:32px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+  @media (max-width:640px){ .precio-box{grid-template-columns:1fr} }
+  .precio-box .et{font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--soft)}
+  .precio-box .val{font-size:26px; font-weight:900; color:var(--blue); margin-top:4px}
+  .precio-box .val.acento{color:var(--orange)}
+  .precio-box .pie{font-size:13px; color:var(--body); margin-top:2px}
+
+  .opciones{display:grid; grid-template-columns:1fr 1.08fr 1fr; gap:18px; margin-top:32px; align-items:stretch}
+  @media (max-width:760px){ .opciones{grid-template-columns:1fr} }
+  td.col-reco, th.col-reco{background:rgba(227,108,9,.06)}
+  .opcion{border:1.5px solid var(--line); border-radius:8px; padding:24px; position:relative; background:var(--white)}
+  .opcion.recomendada{border-color:var(--orange); box-shadow:0 8px 24px rgba(227,108,9,.12)}
+  .opcion .sello{position:absolute; top:-12px; left:20px; background:var(--orange); color:var(--white);
+    font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; padding:4px 10px; border-radius:3px}
+  .opcion .nom{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--soft)}
+  .opcion .val{font-size:34px; font-weight:900; color:var(--blue); margin-top:6px; line-height:1.1}
+  .opcion.recomendada .val{color:var(--orange)}
+  .opcion .pie{font-size:13.5px; color:var(--body); margin-top:4px}
+  .opcion ul{margin:16px 0 0 18px; font-size:14.5px; color:var(--body)}
+  .opcion li{margin-bottom:6px}
+  .nota-docs{font-size:14px; margin-top:18px}
+  .fuera-alcance{border:1px dashed rgba(0,0,0,.25); border-radius:6px; padding:18px 22px; margin-top:20px; font-size:14.5px}
+  .fuera-alcance ul{margin:10px 0 0 18px; color:var(--body)}
+  .fuera-alcance li{margin-bottom:6px}
+  .fuera-alcance p{margin-top:10px; font-size:14px}
+  .elige{display:grid; gap:10px; margin:20px 0 6px}
+  .elige label{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink); cursor:pointer;
+    border:1px solid var(--line); border-radius:6px; padding:12px 14px}
+  .elige input{margin-top:3px; width:16px; height:16px; flex-shrink:0}
+
+  .alcance-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 32px; margin-top:8px}
+  @media (max-width:640px){ .alcance-grid{grid-template-columns:1fr} }
+  .alcance-grid div{padding:12px 0; border-bottom:1px solid var(--line); font-size:15px}
+  .alcance-grid b{display:block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--soft); margin-bottom:4px}
+
+  table{width:100%; border-collapse:collapse; margin-top:8px; font-size:15px}
+  th,td{padding:10px 14px; text-align:right; border-bottom:1px solid var(--line)}
+  th:first-child, td:first-child{text-align:left}
+  thead th{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); background:var(--bg)}
+  tr.total td{font-weight:900; font-size:16px; border-top:2px solid var(--ink); border-bottom:0}
+  tr.dcto td{color:var(--orange); font-weight:500}
+
+  .veredicto{background:var(--bg); border-left:4px solid var(--orange); padding:18px 22px; margin-top:24px; font-size:15px}
+
+  .tarjetas{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px}
+  @media (max-width:760px){ .tarjetas{grid-template-columns:1fr} }
+  .tarjeta{border:1px solid var(--line); border-radius:8px; padding:22px}
+  .tarjeta p{font-size:14.5px; margin-top:6px}
+
+  details{border-bottom:1px solid var(--line); padding:16px 0}
+  summary{cursor:pointer; font-weight:500; font-size:15.5px; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ "; color:var(--blue); font-weight:900}
+  details[open] summary::before{content:"– "}
+  details p{margin-top:10px; font-size:14.5px}
+
+  footer{background:var(--black); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px}
+  footer a{color:var(--orange)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="marca">
+      <div class="barmark"><i style="height:8px"></i><i style="height:14px"></i><i style="height:20px"></i><i style="height:11px"></i></div>
+      <b>PRO-CITY</b>
+    </div>
+    <div class="meta">Propuesta 2026031 Rev. 00 · 19 de octubre del 2026</div>
+  </div>
+</header>
+
+<section style="padding-top:64px; border-top:0">
+  <div class="wrap">
+    <span class="kicker">Propuesta comercial y técnica</span>
+    <h1>Implementación Talana para TEK CHILE S.A.</h1>
+    <p style="max-width:60ch; font-size:17px">Migramos tu operación, cargamos tus históricos y validamos el 100% de los cálculos contra tu sistema actual antes del go-live. Preparado para Romina Valeska Garay Totin.</p>
+
+    <div class="opciones">
+      <div class="opcion">
+        <div class="nom">1 mes de paralelo</div>
+        <div class="val">133,2 UF</div>
+        <div class="pie">+ IVA · 2 meses de proyecto</div>
+        <ul>
+          <li>Todo el alcance de la implementación</li>
+          <li>Un cierre de mes comparado por RUT y por concepto</li>
+          <li>Go-live solo cuando ese cierre cuadra</li>
+        </ul>
+      </div>
+      <div class="opcion recomendada">
+        <span class="sello">Recomendada</span>
+        <div class="nom">2 meses de paralelo</div>
+        <div class="val">181,6 UF</div>
+        <div class="pie">+ IVA · 2 meses de proyecto</div>
+        <ul>
+          <li>Todo el alcance de la implementación</li>
+          <li><strong>Dos cierres de mes</strong> comparados por RUT y por concepto</li>
+          <li>El segundo mes confirma que las correcciones del primero funcionan</li>
+          <li>El equilibrio entre seguridad y plazo</li>
+        </ul>
+      </div>
+      <div class="opcion">
+        <div class="nom">3 meses de paralelo</div>
+        <div class="val">229,9 UF</div>
+        <div class="pie">+ IVA · 3 meses de proyecto</div>
+        <ul>
+          <li>Todo el alcance de la implementación</li>
+          <li><strong>Tres cierres de mes</strong> comparados por RUT y por concepto</li>
+          <li>Para operaciones con mucha variación mes a mes (turnos, comisiones, bonos)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="nota-docs">Las tres opciones incluyen el traspaso de tus documentos digitales a Talana: <strong>0,0097 UF + IVA por documento migrado</strong>, facturado al cierre según la cantidad real (<a href="#documentos">ver detalle</a>).</p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendar.app.google/4k6nLR3WYzGfWJeJ6" target="_blank" rel="noopener">Agenda tu diagnóstico →</a>
+      <a class="btn btn-outline" href="https://wa.me/56937669574?text=Hola%2C%20quiero%20avanzar%20con%20la%20propuesta%202026031%20de%20TEK%20CHILE%20S.A.." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Alcance del proyecto</span>
+    <h2>Lo que cubre esta propuesta</h2>
+    <div class="alcance-grid">
+      <div><b>Dotación a migrar</b>163 trabajadores (51 a 200 trabajadores)</div>
+      <div><b>Razones sociales</b>2</div>
+      <div><b>Históricos</b>2 años · nivel 3 — Libros complejos: varias razones sociales o conceptos sucios.</div>
+      <div><b>Plazo de históricos</b>2 meses (calendario, corre en paralelo)</div>
+      <div><b>Comparativo (paralelo)</b>1, 2 o 3 meses, a tu elección (recomendamos 2)</div>
+      <div><b>Plantillas de documentos</b>10</div>
+      <div><b>Módulos adicionales</b>Firma digital y enrolamiento, Lanzamiento de app y gestión del cambio</div>
+      <div><b>Traspaso de documentos</b>Contratos, anexos, otros documentos y liquidaciones de sueldo</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Propuesta económica</span>
+    <h2>Detalle de la inversión</h2>
+    <table>
+      <thead><tr><th>Etapa</th><th>1 mes de paralelo (UF)</th><th class="col-reco">2 meses de paralelo (UF) · recomendada</th><th>3 meses de paralelo (UF)</th></tr></thead>
+      <tbody>
+        <tr><td>Estructura empresarial</td><td>10,8</td><td class="col-reco">10,8</td><td>10,8</td></tr><tr><td>Centralización contable</td><td>16,2</td><td class="col-reco">16,2</td><td>16,2</td></tr><tr><td>Configuración INE</td><td>5,4</td><td class="col-reco">5,4</td><td>5,4</td></tr><tr><td>Configuración LRE</td><td>5,4</td><td class="col-reco">5,4</td><td>5,4</td></tr><tr><td>Históricos · 2 años · nivel 3</td><td>37,6</td><td class="col-reco">37,6</td><td>37,6</td></tr><tr><td>Comparativo (paralelo)</td><td>60,5</td><td class="col-reco">121,0</td><td>181,4</td></tr><tr><td>Plantillas de documentos · 10</td><td>9,0</td><td class="col-reco">9,0</td><td>9,0</td></tr><tr><td>Módulos adicionales · 2</td><td>21,6</td><td class="col-reco">21,6</td><td>21,6</td></tr>
+        <tr><td>Subtotal</td><td>166,5</td><td class="col-reco">226,9</td><td>287,4</td></tr>
+        <tr class="dcto"><td>Descuento comercial (20%)</td><td>-33,3</td><td class="col-reco">-45,4</td><td>-57,5</td></tr>
+        <tr class="total"><td>Precio cerrado</td><td>133,2 UF</td><td class="col-reco">181,6 UF</td><td>229,9 UF</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px; font-size:13.5px">Tarifa 1,80 UF/hora · UF a $41.000 · precios netos, no incluyen IVA.</p>
+
+    <div class="veredicto"><strong>Por qué recomendamos 2 meses.</strong> El primer paralelo encuentra las diferencias y las corrige en la parametrización. El segundo prueba esas correcciones en un cierre real distinto, con sus propias licencias, finiquitos y bonos. Un tercer mes suma seguridad, pero en la mayoría de las empresas dos cierres cuadrados ya bastan para entrar a producción con tranquilidad.</div>
+
+    <div class="fuera-alcance">
+      <strong>No incluido en esta propuesta (se cotiza aparte):</strong>
+      <ul>
+        <li><strong>Apoyo en producción:</strong> acompañamiento en los cierres de remuneraciones posteriores al go-live.</li>
+        <li><strong>Soporte adicional:</strong> consultas, ajustes o capacitaciones fuera del alcance descrito arriba.</li>
+      </ul>
+      <p>Si quieres incluirlos, te enviamos una cotización complementaria por horas o por bolsa mensual.</p>
+    </div>
+  </div>
+</section>
+
+<section id="documentos">
+  <div class="wrap">
+    <span class="kicker">Traspaso de documentos</span>
+    <h2>Tus carpetas digitales, dentro de Talana</h2>
+    <p style="max-width:62ch">Tomamos los documentos de cada trabajador desde tu Google Drive o tus carpetas digitales y los dejamos cargados en su ficha de Talana, ordenados por tipo:</p>
+    <div class="alcance-grid" style="margin-top:18px">
+      <div><b>Contratos</b>Contratos de trabajo vigentes</div>
+      <div><b>Anexos</b>Anexos y modificaciones de contrato</div>
+      <div><b>Liquidaciones de sueldo</b>Liquidaciones históricas de cada trabajador</div>
+      <div><b>Otros documentos</b>Certificados, cartas, pactos y demás respaldos</div>
+    </div>
+    <table style="margin-top:24px">
+      <tbody>
+        <tr><td>Valor por documento migrado</td><td>0,0097 UF + IVA</td></tr>
+        <tr><td>Estimación referencial (163 trabajadores × 10 documentos promedio)</td><td>1.630 documentos</td></tr>
+        <tr class="total"><td>Monto estimado</td><td>15,8 UF + IVA</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:14px">Es un precio abierto: al terminar contamos los documentos efectivamente extraídos y migrados, y se factura solo esa cantidad. Es igual para las tres opciones de paralelo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Por qué Pro-City</span>
+    <h2>Sin letra chica</h2>
+    <div class="tarjetas">
+        <div class="tarjeta"><h3>Precio cerrado</h3><p>El valor de la propuesta es el valor final. Sin bolsas de horas ni cobros adicionales por alcance ya definido.</p></div>
+        <div class="tarjeta"><h3>Garantía de cuadratura</h3><p>Validamos el 100% de los cálculos y no damos go-live hasta que cuadre. Está escrito en la propuesta, no es una promesa verbal.</p></div>
+        <div class="tarjeta"><h3>Un solo interlocutor</h3><p>Un líder de proyecto responsable de principio a fin. No una rotación de ejecutivos ni una mesa de ayuda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Preguntas frecuentes</span>
+    <h2>Antes de que preguntes</h2>
+        <details><summary>¿Cómo funciona el proceso, paso a paso?</summary><p>Avanzamos por hitos: primero la estructura, después el maestro de personas y la documentación, luego los históricos, después el paralelo. El paralelo es el momento clave: procesamos el mismo mes en tu sistema actual y en el nuevo, y comparamos por RUT y por concepto. Recién cuando eso cuadra pasamos a producción. El apoyo en los cierres posteriores al go-live se cotiza aparte, si lo necesitas.</p></details>
+        <details><summary>¿Y si el paralelo no cuadra?</summary><p>Entonces no hay go-live. Así de simple, y así está escrito en la propuesta. Cada diferencia se rastrea hasta su causa raíz, se corrige en la parametrización de origen y se vuelve a correr. Recién cuando la comparación por RUT y por concepto da cero diferencias no explicadas, el sistema nuevo pasa a producción.</p></details>
+        <details><summary>El implementador del software dice que esto viene incluido</summary><p>Y es cierto, hasta cierto punto: configura la plataforma, carga los datos y capacita en el uso general. Lo que normalmente no hace —o hace sin garantía— es revisar si tu estructura de haberes estaba bien definida de origen, reconstruir tus históricos, cuadrar tu impuesto único y correr un paralelo peso a peso. Ellos responden por que el software funcione; nosotros respondemos por que tus números cuadren.</p></details>
+        <details><summary>¿Por qué el precio es cerrado y no por horas?</summary><p>Para que puedas comparar una cifra conocida hoy contra una exposición desconocida mañana. Un error en la estructura de haberes que se descubre nueve meses después significa recalcular liquidaciones, corregir declaraciones y pagar diferencias con reajuste y multa — un orden de magnitud distinto al costo de una implementación bien hecha.</p></details>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">Siguiente paso</span>
+    <h2>¿Avanzamos?</h2>
+    <p style="max-width:60ch">Responde este correo, agenda directamente o escríbenos por WhatsApp. Si aceptas, hacemos el kick-off y partimos por la estructura.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://calendar.app.google/4k6nLR3WYzGfWJeJ6" target="_blank" rel="noopener">Agenda tu diagnóstico →</a>
+      <a class="btn btn-outline" href="https://wa.me/56937669574?text=Hola%2C%20quiero%20avanzar%20con%20la%20propuesta%202026031%20de%20TEK%20CHILE%20S.A.." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      <a class="btn btn-outline" href="mailto:contacto@procity.live">contacto@procity.live</a>
+    </div>
+  </div>
+</section>
+
+<section id="aceptacion" style="border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">Aceptación</span>
+    <h2>Acepta esta cotización</h2>
+
+    <div id="bloque-aceptar">
+      <p style="max-width:60ch">Elige la opción de paralelo, marca ambas casillas y confirma.</p>
+      <div class="elige">
+        <label><input type="radio" name="opcion" value="2" checked> <span><strong>2 meses de paralelo · 181,6 UF + IVA</strong> (recomendada)</span></label>
+        <label><input type="radio" name="opcion" value="1"> <span>1 mes de paralelo · 133,2 UF + IVA</span></label>
+        <label><input type="radio" name="opcion" value="3"> <span>3 meses de paralelo · 229,9 UF + IVA</span></label>
+      </div>
+      <div style="margin:20px 0; display:grid; gap:12px">
+        <label style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink); cursor:pointer">
+          <input type="checkbox" id="chk-condiciones" style="margin-top:3px; width:16px; height:16px; flex-shrink:0">
+          <span>Acepto el alcance, el precio de la opción elegida (<strong id="precio-elegido">181,6 UF + IVA</strong>), el traspaso de documentos a 0,0097 UF + IVA por documento migrado y las condiciones descritas en esta propuesta.</span>
+        </label>
+        <label style="display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink); cursor:pointer">
+          <input type="checkbox" id="chk-contacto" style="margin-top:3px; width:16px; height:16px; flex-shrink:0">
+          <span>Autorizo a Pro-City a contactarme para coordinar el kick-off del proyecto.</span>
+        </label>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-aceptar" disabled style="opacity:.5; cursor:not-allowed; border:none">Aceptar cotización →</button>
+    </div>
+
+    <div id="bloque-confirmado" hidden style="background:var(--bg); border-left:4px solid var(--orange); padding:22px 24px">
+      <p style="color:var(--ink); font-weight:500; margin-bottom:6px">✓ Cotización aceptada</p>
+      <p id="txt-confirmado" style="font-size:14.5px"></p>
+      <div class="cta-row" style="margin-top:16px">
+        <a class="btn btn-primary" id="link-confirmar-correo" href="#">Confirmar por correo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>Pro-City SpA · RUT 77.205.627-3 · Morandé 835, oficina 518, Santiago</div>
+    <div>Propuesta 2026031 Rev. 00 · emitida el 19 de octubre del 2026</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+(function () {
+  var chk1 = document.getElementById("chk-condiciones");
+  var chk2 = document.getElementById("chk-contacto");
+  var btn = document.getElementById("btn-aceptar");
+  function actualizar() {
+    var listo = chk1.checked && chk2.checked;
+    btn.disabled = !listo;
+    btn.style.opacity = listo ? "1" : ".5";
+    btn.style.cursor = listo ? "pointer" : "not-allowed";
+  }
+  chk1.addEventListener("change", actualizar);
+  chk2.addEventListener("change", actualizar);
+
+  var OPCIONES = {
+    "1": { nombre: "1 mes de paralelo", precio: "133,2" },
+    "2": { nombre: "2 meses de paralelo", precio: "181,6" },
+    "3": { nombre: "3 meses de paralelo", precio: "229,9" }
+  };
+  var DOCS_TXT = "Traspaso de documentos: 0,0097 UF + IVA por documento migrado, según conteo final.";
+  function opcionElegida() {
+    var r = document.querySelector('input[name="opcion"]:checked');
+    return OPCIONES[r ? r.value : "2"];
+  }
+  [].forEach.call(document.querySelectorAll('input[name="opcion"]'), function (r) {
+    r.addEventListener("change", function () {
+      document.getElementById("precio-elegido").textContent = opcionElegida().precio + " UF + IVA";
+    });
+  });
+
+  // Backend real (Google Apps Script) — ver apps-script/enviar-propuestas.gs.
+  // Si no está configurado en el cotizador, la aceptación queda igual
+  // registrada en pantalla y con el link mailto de respaldo.
+  var APPS_SCRIPT_URL = "";
+  var APPS_SCRIPT_TOKEN = "";
+  var EMAIL_CLIENTE = "rgaray@tek.tech";
+
+  function mostrarConfirmado(mensaje) {
+    document.getElementById("bloque-aceptar").hidden = true;
+    document.getElementById("txt-confirmado").textContent = mensaje;
+    document.getElementById("bloque-confirmado").hidden = false;
+  }
+
+  btn.addEventListener("click", function () {
+    if (btn.disabled) return;
+    var fecha = new Date().toLocaleString("es-CL");
+
+    var asunto = encodeURIComponent("Acepto la propuesta 2026031 - TEK CHILE S.A.");
+    var cuerpo = encodeURIComponent(
+      "Confirmo la aceptación de la propuesta 2026031 (Talana), opción " + opcionElegida().nombre + ", por " + opcionElegida().precio + " UF + IVA.\n" + (DOCS_TXT ? DOCS_TXT + "\n" : "") + "\nCliente: TEK CHILE S.A.\nFecha: " + fecha
+    );
+    document.getElementById("link-confirmar-correo").href = "mailto:contacto@procity.live?subject=" + asunto + "&body=" + cuerpo;
+
+    if (!APPS_SCRIPT_URL || !EMAIL_CLIENTE || typeof html2pdf === "undefined") {
+      mostrarConfirmado("Elegiste " + opcionElegida().nombre + " (" + opcionElegida().precio + " UF + IVA). Para dejar la aceptación confirmada, envíanos el correo con el botón de abajo; ya va redactado. Apenas lo recibamos coordinamos el kick-off.");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Generando comprobante…";
+
+    html2pdf().set({
+      margin: 0,
+      filename: "Propuesta 2026031.pdf",
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: "pt", format: "a4" }
+    }).from(document.body).outputPdf("datauristring").then(function (datauri) {
+      var base64 = datauri.split(",")[1];
+      return fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Apps Script + CORS: sin esto el fetch se bloquea.
+                          // A cambio no podemos leer la respuesta real — el
+                          // "enviado" de abajo es optimista, no confirmado.
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          token: APPS_SCRIPT_TOKEN,
+          accion: "aceptar_propuesta",
+          folio: "2026031",
+          cliente: "TEK CHILE S.A.",
+          contacto: "Romina Valeska Garay Totin",
+          sistema: "Talana",
+          email: EMAIL_CLIENTE,
+          precio: opcionElegida().precio,
+          opcion: opcionElegida().nombre,
+          fecha: fecha,
+          pdf_base64: base64
+        })
+      });
+    }).then(function () {
+      mostrarConfirmado("Registrado el " + fecha + ". Te enviamos la copia en PDF a " + EMAIL_CLIENTE + ". Si no te llega en unos minutos, revisa spam o escríbenos.");
+    }).catch(function () {
+      mostrarConfirmado("Registrado el " + fecha + ". No pudimos generar la copia automática — usa el botón de abajo para confirmarlo por correo:");
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
