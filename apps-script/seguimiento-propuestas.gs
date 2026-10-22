@@ -37,7 +37,7 @@ const COLUMNAS = [
   "Opción 1 mes (UF)", "Opción 2 meses (UF)", "Opción 3 meses (UF)",
   "Link", "Estado", "Aperturas", "Primera apertura", "Última apertura",
   "Opción aceptada", "Precio aceptado (UF)", "Fecha aceptación",
-  "Próximo seguimiento", "Notas"
+  "Próximo seguimiento", "Notas", "Interesado en"
 ];
 const ESTADOS = [
   ["Enviada",        "#E8EAF6"],
@@ -104,6 +104,7 @@ function doPost(e) {
   try {
     if (d.accion === "apertura") return apertura(d);
     if (d.accion === "aceptar_propuesta") return aceptar(d);
+    if (d.accion === "interes") return interes(d);
     if (d.accion === "registrar_propuesta") { filaDe(d); return responder(true, "registrada"); }
     return responder(false, "acción desconocida");
   } finally {
@@ -178,6 +179,31 @@ function aceptar(d) {
     });
   }
   return responder(true, "aceptación registrada");
+}
+
+// El cliente presionó "Me interesa" en un servicio adicional de la propuesta.
+function interes(d) {
+  const { hoja, fila, col } = filaDe(d);
+  const c = col("Interesado en");
+  // la columna se agregó después de instalar: si falta el encabezado, se pone
+  if (!hoja.getRange(1, c).getValue()) {
+    hoja.getRange(1, c).setValue("Interesado en").setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF");
+  }
+  const celda = hoja.getRange(fila, c);
+  const actuales = String(celda.getValue() || "").split(" · ").filter(Boolean);
+  const servicio = String(d.servicio || "").slice(0, 120);
+  if (servicio && actuales.indexOf(servicio) < 0) actuales.push(servicio);
+  celda.setValue(actuales.join(" · "));
+
+  MailApp.sendEmail({
+    to: CORREO_AVISOS,
+    subject: `💡 ${d.cliente || "Un cliente"} se interesó en ${servicio} (propuesta ${d.folio})`,
+    htmlBody: `<p><b>${esc(d.contacto || d.cliente)}</b> (${esc(d.cliente)}) presionó <b>Me interesa</b> en
+      <b>${esc(servicio)}</b> dentro de la propuesta <b>${esc(d.folio)}</b>.</p>
+      <p>Contacto: ${esc(d.contacto)} · ${esc(d.email)}</p>
+      <p><a href="${esc(d.url)}">Ver la propuesta</a> · <a href="${SpreadsheetApp.getActiveSpreadsheet().getUrl()}">Ver seguimiento</a></p>`
+  });
+  return responder(true, "interés registrado");
 }
 
 /* ---------- utilidades ---------- */
