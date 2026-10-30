@@ -419,7 +419,6 @@ function urlPlanilla() {
 }
 
 /* ---------- utilidades ---------- */
-// Devuelve la fila del folio; si no existe la crea con los datos que trae el aviso.
 // Devuelve la fila del folio; si no existe la crea. En los dos casos completa
 // las celdas vacías con lo que traiga el aviso (nunca pisa lo que ya hay:
 // lo escrito a mano, como la OC o la factura, se respeta).
