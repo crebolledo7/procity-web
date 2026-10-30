@@ -1,0 +1,214 @@
+{"paginas": [
+{
+"slug": "integracion-buk-api",
+"title": "Integración de Buk con SAP, ERP y BI vía API | Pro-City",
+"desc": "Integramos Buk con SAP, tu ERP contable, BI y sistemas de asistencia vía API, y desarrollamos funcionalidades a medida sobre Buk. Somos Partner de Buk en Chile.",
+"servicio": "Integración de Buk vía API",
+"tipos": ["Integración Buk con SAP y ERP", "Centralización contable desde Buk", "Informes BI desde la API de Buk", "Integración de Buk con sistemas de asistencia", "Desarrollos a medida sobre Buk"],
+"padre": ["Integraciones y automatización", "integraciones-automatizacion"],
+"kicker": "Integraciones Buk",
+"h1": "Integración de Buk con SAP, ERP, BI y sistemas de asistencia",
+"sub": "Que Buk converse con el resto de tus sistemas, sin planillas de por medio.",
+"lead": "Conectamos Buk vía API con tu ERP, tu contabilidad, tus tableros de BI y tu sistema de asistencia, y desarrollamos lo que la plataforma no trae de fábrica.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20integrar%20Buk%20con%20otros%20sistemas.",
+"chips": ["API Buk", "SAP", "ERP contable", "BI", "GeoVictoria", "A medida"],
+"que_es_h2": "Buk conectado, la información una sola vez.",
+"que_es": "Pro-City, Partner de Buk en Chile, desarrolla integraciones vía API entre Buk y los otros sistemas de la empresa: ERP como SAP, contabilidad, BI y control de asistencia como GeoVictoria. También construimos funcionalidades a medida sobre Buk cuando el estándar no alcanza.",
+"tarjetas": [
+ {"h3": "Buk con SAP y ERP", "p": "Maestro de colaboradores y centros de costo alineados entre Buk y tu ERP, sin digitación intermedia."},
+ {"h3": "Centralización contable", "p": "Los resultados de remuneraciones llegan a tu contabilidad con la estructura de asientos correcta."},
+ {"h3": "BI desde la API de Buk", "p": "Indicadores de dotación, ausentismo y costo actualizados solos, sin exportar planillas cada mes."},
+ {"h3": "Buk con sistemas de asistencia", "p": "Marcas, horas extra, atrasos y ausencias desde GeoVictoria u otro sistema de asistencia directo a Buk."},
+ {"h3": "Desarrollos a medida", "p": "Funcionalidades y automatizaciones que Buk no trae de fábrica, construidas sobre su API."}
+],
+"faq_h2": "Sobre las integraciones con Buk",
+"faq": [
+ ["¿Buk tiene API?", "Sí. Usamos la API de Buk para conectarlo con ERP, contabilidad, BI y sistemas de asistencia, y para desarrollos a medida."],
+ ["¿Se puede integrar Buk con SAP?", "Sí. Desarrollamos integraciones entre Buk y ERP como SAP para mantener alineados el maestro de colaboradores, los centros de costo y la información contable."],
+ ["¿Se puede conectar GeoVictoria con Buk?", "Sí. Integramos sistemas de asistencia como GeoVictoria con Buk para que las marcas y horas extra pasen directo a remuneraciones."],
+ ["¿Trabajan solo con Buk?", "No. Hacemos las mismas integraciones con Talana y Rex+."]
+],
+"relacionados": [
+ ["Integración de GeoVictoria", "integracion-geovictoria.html", "Asistencia conectada con Buk y Talana."],
+ ["Implementación Buk", "implementacion-buk.html", "Somos Partner de Buk en Chile."],
+ ["Integración de Talana vía API", "integracion-talana-sap-api.html", "SAP, ERP y BI con Talana."]
+],
+"cta_h2": "¿Tu Buk vive aislado del resto de tus sistemas?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos qué sistemas tienes y cómo conectarlos."
+},
+{
+"slug": "integracion-geovictoria",
+"title": "Integración de GeoVictoria con Buk y Talana | Pro-City",
+"desc": "Integramos GeoVictoria y otros sistemas de control de asistencia con Buk, Talana y Rex+: marcas, horas extra, atrasos y ausencias directo a remuneraciones.",
+"servicio": "Integración de sistemas de asistencia con remuneraciones",
+"tipos": ["Integración GeoVictoria con Buk", "Integración GeoVictoria con Talana", "Integración de relojes control y sistemas de asistencia"],
+"padre": ["Integraciones y automatización", "integraciones-automatizacion"],
+"kicker": "Asistencia · Integraciones",
+"h1": "Integración de GeoVictoria y sistemas de asistencia con Buk y Talana",
+"sub": "Las horas trabajadas, directo a la liquidación.",
+"lead": "Conectamos GeoVictoria u otro sistema de control de asistencia con Buk, Talana o Rex+, para que horas extra, atrasos y ausencias lleguen solos y correctos a remuneraciones.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20integrar%20mi%20sistema%20de%20asistencia.",
+"chips": ["GeoVictoria", "Buk", "Talana", "Rex+", "Horas extra", "Turnos"],
+"que_es_h2": "Sin traspasar asistencia a mano cada mes.",
+"que_es": "Pro-City integra sistemas de control de asistencia como GeoVictoria con plataformas de remuneraciones como Buk, Talana y Rex+. Así las marcas, horas extra, atrasos y ausencias pasan directo al cálculo de las liquidaciones, sin exportar ni digitar planillas.",
+"tarjetas": [
+ {"h3": "GeoVictoria con Buk", "p": "Asistencia y horas extra de GeoVictoria directo a las remuneraciones de Buk."},
+ {"h3": "GeoVictoria con Talana", "p": "La misma integración, para empresas que procesan en Talana."},
+ {"h3": "Otros sistemas de asistencia", "p": "Relojes control y sistemas de asistencia conectados vía API o archivos automatizados."},
+ {"h3": "Reglas de cálculo", "p": "Configuramos turnos y reglas de horas extra para que el resultado cuadre en la liquidación."}
+],
+"faq_h2": "Sobre la integración de asistencia",
+"faq": [
+ ["¿Se puede integrar GeoVictoria con Buk?", "Sí. Conectamos GeoVictoria con Buk para que la asistencia y las horas extra pasen directo a remuneraciones."],
+ ["¿Y GeoVictoria con Talana?", "Sí. Hacemos la misma integración con Talana y también con Rex+."],
+ ["¿Qué pasa si uso otro sistema de asistencia?", "También lo podemos integrar. Revisamos qué entrega tu sistema y armamos la conexión con tu plataforma de remuneraciones."]
+],
+"relacionados": [
+ ["Control de asistencia y turnos", "control-asistencia-turnos.html", "Mallas de turno y marcación por app."],
+ ["Integración de Buk vía API", "integracion-buk-api.html", "SAP, ERP, BI y asistencia con Buk."],
+ ["Integración de Talana vía API", "integracion-talana-sap-api.html", "SAP, ERP y BI con Talana."]
+],
+"cta_h2": "¿Sigues traspasando la asistencia a mano?",
+"cta_p": "Agenda 30 minutos sin costo. Te mostramos cómo conectarla con tus remuneraciones."
+},
+{
+"slug": "migrar-de-talana-a-buk",
+"title": "Migrar de Talana a Buk sin descuadres | Pro-City",
+"desc": "Migración de Talana a Buk con históricos, paralelo por RUT y concepto y acta de cuadratura antes del go-live. Pro-City es Partner de Buk e implementa Talana.",
+"servicio": "Migración de Talana a Buk",
+"kicker": "Migración Talana → Buk",
+"h1": "Migrar de Talana a Buk sin descuadres",
+"sub": "Conocemos los dos sistemas por dentro.",
+"lead": "Implementamos Talana y somos Partner de Buk: sabemos qué se configura distinto en cada uno, qué históricos hay que llevar y dónde aparecen los descuadres.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20quiero%20migrar%20de%20Talana%20a%20Buk.",
+"chips": ["Talana", "Buk", "Históricos", "Paralelo", "Acta de cuadratura"],
+"que_es_h2": "Cómo se migra de Talana a Buk sin perder un mes.",
+"que_es": "Migrar de Talana a Buk es llevar la estructura, el maestro de personas, los históricos de remuneraciones y la documentación de un sistema al otro, y validar con un paralelo que Buk calcula igual antes de dejar Talana. Pro-City lo hace con su método de hitos y acta de cuadratura.",
+"tarjetas": [
+ {"h3": "Levantamiento", "p": "Haberes, descuentos y reglas de Talana traducidos a la configuración de Buk."},
+ {"h3": "Maestro y documentación", "p": "Personas, contratos, vacaciones y antigüedad cargados y verificados en Buk."},
+ {"h3": "Históricos", "p": "Liquidaciones y acumulados para migrar en cualquier mes del año."},
+ {"h3": "Paralelo y go-live", "p": "El mismo mes en Talana y Buk, comparado por RUT y concepto, hasta el acta de cuadratura."}
+],
+"faq_h2": "Sobre migrar de Talana a Buk",
+"faq": [
+ ["¿Se puede migrar de Talana a Buk a mitad de año?", "Sí, siempre que los históricos del año se carguen bien en Buk. Así el cálculo anual no se rompe."],
+ ["¿Cuánto demora migrar de Talana a Buk?", "Depende del tamaño y la complejidad de la empresa. En el diagnóstico te damos una carta Gantt con fechas y una propuesta en 3 días hábiles."],
+ ["¿Qué pasa con los documentos y contratos?", "Se migran al nuevo sistema. Y si usas RH Connect, tus contratos siguen al día en la Dirección del Trabajo, porque funciona con Talana y con Buk."]
+],
+"relacionados": [
+ ["Implementación Buk", "implementacion-buk.html", "Somos Partner de Buk en Chile."],
+ ["Migrar de Buk a Talana", "migrar-de-buk-a-talana.html", "El camino inverso, con el mismo método."],
+ ["Paralelo de remuneraciones", "paralelo-remuneraciones.html", "Valida el sistema nuevo antes del go-live."]
+],
+"cta_h2": "¿Estás evaluando dejar Talana por Buk?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos con franqueza qué implica el cambio en tu caso."
+},
+{
+"slug": "migrar-de-buk-a-talana",
+"title": "Migrar de Buk a Talana sin descuadres | Pro-City",
+"desc": "Migración de Buk a Talana con históricos, paralelo por RUT y concepto y acta de cuadratura antes del go-live. Implementamos Talana en Chile y Perú.",
+"servicio": "Migración de Buk a Talana",
+"kicker": "Migración Buk → Talana",
+"h1": "Migrar de Buk a Talana sin descuadres",
+"sub": "Conocemos los dos sistemas por dentro.",
+"lead": "Somos Partner de Buk e implementamos Talana en Chile y Perú: sabemos qué se configura distinto en cada uno, qué históricos hay que llevar y dónde aparecen los descuadres.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20quiero%20migrar%20de%20Buk%20a%20Talana.",
+"chips": ["Buk", "Talana", "Históricos", "Paralelo", "Firma digital"],
+"que_es_h2": "Cómo se migra de Buk a Talana sin perder un mes.",
+"que_es": "Migrar de Buk a Talana es llevar la estructura, el maestro de personas, los históricos de remuneraciones y la documentación de un sistema al otro, y validar con un paralelo que Talana calcula igual antes de dejar Buk. Pro-City lo hace con su método de hitos y acta de cuadratura.",
+"tarjetas": [
+ {"h3": "Levantamiento", "p": "Haberes, descuentos y reglas de Buk traducidos a la configuración de Talana."},
+ {"h3": "Maestro y documentación", "p": "Personas, contratos, plantillas y firma digital listos en Talana."},
+ {"h3": "Históricos", "p": "Liquidaciones y acumulados para migrar en cualquier mes del año."},
+ {"h3": "Paralelo y go-live", "p": "El mismo mes en Buk y Talana, comparado por RUT y concepto, hasta el acta de cuadratura."}
+],
+"faq_h2": "Sobre migrar de Buk a Talana",
+"faq": [
+ ["¿Se puede migrar de Buk a Talana a mitad de año?", "Sí, siempre que los históricos del año se carguen bien en Talana. Así el cálculo anual no se rompe."],
+ ["¿Cuánto demora migrar de Buk a Talana?", "Depende del tamaño y la complejidad de la empresa. En el diagnóstico te damos una carta Gantt con fechas y una propuesta en 3 días hábiles."],
+ ["¿Qué pasa con los contratos en la Dirección del Trabajo?", "Siguen registrados. Y si usas RH Connect, la comparación con la DT continúa después del cambio, porque funciona con Buk y con Talana."]
+],
+"relacionados": [
+ ["Implementación Talana", "implementacion-talana.html", "Implementaciones en Chile y Perú."],
+ ["Migrar de Talana a Buk", "migrar-de-talana-a-buk.html", "El camino inverso, con el mismo método."],
+ ["Confección de históricos", "confeccion-historicos-remuneraciones.html", "La historia de remuneraciones bien cargada."]
+],
+"cta_h2": "¿Estás evaluando dejar Buk por Talana?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos con franqueza qué implica el cambio en tu caso."
+},
+{
+"slug": "migrar-de-adp",
+"title": "Migrar de ADP a Buk o Talana | Pro-City",
+"desc": "Migración de ADP a Buk o Talana: levantamiento de conceptos, confección de históricos, impuesto único cuadrado contra F29 y paralelo antes del go-live.",
+"servicio": "Migración de ADP a Buk o Talana",
+"kicker": "Migración desde ADP",
+"h1": "Migrar de ADP a Buk o Talana sin descuadres",
+"sub": "Dejar ADP sin que se te caiga un mes.",
+"lead": "Levantamos tus conceptos de ADP, reconstruimos los históricos, cuadramos el impuesto único contra los F29 y corremos el paralelo hasta que Buk o Talana calculen igual.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20quiero%20migrar%20desde%20ADP.",
+"chips": ["ADP", "Buk", "Talana", "Históricos", "Impuesto único vs F29"],
+"que_es_h2": "Lo que cuesta de dejar ADP, resuelto antes del go-live.",
+"que_es": "Migrar de ADP a Buk o Talana implica traducir los conceptos de ADP a la nueva plataforma, confeccionar los históricos de remuneraciones, revisar el impuesto único contra los Formularios 29 y validar con un paralelo por RUT y concepto. Pro-City lidera el proyecto de punta a punta.",
+"tarjetas": [
+ {"h3": "Levantamiento de conceptos", "p": "Cada haber y descuento de ADP traducido a la configuración de Buk o Talana."},
+ {"h3": "Confección de históricos", "p": "Liquidaciones y acumulados desde ADP, listos para el sistema nuevo."},
+ {"h3": "Impuesto único contra F29", "p": "Revisión mes a mes de los libros de ADP contra los Formularios 29 del SII."},
+ {"h3": "Paralelo y acta", "p": "El mismo mes en ADP y en el sistema nuevo, comparado hasta el acta de cuadratura."}
+],
+"faq_h2": "Sobre migrar desde ADP",
+"faq": [
+ ["¿Se puede migrar de ADP a Buk?", "Sí. Somos Partner de Buk y migramos desde ADP con históricos y paralelo antes del go-live."],
+ ["¿Se puede migrar de ADP a Talana?", "Sí. Implementamos Talana y migramos desde ADP con el mismo método."],
+ ["¿Qué es lo más delicado de dejar ADP?", "Los históricos y el impuesto único: si los acumulados no quedan bien, el sistema nuevo calcula mal el impuesto y las vacaciones. Por eso los cuadramos contra el F29 antes de cargar."]
+],
+"relacionados": [
+ ["Confección de históricos", "confeccion-historicos-remuneraciones.html", "Liquidaciones y acumulados bien cargados."],
+ ["Implementación Buk", "implementacion-buk.html", "Somos Partner de Buk en Chile."],
+ ["Migrar desde cualquier sistema", "migrar-sistema-remuneraciones.html", "Softland, Defontana, Nubox, Rex+ y más."]
+],
+"cta_h2": "¿Quieres dejar ADP?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos qué implica el cambio y cuánto toma."
+},
+{
+"slug": "migrar-sistema-remuneraciones",
+"title": "Migrar desde Softland, Defontana, Nubox o Excel | Pro-City",
+"desc": "Migramos tus remuneraciones desde cualquier sistema: Softland, Defontana, Nubox, Rex+, ADP o planillas Excel, a Buk o Talana, con históricos y paralelo.",
+"servicio": "Migración de sistema de remuneraciones",
+"tipos": ["Migración desde Softland", "Migración desde Defontana", "Migración desde Nubox", "Migración desde Rex+", "Migración desde ADP", "Migración desde Excel"],
+"kicker": "Migración desde cualquier sistema",
+"h1": "Migrar tus remuneraciones desde Softland, Defontana, Nubox, Rex+ o Excel",
+"sub": "Desde el sistema que tengas, a Buk o Talana.",
+"lead": "No importa de dónde vengas: levantamos tu operación actual, reconstruimos los históricos y validamos con un paralelo que el sistema nuevo calcula igual antes de apagar el anterior.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20quiero%20cambiar%20mi%20sistema%20de%20remuneraciones.",
+"chips": ["Softland", "Defontana", "Nubox", "Rex+", "ADP", "Excel"],
+"que_es_h2": "El método es el mismo; lo que cambia es el origen.",
+"que_es": "Pro-City migra remuneraciones desde cualquier sistema de origen, como Softland, Defontana, Nubox, Rex+, ADP o planillas Excel, hacia Buk o Talana. Lo que asegura la migración no es conocer un sistema en particular, sino reconstruir bien los históricos y correr un paralelo completo antes del go-live.",
+"tarjetas": [
+ {"h3": "Desde un ERP", "p": "Softland, Defontana, Nubox u otro ERP con módulo de remuneraciones."},
+ {"h3": "Desde otra plataforma de RRHH", "p": "Rex+, ADP, Buk o Talana: migraciones en cualquier dirección."},
+ {"h3": "Desde planillas Excel", "p": "Ordenamos la información que hoy vive en planillas y la llevamos a un sistema."},
+ {"h3": "El mismo control de calidad", "p": "Históricos, impuesto único contra F29, paralelo por RUT y concepto y acta de cuadratura."}
+],
+"faq_h2": "Sobre migrar de sistema de remuneraciones",
+"faq": [
+ ["¿Pueden migrar desde Defontana a Talana?", "Sí. Migramos desde Defontana con comparativo concepto por concepto y por RUT entre ambos sistemas antes del go-live."],
+ ["¿Pueden migrar desde Softland o Nubox a Buk?", "Sí. Migramos desde ERP como Softland o Nubox hacia Buk o Talana con el mismo método de históricos y paralelo."],
+ ["¿Y si hoy calculo las remuneraciones en Excel?", "También. Ordenamos la información de tus planillas, la cargamos en el sistema nuevo y validamos que calcule igual."],
+ ["¿Cuánto demora una migración?", "Depende del tamaño y la complejidad. Lo explicamos en nuestra guía sobre cuánto demora una implementación."]
+],
+"relacionados": [
+ ["Migración de remuneraciones", "migracion-remuneraciones.html", "El método completo para cambiar de sistema."],
+ ["Migrar de ADP", "migrar-de-adp.html", "A Buk o Talana, sin descuadres."],
+ ["Guía: ¿cuánto demora una implementación?", "blog-cuanto-demora-una-implementacion.html", "Plazos reales y qué los alarga."]
+],
+"cta_h2": "¿Tu sistema actual se te quedó chico?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos qué implica cambiarte desde el sistema que tengas."
+}
+]}

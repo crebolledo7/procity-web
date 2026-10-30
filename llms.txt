@@ -15,6 +15,9 @@ Datos de contacto: contacto@procity.live · WhatsApp +56 9 3766 9574 · Morandé
 - [Implementación de Talana](https://pro-city.cl/implementacion-talana): implementación de Talana en Chile y Perú.
 - [Implementación de Rex+](https://pro-city.cl/implementacion-rex)
 - [Migración de software de remuneraciones](https://pro-city.cl/migracion-remuneraciones): cambio de sistema con históricos y paralelo por RUT y concepto, sin descuadres.
+- [Migrar de Talana a Buk](https://pro-city.cl/migrar-de-talana-a-buk) y [de Buk a Talana](https://pro-city.cl/migrar-de-buk-a-talana): migraciones entre plataformas con históricos y paralelo.
+- [Migrar de ADP](https://pro-city.cl/migrar-de-adp): de ADP a Buk o Talana, con impuesto único cuadrado contra F29.
+- [Migrar desde cualquier sistema](https://pro-city.cl/migrar-sistema-remuneraciones): Softland, Defontana, Nubox, Rex+ o Excel hacia Buk o Talana.
 - [Planes](https://pro-city.cl/planes): planes cerrados de implementación, rescate, históricos, payroll y adopción.
 - [Servicios](https://pro-city.cl/servicios): migración, confección de históricos, paralelo de remuneraciones, payroll externalizado, servicios legales y capacitación.
 - [Confección de históricos de remuneraciones](https://pro-city.cl/confeccion-historicos-remuneraciones): liquidaciones históricas, acumulados e impuesto único cuadrado contra F29 para migrar en cualquier mes.
@@ -25,6 +28,8 @@ Datos de contacto: contacto@procity.live · WhatsApp +56 9 3766 9574 · Morandé
 ## Integraciones y automatización
 
 - [Integraciones y automatización](https://pro-city.cl/integraciones-automatizacion): conexión de Buk, Talana y Rex+ con ERP, contabilidad y BI; automatización de procesos de remuneraciones y sistemas a medida.
+- [Integración de Buk vía API](https://pro-city.cl/integracion-buk-api): Buk con SAP, ERP, BI, sistemas de asistencia y desarrollos a medida (Pro-City es Partner de Buk).
+- [Integración de GeoVictoria](https://pro-city.cl/integracion-geovictoria): GeoVictoria y otros sistemas de asistencia conectados con Buk, Talana y Rex+.
 - [Integración de Talana con SAP, ERP y BI vía API](https://pro-city.cl/integracion-talana-sap-api): casos reales: SAP con Talana (Arthrex), BI desde la API de Talana (Dominó), estados de pago automatizados (ManpowerGroup).
 
 ## Operación de remuneraciones y gestión de personas
