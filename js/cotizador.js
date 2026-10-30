@@ -96,19 +96,49 @@
      --------------------------------------------------------- */
   var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqpkqavn'; // Cotizador Pro-City -> crebolledo@procity.live
 
-  function submitLead(payload) {
+  /* Destino principal: la planilla "Seguimiento propuestas Pro-City"
+     (apps-script/seguimiento-propuestas.gs, accion "contacto_web"), que
+     guarda el contacto en la hoja "Contactos web" y avisa por correo.
+     Formspree queda solo de respaldo si la planilla no responde. Si
+     fallan los dos, la promesa se rechaza y quien llama avisa al
+     usuario: nunca se muestra "gracias" por un contacto que no llego.
+     El token es el mismo de las paginas de propuesta (ya es publico). */
+  var SEGUIMIENTO_URL = 'https://script.google.com/macros/s/AKfycbxnCoriormg_AiaYpqfiifZlXCsNZ4HrudCWof23qqCvf2bOm-0PYLyhA4dSblyj8pS/exec';
+  var SEGUIMIENTO_TOKEN = 'pc-j-J__ek-Rl8ksIXBxMjPgmvx';
+
+  function enviarAPlanilla(payload) {
+    var cuerpo = JSON.stringify(Object.assign({ token: SEGUIMIENTO_TOKEN, accion: 'contacto_web' }, payload));
+    // text/plain evita la consulta previa (CORS) que Apps Script no responde
+    return fetch(SEGUIMIENTO_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: cuerpo
+    }).then(function (res) { return res.json(); }).then(function (r) {
+      if (!r || !r.ok) { throw new Error('planilla: ' + (r && r.mensaje)); }
+      return r;
+    });
+  }
+
+  function enviarAFormspree(payload) {
     return fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }).then(function (res) {
-      if (!res.ok) { throw new Error('submitLead: respuesta no OK (' + res.status + ')'); }
+      if (!res.ok) { throw new Error('formspree: respuesta ' + res.status); }
       return res;
+    });
+  }
+
+  function submitLead(payload) {
+    return enviarAPlanilla(payload).catch(function (err) {
+      console.warn('submitLead: la planilla no respondió, se usa Formspree.', err);
+      trackEvent('lead_respaldo_formspree', { tipo: payload.tipo });
+      return enviarAFormspree(payload);
     }).catch(function (err) {
-      console.warn('submitLead: el lead NO se envió. Configura FORMSPREE_ENDPOINT en js/cotizador.js (o cambia submitLead para tu backend).', err);
-      // No relanzamos el error a proposito: quien llama muestra la
-      // pantalla de gracias de todas formas para no dejar al usuario
-      // colgado mientras el formulario de verdad no esta conectado.
+      console.error('submitLead: el contacto NO se envió.', err);
+      trackEvent('lead_no_enviado', { tipo: payload.tipo });
+      throw err;
     });
   }
 
@@ -167,7 +197,7 @@
       var btn = form.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
 
-      submitLead({ type: 'lead_magnet', source: source, email: email, page: location.pathname, ts: new Date().toISOString() })
+      submitLead({ tipo: 'lead_magnet', source: source, email: email, page: location.pathname, ts: new Date().toISOString() })
         .then(function () {
           trackEvent('lead_magnet_descargado', { source: source });
           if (status) {
@@ -175,6 +205,12 @@
           }
           form.reset();
           if (btn) { btn.disabled = true; btn.textContent = 'Enviado ✓'; }
+        }, function () {
+          // el PDF se entrega igual; el contacto se pide por otra via
+          if (status) {
+            status.innerHTML = 'No pudimos registrar tu correo, pero aquí tienes el documento: <a href="' + LEAD_MAGNET_PDF + '" style="color:var(--blue);text-decoration:underline">descarga las 12 preguntas →</a>';
+          }
+          if (btn) { btn.disabled = false; btn.textContent = 'Reintentar'; }
         });
     });
   }
@@ -419,6 +455,7 @@
 
     var step1Data = readStep1();
     var payload = {
+      tipo: 'cotizador',
       plan: currentPlanSlug,
       plan_label: currentPlanLabel,
       trabajadores: step1Data.trabajadores,
@@ -465,6 +502,11 @@
       });
       try { sessionStorage.removeItem(STEP1_KEY); } catch (ex) {}
       showThanks();
+    }, function () {
+      // los datos quedan en el formulario para reintentar
+      errorEl.innerHTML = 'No pudimos enviar tus datos. Intenta de nuevo o escríbenos por <a href="'
+        + WA_BASE + '?text=' + encodeURIComponent('Hola, quiero cotizar' + (currentPlanLabel ? ' ' + currentPlanLabel : '') + '.')
+        + '" target="_blank" rel="noopener">WhatsApp</a> o a contacto@procity.live.';
     }).finally(function () {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Recibir mi propuesta →'; }
     });

@@ -10,6 +10,10 @@
      - el cliente ACEPTA             → marca la fila "Aceptada",
        te avisa por correo y le manda al cliente la confirmación.
 
+   Además, los formularios de pro-city.cl (cotizador de planes y
+   descarga de las 12 preguntas) dejan cada contacto en la hoja
+   "Contactos web" (se crea sola) y te avisan por correo.
+
    Cada propuesta es una fila (se crea sola la primera vez que
    llega un aviso con ese folio). El estado lo puedes cambiar a
    mano desde la lista desplegable: el color se ajusta solo.
@@ -97,6 +101,7 @@ function doPost(e) {
   let d;
   try { d = JSON.parse(e.postData.contents); } catch (err) { return responder(false, "json inválido"); }
   if (!d || d.token !== TOKEN) return responder(false, "token inválido");
+  if (d.accion === "contacto_web") return contactoWeb(d);
   if (!d.folio) return responder(false, "falta folio");
 
   const lock = LockService.getScriptLock();
@@ -204,6 +209,69 @@ function interes(d) {
       <p><a href="${esc(d.url)}">Ver la propuesta</a> · <a href="${SpreadsheetApp.getActiveSpreadsheet().getUrl()}">Ver seguimiento</a></p>`
   });
   return responder(true, "interés registrado");
+}
+
+/* ---------- contactos desde los formularios de pro-city.cl ---------- */
+const HOJA_CONTACTOS = "Contactos web";
+const COLUMNAS_CONTACTOS = [
+  "Fecha", "Tipo", "Nombre", "Empresa", "Correo", "Teléfono", "Plan",
+  "Trabajadores", "Razones sociales", "Sistema actual", "Plazo",
+  "Página", "Revisar (posible bot)", "Estado", "Notas"
+];
+
+function contactoWeb(d) {
+  const email = String(d.email || "").trim();
+  if (email.indexOf("@") < 1) return responder(false, "falta correo");
+  const corto = v => String(v == null ? "" : v).slice(0, 200);
+  const tipo = d.tipo === "lead_magnet" ? "Descargó las 12 preguntas" : "Pidió propuesta";
+
+  const lock = LockService.getScriptLock();
+  lock.waitLock(15000);
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let hoja = ss.getSheetByName(HOJA_CONTACTOS);
+    if (!hoja) {
+      hoja = ss.insertSheet(HOJA_CONTACTOS);
+      hoja.getRange(1, 1, 1, COLUMNAS_CONTACTOS.length).setValues([COLUMNAS_CONTACTOS])
+        .setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF").setWrap(true);
+      hoja.setFrozenRows(1);
+      hoja.getRange("A:A").setNumberFormat("dd-mm-yyyy hh:mm");
+      hoja.getRange(2, COLUMNAS_CONTACTOS.indexOf("Estado") + 1, 1000, 1).setDataValidation(
+        SpreadsheetApp.newDataValidation()
+          .requireValueInList(["Nuevo", "Contactado", "Propuesta enviada", "Descartado"], true).build());
+    }
+    hoja.appendRow([
+      new Date(), tipo, corto(d.nombre), corto(d.empresa), corto(email), "'" + corto(d.telefono),
+      corto(d.plan_label || d.plan || d.source), corto(d.trabajadores), corto(d.razones_sociales),
+      corto(d.sistema_actual), corto(d.plazo), corto(d.page), d.revisar_posible_bot ? "Sí" : "",
+      "Nuevo", ""
+    ]);
+  } finally {
+    lock.releaseLock();
+  }
+
+  const quien = d.nombre ? `${esc(d.nombre)}${d.empresa ? " (" + esc(d.empresa) + ")" : ""}` : esc(email);
+  MailApp.sendEmail({
+    to: CORREO_AVISOS,
+    replyTo: email,
+    subject: d.tipo === "lead_magnet"
+      ? `📥 ${email} descargó las 12 preguntas`
+      : `🔥 Nuevo contacto web: ${d.empresa || d.nombre || email}${d.plan_label ? " · " + d.plan_label : ""}`,
+    htmlBody: `<p><b>${quien}</b> · ${tipo}.</p>
+      <ul>
+        <li>Correo: ${esc(email)}${d.telefono ? " · Teléfono: " + esc(d.telefono) : ""}</li>
+        ${d.plan_label ? `<li>Plan: ${esc(d.plan_label)}</li>` : ""}
+        ${d.trabajadores ? `<li>Trabajadores: ${esc(d.trabajadores)} · Razones sociales: ${esc(d.razones_sociales)}</li>` : ""}
+        ${d.sistema_actual ? `<li>Sistema actual: ${esc(d.sistema_actual)} · Plazo: ${esc(d.plazo)}</li>` : ""}
+        ${d.revisar_posible_bot ? "<li>⚠️ Lo llenó muy rápido: revisa que no sea un robot.</li>" : ""}
+      </ul>
+      <p>Responde este correo para escribirle directo. <a href="${urlPlanilla()}">Ver todos los contactos</a></p>`
+  });
+  return responder(true, "contacto registrado");
+}
+
+function urlPlanilla() {
+  return SpreadsheetApp.getActiveSpreadsheet().getUrl();
 }
 
 /* ---------- utilidades ---------- */
