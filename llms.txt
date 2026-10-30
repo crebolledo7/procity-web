@@ -17,7 +17,33 @@ Datos de contacto: contacto@procity.live · WhatsApp +56 9 3766 9574 · Morandé
 - [Migración de software de remuneraciones](https://pro-city.cl/migracion-remuneraciones): cambio de sistema con históricos y paralelo por RUT y concepto, sin descuadres.
 - [Planes](https://pro-city.cl/planes): planes cerrados de implementación, rescate, históricos, payroll y adopción.
 - [Servicios](https://pro-city.cl/servicios): migración, confección de históricos, paralelo de remuneraciones, payroll externalizado, servicios legales y capacitación.
-- [Integraciones y automatización](https://pro-city.cl/integraciones-automatizacion): conexión de Buk, Talana y Rex+ con ERP, contabilidad y BI; automatización de procesos de remuneraciones.
+- [Confección de históricos de remuneraciones](https://pro-city.cl/confeccion-historicos-remuneraciones): liquidaciones históricas, acumulados e impuesto único cuadrado contra F29 para migrar en cualquier mes.
+- [Paralelo de remuneraciones](https://pro-city.cl/paralelo-remuneraciones): el mismo mes en ambos sistemas, comparado por RUT y concepto, con acta de cuadratura antes del go-live.
+- [Control de asistencia y turnos](https://pro-city.cl/control-asistencia-turnos): mallas de turno, horas extra y marcación por app conectadas a remuneraciones.
+- [Carga documental y firma digital](https://pro-city.cl/carga-documental-firma-digital): carpeta digital del trabajador, plantillas de contratos y enrolamiento en firma digital.
+
+## Integraciones y automatización
+
+- [Integraciones y automatización](https://pro-city.cl/integraciones-automatizacion): conexión de Buk, Talana y Rex+ con ERP, contabilidad y BI; automatización de procesos de remuneraciones y sistemas a medida.
+- [Integración de Talana con SAP, ERP y BI vía API](https://pro-city.cl/integracion-talana-sap-api): casos reales: SAP con Talana (Arthrex), BI desde la API de Talana (Dominó), estados de pago automatizados (ManpowerGroup).
+
+## Operación de remuneraciones y gestión de personas
+
+- [Payroll externalizado](https://pro-city.cl/payroll-externalizado): outsourcing del proceso mensual de remuneraciones: liquidaciones, pago de nóminas e imposiciones, trámites ante la DT y app de autoconsulta.
+- [Asesoría en remuneraciones](https://pro-city.cl/asesoria-remuneraciones): soporte en cierres mensuales, descuadres y configuración de Buk, Talana y Rex+.
+- [Gerencia de personas externalizada](https://pro-city.cl/gerencia-personas-externalizada): comunicaciones internas, asistencia y turnos, mejora de procesos y reportería para gerencia.
+- [Capacitación en Talana y Buk](https://pro-city.cl/capacitacion-talana-buk): capacitación por módulo, test de usabilidad y lanzamiento de la app de autoconsulta.
+- [Reclutamiento y desarrollo organizacional](https://pro-city.cl/reclutamiento-desarrollo-organizacional): selección, módulos de desarrollo organizacional y evaluaciones de desempeño.
+
+## Servicios legales para empresas
+
+- [Servicios legales para empresas](https://pro-city.cl/servicios-legales): equipo jurídico multidisciplinario de Pro-City para empresas en Chile.
+- [Abogados laborales para empresas](https://pro-city.cl/abogados-laborales-empresas): contratos, despidos y finiquitos, defensa en juicios laborales y ante la Inspección del Trabajo, negociación colectiva, Reglamento Interno, visas de trabajo.
+- [Asesoría legal empresarial](https://pro-city.cl/asesoria-legal-empresas): estructura legal y tributaria, sociedades y accionistas, constitución, fusión, reorganización y liquidación, family offices.
+- [Compliance para empresas](https://pro-city.cl/compliance-empresas): planes de cumplimiento, auditorías, mapeo de riesgos legales y reputacionales, políticas de integridad.
+- [Asesoría en Ley REP](https://pro-city.cl/asesoria-ley-rep): Ley 20.920 para productores, importadores y comercializadores, planes de manejo y defensa en procedimientos sancionatorios.
+- [Cobranza judicial y extrajudicial](https://pro-city.cl/cobranza-judicial): pagarés, cheques, letras, facturas y sentencias; acuerdos de pago y embargos.
+- [Asesoría inmobiliaria](https://pro-city.cl/asesoria-inmobiliaria): compraventas, estudios de título, arrendamientos, copropiedad y joint ventures.
 
 ## Sobre Pro-City
 
