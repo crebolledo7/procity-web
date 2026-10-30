@@ -68,7 +68,7 @@ Auditoría revisada el 2026-09-15 — lo que sigue son decisiones de negocio, no
 - [ ] Redactar la cita textual de cada testimonio en `nosotros.html` (los 4 videos ya están, falta la frase de cada cliente) y confirmar la cita del fundador.
 - [ ] Decidir si los metadatos (title, description, JSON-LD) llevan tildes; hoy van sin ellas y el cuerpo sí las lleva.
 - [x] Los 21 clientes autorizaron aparecer en el sitio (confirmado 2026-10-30).
-- [ ] Validar la frase de escasez del topbar o eliminarla.
+- [x] Frase del topbar: "Llevamos pocos proyectos a la vez para no atrasar ninguno" (decisión 2026-10-30).
 - [ ] Regenerar los PNG de logo en `#425CC7` o corregir el manual (los oficiales están en `#385CC7`).
 - [ ] Foto o video del fundador.
 - [ ] Antes de conectar el cotizador en producción: generar el `TOKEN_SECRETO` real en `apps-script/enviar-propuestas.gs` (el script ya rechaza el valor de ejemplo).
