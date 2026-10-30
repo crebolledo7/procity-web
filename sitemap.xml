@@ -41,6 +41,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://pro-city.cl/rh-connect</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://pro-city.cl/nosotros</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
