@@ -18,6 +18,15 @@
    llega un aviso con ese folio). El estado lo puedes cambiar a
    mano desde la lista desplegable: el color se ajusta solo.
 
+   LIBRO ÚNICO (desde 2026-10-30): la hoja "Propuestas" reemplaza
+   al Excel "Folios Propuestas comerciales". Tiene las columnas de
+   siempre (rubro, servicio, UF, OC, factura, EDP...) más las del
+   seguimiento automático. Los años 2021-2025 quedan en una hoja
+   cada uno y "Resumen" cuenta aceptadas y rechazadas por año.
+   El cotizador pide el próximo folio a doGet (accion=proximo_folio)
+   y registra cada propuesta al publicarla (registrar_propuesta).
+   Para traer el Excel antiguo, una sola vez: ▶ unificarLibros.
+
    INSTALACIÓN (una vez):
      1. Pega este archivo en Extensiones → Apps Script de la planilla.
      2. Elige la función "configurar" arriba y presiona ▶ Ejecutar.
@@ -36,22 +45,33 @@ const CORREO_AVISOS = "crebolledo@procity.live";
 const AVISAR_APERTURA = true;
 
 const HOJA = "Propuestas";
+// Columnas del libro único: primero las del Excel de folios (con nombres
+// más claros), después las que llena el seguimiento automático.
 const COLUMNAS = [
-  "Folio", "Cliente", "Contacto", "Correo", "Sistema",
+  "Folio", "Rev.", "Fecha", "Cliente", "Rubro", "Contacto", "Cargo", "Correo", "Celular",
+  "Por dónde llega", "Persona que refiere", "Sistema", "Servicio", "Trabajadores", "Hrs",
+  "Monto Neto UF", "Cant UF", "Descuento UF", "UF Neto", "Fecha UF", "Valor UF día", "Neto $",
+  "Estado", "% de avance", "N° OC", "N° Factura", "EDP", "Fecha inicio", "Finaliza",
   "Opción 1 mes (UF)", "Opción 2 meses (UF)", "Opción 3 meses (UF)",
-  "Link", "Estado", "Aperturas", "Primera apertura", "Última apertura",
+  "Link", "Aperturas", "Primera apertura", "Última apertura",
   "Opción aceptada", "Precio aceptado (UF)", "Fecha aceptación",
   "Próximo seguimiento", "Notas", "Interesado en"
 ];
+const COL_FECHA = ["Fecha", "Fecha UF", "Fecha inicio", "Finaliza", "Próximo seguimiento"];
+const COL_FECHA_HORA = ["Primera apertura", "Última apertura", "Fecha aceptación"];
 const ESTADOS = [
   ["Enviada",        "#E8EAF6"],
+  ["Pendiente",      "#E8EAF6"],
   ["Abierta",        "#FFF3CD"],
   ["En seguimiento", "#FFE0B2"],
   ["Aceptada",       "#C8E6C9"],
   ["Ganada",         "#81C784"],
-  ["Perdida",        "#F8BBD0"],
+  ["Rechazada",      "#F8BBD0"],
   ["Cerrada",        "#E0E0E0"]
 ];
+// El libro unificado se arma desde este archivo (exportado del Excel antiguo
+// con procity-cotizador/scripts/exportar-historico.py).
+const ID_HISTORICO = "1-HoObenFaCOnJBLopNb_y--yACzESW1f";
 
 /* ---------- instalación: hoja, encabezados, colores ---------- */
 function configurar() {
@@ -62,38 +82,141 @@ function configurar() {
     hoja = ss.getSheets()[0];
     hoja.setName(HOJA);
   }
+  formatearPropuestas(hoja);
+}
+
+function formatearPropuestas(hoja) {
+  const col = n => COLUMNAS.indexOf(n) + 1;
   hoja.getRange(1, 1, 1, COLUMNAS.length).setValues([COLUMNAS])
     .setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF").setWrap(true);
   hoja.setFrozenRows(1);
-  hoja.setFrozenColumns(2);
-  hoja.getRange("A:A").setNumberFormat("@");                 // folio como texto
-  hoja.getRange("L:M").setNumberFormat("dd-mm-yyyy hh:mm");
-  hoja.getRange("P:P").setNumberFormat("dd-mm-yyyy hh:mm");
-  hoja.getRange("Q:Q").setNumberFormat("dd-mm-yyyy");
+  hoja.setFrozenColumns(4);
+  hoja.getRange(1, col("Folio"), hoja.getMaxRows(), 1).setNumberFormat("@");   // folio como texto
+  COL_FECHA.forEach(n => hoja.getRange(2, col(n), hoja.getMaxRows() - 1, 1).setNumberFormat("dd-mm-yyyy"));
+  COL_FECHA_HORA.forEach(n => hoja.getRange(2, col(n), hoja.getMaxRows() - 1, 1).setNumberFormat("dd-mm-yyyy hh:mm"));
 
-  const col = n => COLUMNAS.indexOf(n) + 1;
-  const rangoEstado = hoja.getRange(2, col("Estado"), 1000, 1);
-  rangoEstado.setDataValidation(
+  hoja.getRange(2, col("Estado"), 1000, 1).setDataValidation(
     SpreadsheetApp.newDataValidation().requireValueInList(ESTADOS.map(e => e[0]), true).build()
   );
   const filas = hoja.getRange(2, 1, 1000, COLUMNAS.length);
-  const letra = String.fromCharCode(64 + col("Estado"));
+  const letra = letraDe(col("Estado"));
   hoja.setConditionalFormatRules(ESTADOS.map(([estado, color]) =>
     SpreadsheetApp.newConditionalFormatRule()
       .whenFormulaSatisfied(`=$${letra}2="${estado}"`)
       .setBackground(color).setRanges([filas]).build()
   ));
   hoja.setColumnWidth(col("Cliente"), 200);
+  hoja.setColumnWidth(col("Servicio"), 200);
   hoja.setColumnWidth(col("Link"), 260);
   hoja.setColumnWidth(col("Notas"), 300);
+}
 
-  // Propuestas emitidas antes de instalar el seguimiento
-  filaDe({
-    folio: "2026031", cliente: "TEK CHILE S.A.", contacto: "Romina Valeska Garay Totin",
-    email: "rgaray@tek.tech", sistema: "Talana",
-    opciones: { "1": "133,2", "2": "181,6", "3": "229,9" },
-    url: "https://pro-city.cl/propuestas/2026031.html"
+function letraDe(n) {
+  let s = "";
+  while (n > 0) { const r = (n - 1) % 26; s = String.fromCharCode(65 + r) + s; n = Math.floor((n - 1) / 26); }
+  return s;
+}
+
+/* ---------- unir el Excel antiguo con este libro (una sola vez) ---------- */
+// Crea una hoja por año (2021-2025) tal como estaba en el Excel, rehace
+// "Propuestas" con las columnas del libro único mezclando las propuestas 2026
+// del Excel con las que ya registró el cotizador (por folio; si las dos
+// tienen dato, gana el de esta planilla, que es el más nuevo) y deja la hoja
+// anterior como respaldo. Se puede volver a ejecutar: no duplica años.
+function unificarLibros() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const datos = JSON.parse(DriveApp.getFileById(ID_HISTORICO).getBlob().getDataAsString("UTF-8"));
+  const aFecha = v => (typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v)) ? new Date(v + "T12:00:00") : v;
+
+  // 1. un año por hoja, tal cual
+  Object.keys(datos.anios).sort().forEach(anio => {
+    if (ss.getSheetByName(anio)) return;
+    const { columnas, filas } = datos.anios[anio];
+    const h = ss.insertSheet(anio, ss.getSheets().length);
+    h.getRange(1, 1, 1, columnas.length).setValues([columnas])
+      .setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF").setWrap(true);
+    if (filas.length) {
+      const esFecha = columnas.map(c => /^Fecha|Finaliza/.test(c));
+      h.getRange(2, 1, filas.length, columnas.length)
+        .setValues(filas.map(f => f.map((v, i) => v === null ? "" : (esFecha[i] ? aFecha(v) : v))));
+      columnas.forEach((c, i) => { if (esFecha[i]) h.getRange(2, i + 1, filas.length, 1).setNumberFormat("dd-mm-yyyy"); });
+    }
+    h.setFrozenRows(1);
   });
+
+  // 2. libro único: 2026 del Excel + lo que ya registró el seguimiento
+  const porFolio = {};
+  datos.propuestas2026.forEach(p => { porFolio[String(p.Folio)] = Object.assign({}, p); });
+  let anterior = ss.getSheetByName(HOJA);
+  if (anterior && anterior.getRange(1, 2).getValue() === "Cliente") {   // formato antiguo, sin unificar
+    const valores = anterior.getDataRange().getValues();
+    const enc = valores[0];
+    valores.slice(1).forEach(f => {
+      const folio = String(f[0]).trim();
+      if (!folio) return;
+      const p = porFolio[folio] || (porFolio[folio] = { Folio: folio });
+      enc.forEach((c, i) => { if (f[i] !== "" && f[i] !== null) p[c] = f[i]; });
+    });
+    anterior.setName("Propuestas (antes de unificar)");
+  } else if (anterior) {
+    throw new Error("La hoja Propuestas ya está unificada.");
+  }
+  const hoja = ss.insertSheet(HOJA, 0);
+  const folios = Object.keys(porFolio).sort((a, b) => (/^\d+$/.test(a) ? 0 : 1) - (/^\d+$/.test(b) ? 0 : 1) || a.localeCompare(b));
+  const filas = folios.map(fo => COLUMNAS.map(c => {
+    const v = porFolio[fo][c];
+    if (v === undefined || v === null) return "";
+    return COL_FECHA.indexOf(c) >= 0 ? aFecha(v) : v;
+  }));
+  if (filas.length) hoja.getRange(2, 1, filas.length, COLUMNAS.length).setValues(filas);
+  formatearPropuestas(hoja);
+
+  // 3. resumen por año
+  armarResumen(ss);
+  const respaldo = ss.getSheetByName("Propuestas (antes de unificar)");
+  if (respaldo) ss.setActiveSheet(respaldo), ss.moveActiveSheet(ss.getSheets().length);
+  ss.setActiveSheet(hoja);
+  return `Listo: ${filas.length} propuestas en "${HOJA}" y ${Object.keys(datos.anios).length} años de historial.`;
+}
+
+function armarResumen(ss) {
+  let r = ss.getSheetByName("Resumen");
+  if (!r) r = ss.insertSheet("Resumen", 1);
+  r.clear();
+  const filas = [["Año", "Propuestas", "Aceptadas", "Rechazadas", "Pendientes", "% aceptadas"]];
+  const hojas = ss.getSheets().map(h => h.getName()).filter(n => /^\d{4}$/.test(n)).sort();
+  const fila = (nombre, etiqueta) => {
+    const h = ss.getSheetByName(nombre);
+    const enc = h.getRange(1, 1, 1, h.getLastColumn()).getValues()[0];
+    const e = letraDe(enc.indexOf("Estado") + 1), f = letraDe(Math.max(1, enc.indexOf("Folio") + 1, enc.indexOf("N°") + 1));
+    const q = `'${nombre}'!`;
+    const n = filas.length + 1;
+    filas.push([etiqueta, `=COUNTA(${q}${f}2:${f})`,
+      `=COUNTIF(${q}${e}2:${e},"Aceptada")+COUNTIF(${q}${e}2:${e},"Aprobado")+COUNTIF(${q}${e}2:${e},"Ganada")`,
+      `=COUNTIF(${q}${e}2:${e},"Rechazada")+COUNTIF(${q}${e}2:${e},"Perdida")`,
+      `=B${n}-C${n}-D${n}`, `=IF(B${n}=0,"",C${n}/B${n})`]);
+  };
+  hojas.forEach(n => fila(n, n));
+  fila(HOJA, "2026 en adelante (Propuestas)");
+  r.getRange(1, 1, filas.length, filas[0].length).setValues(filas);
+  r.getRange(1, 1, 1, filas[0].length).setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF");
+  r.getRange(2, 6, filas.length - 1, 1).setNumberFormat("0%");
+  r.setColumnWidth(1, 220);
+}
+
+/* ---------- próximo folio (lo pide el cotizador) ---------- */
+function proximoFolio() {
+  const anio = String(new Date().getFullYear());
+  const hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA);
+  const ultima = hoja.getLastRow();
+  let max = 0;
+  if (ultima >= 2) {
+    hoja.getRange(2, 1, ultima - 1, 1).getValues().forEach(([v]) => {
+      const s = String(v).trim();
+      if (s.length === 7 && s.indexOf(anio) === 0 && /^\d+$/.test(s)) max = Math.max(max, Number(s.slice(4)));
+    });
+  }
+  return anio + String(max + 1).padStart(3, "0");
 }
 
 /* ---------- entrada desde las páginas de propuesta ---------- */
@@ -110,14 +233,19 @@ function doPost(e) {
     if (d.accion === "apertura") return apertura(d);
     if (d.accion === "aceptar_propuesta") return aceptar(d);
     if (d.accion === "interes") return interes(d);
-    if (d.accion === "registrar_propuesta") { filaDe(d); return responder(true, "registrada"); }
+    if (d.accion === "registrar_propuesta") { filaDe(d); return responder(true, "registrada"); }   // filaDe completa lo que falte
     return responder(false, "acción desconocida");
   } finally {
     lock.releaseLock();
   }
 }
 
-function doGet() {
+function doGet(e) {
+  const p = (e && e.parameter) || {};
+  if (p.accion === "proximo_folio") {
+    if (p.token !== TOKEN) return responder(false, "token inválido");
+    return responder(true, proximoFolio());
+  }
   return ContentService.createTextOutput("Seguimiento de propuestas Pro-City: activo.");
 }
 
@@ -292,32 +420,46 @@ function urlPlanilla() {
 
 /* ---------- utilidades ---------- */
 // Devuelve la fila del folio; si no existe la crea con los datos que trae el aviso.
+// Devuelve la fila del folio; si no existe la crea. En los dos casos completa
+// las celdas vacías con lo que traiga el aviso (nunca pisa lo que ya hay:
+// lo escrito a mano, como la OC o la factura, se respeta).
 function filaDe(d) {
   const hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA);
   if (!hoja) throw new Error('Falta la hoja "' + HOJA + '": ejecuta configurar()');
   const col = n => COLUMNAS.indexOf(n) + 1;
   const folio = String(d.folio).trim();
+  const op = d.opciones || {};
+  const datos = Object.assign({
+    "Cliente": d.cliente, "Contacto": d.contacto, "Correo": d.email, "Sistema": d.sistema,
+    "Opción 1 mes (UF)": op["1"], "Opción 2 meses (UF)": op["2"], "Opción 3 meses (UF)": op["3"],
+    "Link": d.url
+  }, d.campos || {});   // campos: {columna: valor} que manda el cotizador al publicar
+
+  let fila = -1;
   const ultima = hoja.getLastRow();
   if (ultima >= 2) {
-    const folios = hoja.getRange(2, 1, ultima - 1, 1).getValues().map(r => String(r[0]).trim());
-    const i = folios.indexOf(folio);
-    if (i >= 0) return { hoja, fila: i + 2, col };
+    const i = hoja.getRange(2, 1, ultima - 1, 1).getValues().map(r => String(r[0]).trim()).indexOf(folio);
+    if (i >= 0) fila = i + 2;
   }
-  const op = d.opciones || {};
-  const nueva = COLUMNAS.map(() => "");
-  nueva[col("Folio") - 1] = folio;
-  nueva[col("Cliente") - 1] = d.cliente || "";
-  nueva[col("Contacto") - 1] = d.contacto || "";
-  nueva[col("Correo") - 1] = d.email || "";
-  nueva[col("Sistema") - 1] = d.sistema || "";
-  nueva[col("Opción 1 mes (UF)") - 1] = op["1"] || "";
-  nueva[col("Opción 2 meses (UF)") - 1] = op["2"] || "";
-  nueva[col("Opción 3 meses (UF)") - 1] = op["3"] || "";
-  nueva[col("Link") - 1] = d.url || "";
-  nueva[col("Estado") - 1] = "Enviada";
-  nueva[col("Aperturas") - 1] = 0;
-  hoja.appendRow(nueva);
-  return { hoja, fila: hoja.getLastRow(), col };
+  if (fila < 0) {
+    const nueva = COLUMNAS.map(() => "");
+    nueva[col("Folio") - 1] = folio;
+    nueva[col("Rev.") - 1] = "00";
+    nueva[col("Fecha") - 1] = new Date();
+    nueva[col("Estado") - 1] = "Enviada";
+    nueva[col("Aperturas") - 1] = 0;
+    hoja.appendRow(nueva);
+    fila = hoja.getLastRow();
+  }
+  const actual = hoja.getRange(fila, 1, 1, COLUMNAS.length).getValues()[0];
+  Object.keys(datos).forEach(c => {
+    const k = col(c);
+    const v = datos[c];
+    if (k > 0 && v !== undefined && v !== null && v !== "" && (actual[k - 1] === "" || actual[k - 1] === null)) {
+      hoja.getRange(fila, k).setValue(v);
+    }
+  });
+  return { hoja, fila, col };
 }
 
 function esc(s) {
