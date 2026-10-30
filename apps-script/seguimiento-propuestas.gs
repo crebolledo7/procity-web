@@ -163,24 +163,40 @@ function aceptar(d) {
         <li>Contacto: ${esc(d.contacto)} · ${esc(d.email)}</li>
         <li>Fecha: ${esc(d.fecha)}</li>
       </ul>
+      ${d.email ? "<p>Al cliente le llegó la confirmación con la solicitud de datos de facturación y N° de OC: su respuesta te llega a este correo.</p>" : "<p>La propuesta no tenía correo del cliente: pídele tú los datos de facturación y la OC.</p>"}
       <p><a href="${esc(d.url)}">Ver la propuesta</a> · <a href="${SpreadsheetApp.getActiveSpreadsheet().getUrl()}">Ver seguimiento</a></p>`
   });
 
   if (d.email) {
+    // Confirmación al cliente + solicitud de datos de facturación (responde a este correo)
+    // "Ximena Muñoz y Sandra Carmona" -> "Hola Ximena y Sandra"
+    const nombres = String(d.contacto || "").split(/\s+y\s+|,\s*/).map(n => n.trim().split(" ")[0]).filter(Boolean);
+    const saludo = nombres.length ? "Hola " + esc(nombres.length > 1 ? nombres.slice(0, -1).join(", ") + " y " + nombres[nombres.length - 1] : nombres[0]) : "Hola";
+    const precioTxt = /IVA/.test(String(d.precio)) ? String(d.precio) : String(d.precio) + (/UF/.test(String(d.precio)) ? "" : " UF") + " + IVA";
+    const filaDato = n => `<tr><td style="padding:6px 10px; border-bottom:1px solid #E2E5EF; font-weight:bold; width:46%">${n}:</td><td style="padding:6px 10px; border-bottom:1px solid #E2E5EF"></td></tr>`;
     MailApp.sendEmail({
       to: d.email,
       replyTo: CORREO_AVISOS,
       name: "Pro-City",
-      subject: `Recibimos tu aceptación · Propuesta ${d.folio}`,
-      htmlBody: `<p>Hola${d.contacto ? " " + esc(String(d.contacto).split(" ")[0]) : ""}:</p>
-        <p>Recibimos la aceptación de la propuesta <b>${esc(d.folio)}</b> para ${esc(d.cliente)}:</p>
-        <ul>
-          <li>${esc(d.opcion)} · <b>${esc(d.precio)} UF + IVA</b></li>
-          ${d.docs ? `<li>${esc(d.docs)}</li>` : ""}
-        </ul>
-        <p>Te contactaremos para coordinar el kick-off. La propuesta completa sigue disponible en
-        <a href="${esc(d.url)}">${esc(d.url)}</a>.</p>
-        <p>Saludos,<br>Equipo Pro-City</p>`
+      subject: `¡Bienvenidos! Recibimos la aceptación de la propuesta ${d.folio}`,
+      htmlBody: `<div style="font-family:Arial,Helvetica,sans-serif; font-size:14px; color:#222; line-height:1.55; max-width:620px">
+        <p>${saludo}, ¡qué buenas noticias!</p>
+        <p>Recibimos la aceptación de la propuesta <b>${esc(d.folio)}</b> de <b>${esc(d.cliente)}</b>: estamos muy contentos de partir este proyecto con ustedes.</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; margin:14px 0">
+          <tr><td style="background:#EDF0FC; border-left:4px solid #425CC7; padding:12px 16px; font-size:13.5px">
+            ✅ <b>${esc(d.opcion)}</b><br>${esc(precioTxt)}
+            ${d.docs ? `<br>✅ ${esc(d.docs)}` : ""}
+          </td></tr>
+        </table>
+        <p>Para emitir la factura y coordinar el inicio, ¿nos pueden responder este correo con los siguientes datos?</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; border-collapse:collapse; font-size:13.5px; margin:6px 0 16px">
+          ${["Nombre de fantasía", "Razón social", "RUT empresa", "Giro del SII", "Dirección (con comuna)", "Dirección casa matriz",
+             "Encargado/a de facturación", "Correo de facturación", "Teléfono de facturación", "N° de orden de compra (OC)"].map(filaDato).join("")}
+        </table>
+        <p>Apenas los recibamos, nos ponemos en contacto para agendar el kick-off. La propuesta completa sigue disponible en
+          <a href="${esc(d.url)}" style="color:#425CC7">este link</a>.</p>
+        <p>¡Muchas gracias!<br><b>Cristóbal Rebolledo Flores</b><br>Pro-City · ${CORREO_AVISOS}</p>
+      </div>`
     });
   }
   return responder(true, "aceptación registrada");
