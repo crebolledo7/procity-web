@@ -61,13 +61,13 @@ Detalle completo de estrategia, URLs y pasos de publicación en [`GUIA-SEO.md`](
 
 Auditoría revisada el 2026-09-15 — lo que sigue son decisiones de negocio, no de código:
 
-- [ ] Confirmar el plazo real de entrega de propuesta: `index.html` dice "3 días hábiles", las landings de servicio dicen "5 días hábiles".
-- [ ] Confirmar la cifra real de "% de proyectos entregados en fecha": `index.html` muestra 98.4%, `GUIA-SEO.md` documenta 95%.
+- [x] Plazo de propuesta: 3 días hábiles en todo el sitio (decisión 2026-10-30).
+- [x] Proyectos entregados en fecha: 98.4% (decisión 2026-10-30).
 - [ ] Decidir si "Pro-City Holding" es una cuarta línea de negocio o se funde en Migración Limpia (`planes.html` dice "tres líneas" pero muestra cuatro tarjetas).
 - [ ] Decidir si "Horas de asesoría a demanda" se mantiene por hora o se reempaqueta como alcance cerrado (choca con "sin bolsas de horas" del resto del copy).
 - [ ] Redactar la cita textual de cada testimonio en `nosotros.html` (los 4 videos ya están, falta la frase de cada cliente) y confirmar la cita del fundador.
 - [ ] Decidir si los metadatos (title, description, JSON-LD) llevan tildes; hoy van sin ellas y el cuerpo sí las lleva.
-- [ ] Confirmar que los 21 clientes se pueden nombrar públicamente.
+- [x] Los 21 clientes autorizaron aparecer en el sitio (confirmado 2026-10-30).
 - [ ] Validar la frase de escasez del topbar o eliminarla.
 - [ ] Regenerar los PNG de logo en `#425CC7` o corregir el manual (los oficiales están en `#385CC7`).
 - [ ] Foto o video del fundador.

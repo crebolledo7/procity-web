@@ -222,7 +222,7 @@ Decisiones técnicas:
 
 ## 10. Pendientes de contenido
 
-- ~~Cifras reales para reemplazar los `[XX]`.~~ **Hecho.** Las cifras vigentes son: **5** años en remuneraciones, **50+** empresas acompañadas, **80 mil** liquidaciones validadas en paralelos y **95%** de proyectos entregados en fecha. Si cambian, están en `index.html` (bloque `.rating` y las dos `.stat` del bloque del fundador) y `nosotros.html` (las tres `.stat`). Conviene poder respaldarlas si un cliente las pregunta.
+- ~~Cifras reales para reemplazar los `[XX]`.~~ **Hecho.** Las cifras vigentes son: **5** años en remuneraciones, **50+** empresas acompañadas, **80 mil** liquidaciones validadas en paralelos y **98.4%** de proyectos entregados en fecha. Si cambian, están en `index.html` (bloque `.rating` y las dos `.stat` del bloque del fundador) y `nosotros.html` (las tres `.stat`). Conviene poder respaldarlas si un cliente las pregunta.
 - Confirmar si la cita del fundador representa a Cristóbal o se reescribe.
 - Foto o video del fundador para el bloque que hoy es un marcador.
 - Confirmar que los 21 clientes se pueden nombrar públicamente.
