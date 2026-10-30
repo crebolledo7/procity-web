@@ -520,6 +520,7 @@
   .testi-body .name{margin-bottom:4px}
   .testi-body .meta{margin-bottom:14px}
   .testi-body p{font-size:16px}
+  .testi-quote{margin:0 0 16px;padding-left:16px;border-left:3px solid var(--orange);font-size:17px;font-weight:500;font-style:italic;line-height:1.5;color:var(--black)}
 
   /* ============================================================
      ANIMACIONES AL HACER SCROLL — las activa animaciones.js

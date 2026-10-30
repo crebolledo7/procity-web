@@ -65,7 +65,7 @@ Auditoría revisada el 2026-09-15 — lo que sigue son decisiones de negocio, no
 - [x] Proyectos entregados en fecha: 98.4% (decisión 2026-10-30).
 - [ ] Decidir si "Pro-City Holding" es una cuarta línea de negocio o se funde en Migración Limpia (`planes.html` dice "tres líneas" pero muestra cuatro tarjetas).
 - [ ] Decidir si "Horas de asesoría a demanda" se mantiene por hora o se reempaqueta como alcance cerrado (choca con "sin bolsas de horas" del resto del copy).
-- [ ] Redactar la cita textual de cada testimonio en `nosotros.html` (los 4 videos ya están, falta la frase de cada cliente) y confirmar la cita del fundador.
+- [x] Citas de los 4 testimonios en `nosotros.html`, sacadas de los videos (aprobadas 2026-10-30). Falta confirmar la cita del fundador.
 - [ ] Decidir si los metadatos (title, description, JSON-LD) llevan tildes; hoy van sin ellas y el cuerpo sí las lleva.
 - [x] Los 21 clientes autorizaron aparecer en el sitio (confirmado 2026-10-30).
 - [x] Frase del topbar: "Llevamos pocos proyectos a la vez para no atrasar ninguno" (decisión 2026-10-30).
