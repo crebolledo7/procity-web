@@ -1,0 +1,282 @@
+{"paginas": [
+{
+"slug": "servicios-legales",
+"title": "Servicios legales para empresas en Chile | Pro-City",
+"desc": "Abogados para empresas en Chile: derecho laboral, negociación colectiva, asesoría societaria, compliance, Ley REP, cobranza judicial y asesoría inmobiliaria.",
+"servicio": "Servicios legales para empresas",
+"tipos": ["Derecho del trabajo y negociación colectiva", "Asesoría legal empresarial", "Compliance", "Ley REP y derecho medioambiental", "Cobranza judicial y extrajudicial", "Asesoría inmobiliaria"],
+"kicker": "Servicios legales",
+"h1": "Servicios legales para empresas en Chile",
+"sub": "Abogados que conocen tu operación por dentro.",
+"lead": "Un equipo jurídico multidisciplinario dentro de Pro-City: laboral, societario, cumplimiento, medioambiente, cobranza e inmobiliario. El consejo legal llega aterrizado al proceso real de tu empresa.",
+"cta": "Agenda una asesoría",
+"wa": "Hola%2C%20necesito%20asesor%C3%ADa%20legal%20para%20mi%20empresa.",
+"chips": ["Derecho laboral", "Societario", "Compliance", "Ley REP", "Cobranza", "Inmobiliario"],
+"que_es_h2": "Un solo equipo legal para las decisiones de tu empresa.",
+"que_es": "Pro-City presta servicios legales a empresas en Chile: asesoría y defensa laboral, negociación colectiva, asesoría societaria, planes de cumplimiento, Ley REP, cobranza judicial y extrajudicial, y asesoría inmobiliaria. Como también operamos remuneraciones, el área laboral trabaja con los números reales de tu empresa.",
+"tarjetas": [
+ {"h3": "Derecho del trabajo y negociación colectiva", "p": "Contratos, despidos, finiquitos, juicios laborales, fiscalizaciones de la Inspección del Trabajo y negociaciones colectivas."},
+ {"h3": "Asesoría legal empresarial", "p": "Estructura legal y tributaria, gestión societaria, constitución, fusión, reorganización y liquidación de sociedades."},
+ {"h3": "Compliance y cumplimiento", "p": "Planes de cumplimiento, auditorías, mapeo de riesgos legales y reputacionales, y políticas de integridad."},
+ {"h3": "Ley REP y medioambiente", "p": "Asesoría en la Ley 20.920 para productores, importadores y comercializadores, y defensa en procedimientos sancionatorios."},
+ {"h3": "Cobranza judicial y extrajudicial", "p": "Recuperación de pagarés, cheques, letras, facturas y sentencias, con negociación de acuerdos de pago."},
+ {"h3": "Asesoría inmobiliaria", "p": "Compraventas, estudios de título, arrendamientos, copropiedad y negociaciones comerciales."}
+],
+"por_que_h2": "El abogado que entiende tus remuneraciones.",
+"por_que": [
+ ["Conocemos la operación por dentro", "Implementamos y operamos remuneraciones en más de 50 empresas: el consejo legal parte de cómo funciona tu proceso de verdad."],
+ ["Laboral y remuneraciones en el mismo equipo", "Un finiquito, un anexo o una negociación colectiva se revisan con los cálculos a la vista, no por separado."],
+ ["Un solo interlocutor", "Laboral, societario, cumplimiento y cobranza coordinados por el mismo equipo, sin repartir tu empresa entre varios estudios."]
+],
+"faq_h2": "Sobre los servicios legales de Pro-City",
+"faq": [
+ ["¿Qué servicios legales ofrece Pro-City a empresas?", "Derecho del trabajo y negociación colectiva, asesoría legal empresarial y societaria, compliance y planes de cumplimiento, Ley REP y derecho medioambiental, cobranza judicial y extrajudicial, y asesoría inmobiliaria y de negociaciones comerciales."],
+ ["¿Trabajan solo con empresas que implementaron su sistema con Pro-City?", "No. Los servicios legales están disponibles para cualquier empresa, sea o no cliente de implementación o payroll."],
+ ["¿Pueden representar a mi empresa en un juicio laboral?", "Sí. El área laboral incluye la defensa en juicios laborales y la representación ante la Inspección del Trabajo."],
+ ["¿Cómo se cobra la asesoría legal?", "Depende del tipo de asunto. En la primera conversación revisamos tu caso y te enviamos una propuesta con alcance y valor."]
+],
+"relacionados": [
+ ["Abogados laborales para empresas", "abogados-laborales-empresas.html", "Asesoría, defensa y negociación colectiva."],
+ ["Asesoría legal empresarial", "asesoria-legal-empresas.html", "Sociedades, accionistas y reorganizaciones."],
+ ["Compliance para empresas", "compliance-empresas.html", "Planes de cumplimiento y mapeo de riesgos."],
+ ["Asesoría Ley REP", "asesoria-ley-rep.html", "Ley 20.920 y procedimientos sancionatorios."],
+ ["Cobranza judicial y extrajudicial", "cobranza-judicial.html", "Recupera tus cuentas por cobrar."],
+ ["Asesoría inmobiliaria", "asesoria-inmobiliaria.html", "Compraventas, títulos y arriendos."]
+],
+"cta_h2": "¿Tienes un tema legal en tu empresa?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu caso y te decimos con franqueza qué camino conviene."
+},
+{
+"slug": "abogados-laborales-empresas",
+"title": "Abogados laborales para empresas en Chile | Pro-City",
+"desc": "Asesoría y defensa laboral para empresas: contratos, despidos, finiquitos, juicios laborales, Inspección del Trabajo, negociación colectiva y Reglamento Interno.",
+"servicio": "Asesoría laboral para empresas",
+"tipos": ["Contratos, anexos y finiquitos", "Defensa en juicios laborales", "Negociación colectiva", "Auditoría laboral y Reglamento Interno", "Asesoría previsional e higiene y seguridad", "Inmigración y visas de trabajo"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Derecho laboral",
+"h1": "Abogados laborales para empresas: asesoría, defensa y negociación colectiva",
+"sub": "La contraparte natural de todo lo que hacemos en remuneraciones.",
+"lead": "Te asesoramos en contratos, despidos y finiquitos, te defendemos en juicios laborales y ante la Inspección del Trabajo, y te acompañamos en negociaciones colectivas.",
+"cta": "Agenda una asesoría laboral",
+"wa": "Hola%2C%20necesito%20un%20abogado%20laboral%20para%20mi%20empresa.",
+"chips": ["Despidos y finiquitos", "Juicios laborales", "Inspección del Trabajo", "Negociación colectiva", "Reglamento Interno"],
+"que_es_h2": "Asesoría laboral para el día a día y defensa cuando hace falta.",
+"que_es": "El área laboral de Pro-City asesora a empleadores en Chile en toda la relación laboral: desde el contrato y sus anexos hasta el despido, el finiquito y los juicios. También acompañamos negociaciones colectivas y revisamos la documentación laboral antes de que llegue una fiscalización.",
+"tarjetas": [
+ {"h3": "Contratos, anexos y término de contrato", "p": "Documentos que se sostienen en una fiscalización o en un juicio.", "ul": ["Contratos de trabajo y anexos", "Amonestaciones y cartas de aviso", "Despidos y causales", "Finiquitos"]},
+ {"h3": "Defensa laboral", "p": "Representación de la empresa cuando hay un conflicto.", "ul": ["Juicios laborales", "Fiscalizaciones de la Inspección del Trabajo", "Comparendos y mediaciones"]},
+ {"h3": "Negociación colectiva", "p": "Preparación y acompañamiento en todo el proceso.", "ul": ["Negociaciones colectivas", "Huelgas y paralizaciones", "Relación con sindicatos"]},
+ {"h3": "Auditoría laboral", "p": "Revisamos tu documentación antes de que lo haga la autoridad.", "ul": ["Auditoría de documentación laboral", "Reglamento Interno de Orden, Higiene y Seguridad", "Asesoría previsional e higiene y seguridad"]},
+ {"h3": "Inmigración y relocation", "p": "Para contratar talento extranjero sin trabas.", "ul": ["Visas de trabajo", "Relocation de ejecutivos"]}
+],
+"por_que_h2": "Abogados que también saben calcular una liquidación.",
+"por_que": [
+ ["Laboral y remuneraciones juntos", "Un finiquito o un despido se revisan con los cálculos a la vista: haberes, descuentos, vacaciones e indemnizaciones."],
+ ["Documentos al día en la DT", "Con RH Connect, nuestra plataforma propia, tus contratos y anexos quedan registrados en la Dirección del Trabajo."],
+ ["Prevención antes que juicio", "La auditoría de documentación detecta los problemas antes de que se conviertan en una multa o una demanda."]
+],
+"faq_h2": "Sobre la asesoría laboral para empresas",
+"faq": [
+ ["¿Qué hace un abogado laboral para una empresa?", "Asesora al empleador en toda la relación laboral: redacta y revisa contratos y anexos, orienta despidos y finiquitos, representa a la empresa en juicios laborales y fiscalizaciones de la Inspección del Trabajo, y acompaña las negociaciones colectivas."],
+ ["¿Me pueden defender si un trabajador me demanda?", "Sí. Representamos a la empresa en juicios laborales y ante la Inspección del Trabajo, desde la contestación de la demanda hasta las audiencias."],
+ ["¿Qué empresas deben tener Reglamento Interno?", "El Código del Trabajo exige un Reglamento Interno de Orden, Higiene y Seguridad a las empresas con 10 o más trabajadores permanentes. Lo redactamos o revisamos el que tienes."],
+ ["¿Acompañan negociaciones colectivas?", "Sí. Preparamos a la empresa, participamos en el proceso de negociación y asesoramos en caso de huelga o paralización."],
+ ["¿Pueden auditar mis contratos antes de una fiscalización?", "Sí. Revisamos contratos, anexos, Reglamento Interno y registros, y te entregamos lo que hay que corregir y en qué orden."]
+],
+"relacionados": [
+ ["RH Connect", "rh-connect.html", "Contratos y anexos al día en la Dirección del Trabajo."],
+ ["Payroll externalizado", "payroll-externalizado.html", "Remuneraciones procesadas por especialistas."],
+ ["Todos los servicios legales", "servicios-legales.html", "Societario, compliance, Ley REP, cobranza e inmobiliario."]
+],
+"cta_h2": "¿Tienes un conflicto laboral o quieres prevenirlo?",
+"cta_p": "Agenda 30 minutos sin costo con el área laboral. Revisamos tu caso y te decimos qué hacer primero."
+},
+{
+"slug": "asesoria-legal-empresas",
+"title": "Asesoría legal empresarial y societaria | Pro-City",
+"desc": "Asesoría legal para empresas en Chile: estructura legal y tributaria, gestión societaria, constitución, fusión y reorganización de sociedades, juntas y directorios.",
+"servicio": "Asesoría legal empresarial",
+"tipos": ["Estructura legal y tributaria", "Gestión societaria", "Constitución, fusión y reorganización de sociedades", "Actas de juntas y directorios", "Capitalizaciones y family offices", "Remesas desde el extranjero"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Derecho corporativo",
+"h1": "Asesoría legal empresarial: sociedades, accionistas y reorganizaciones",
+"sub": "Tu empresa respaldada jurídicamente en cada paso.",
+"lead": "Te ayudamos a definir la estructura legal y tributaria del negocio, a ordenar la relación entre accionistas y a constituir, fusionar, reorganizar o liquidar sociedades.",
+"cta": "Agenda una asesoría",
+"wa": "Hola%2C%20necesito%20asesor%C3%ADa%20legal%20para%20mi%20empresa.",
+"chips": ["Sociedades", "Accionistas", "Fusiones", "Juntas y directorios", "Family offices"],
+"que_es_h2": "El respaldo legal para crecer, reorganizarte o cerrar bien.",
+"que_es": "La asesoría legal empresarial de Pro-City acompaña a las empresas en su estructura y su vida societaria: cómo se organizan, cómo se relacionan sus accionistas y cómo se constituyen, fusionan, reorganizan o liquidan, siempre con la mirada tributaria al lado.",
+"tarjetas": [
+ {"h3": "Estructura legal y tributaria", "p": "La forma jurídica que conviene a tu negocio, considerando sus efectos tributarios."},
+ {"h3": "Gestión societaria", "p": "Relaciones entre accionistas, pactos y el día a día de la sociedad.", "ul": ["Relaciones entre accionistas", "Actas de juntas y directorios"]},
+ {"h3": "Constitución y reorganización", "p": "Los cambios grandes de la empresa, bien documentados.", "ul": ["Constitución de sociedades", "Fusiones y reorganizaciones", "Liquidación de sociedades"]},
+ {"h3": "Capitalizaciones y family offices", "p": "Aumentos de capital y estructuras para patrimonios familiares."},
+ {"h3": "Remesas desde el extranjero", "p": "Gestión legal del ingreso de recursos desde otros países."}
+],
+"faq_h2": "Sobre la asesoría legal empresarial",
+"faq": [
+ ["¿Qué incluye la asesoría legal empresarial?", "Definir la estructura legal y tributaria del negocio, gestionar la vida societaria y la relación entre accionistas, redactar actas de juntas y directorios, y acompañar constituciones, fusiones, reorganizaciones, liquidaciones y capitalizaciones."],
+ ["¿Pueden constituir una sociedad?", "Sí. Te ayudamos a elegir el tipo de sociedad y a constituirla, considerando cómo va a operar y sus efectos tributarios."],
+ ["¿Asesoran en conflictos entre socios?", "Sí. La gestión societaria incluye ordenar y documentar las relaciones entre accionistas para prevenir y resolver diferencias."],
+ ["¿Trabajan con family offices?", "Sí. Asesoramos capitalizaciones y estructuras para family offices."]
+],
+"relacionados": [
+ ["Compliance para empresas", "compliance-empresas.html", "Planes de cumplimiento y mapeo de riesgos."],
+ ["Abogados laborales para empresas", "abogados-laborales-empresas.html", "Asesoría, defensa y negociación colectiva."],
+ ["Todos los servicios legales", "servicios-legales.html", "Laboral, compliance, Ley REP, cobranza e inmobiliario."]
+],
+"cta_h2": "¿Vas a crecer, reorganizar o cerrar una sociedad?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu situación y te proponemos el camino legal más simple."
+},
+{
+"slug": "compliance-empresas",
+"title": "Compliance y planes de cumplimiento normativo | Pro-City",
+"desc": "Compliance para empresas en Chile: diseño e implementación de planes de cumplimiento, auditorías, mapeo de riesgos legales y reputacionales y políticas de integridad.",
+"servicio": "Compliance y planes de cumplimiento",
+"tipos": ["Planes de cumplimiento sectoriales", "Auditorías y diagnósticos de cumplimiento", "Mapeo de riesgos legales y reputacionales", "Políticas de integridad y capacitación", "Monitoreo y reportes de cumplimiento"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Compliance",
+"h1": "Compliance para empresas: planes de cumplimiento normativo",
+"sub": "Cumplimiento normativo que protege tu reputación.",
+"lead": "Diseñamos e implementamos planes de cumplimiento a la medida de tu sector, auditamos dónde estás hoy y dejamos indicadores para que el cumplimiento se mantenga en el tiempo.",
+"cta": "Agenda un diagnóstico",
+"wa": "Hola%2C%20quiero%20asesor%C3%ADa%20en%20compliance%20para%20mi%20empresa.",
+"chips": ["Planes de cumplimiento", "Auditorías", "Riesgos legales", "Políticas de integridad", "Capacitación"],
+"que_es_h2": "Saber qué riesgos tienes, y tenerlos bajo control.",
+"que_es": "El servicio de compliance de Pro-City ayuda a las empresas a cumplir la normativa que les aplica: diagnostica el nivel de cumplimiento actual, mapea los riesgos legales y reputacionales, diseña el plan para cerrarlos y lo mantiene vivo con monitoreo, indicadores y capacitación.",
+"tarjetas": [
+ {"h3": "Diagnóstico y auditoría", "p": "Una foto honesta de dónde está tu empresa hoy frente a la normativa que le aplica."},
+ {"h3": "Mapeo de riesgos", "p": "Los riesgos legales y reputacionales ordenados por probabilidad e impacto."},
+ {"h3": "Plan de cumplimiento", "p": "Diseño e implementación de planes sectoriales, con responsables y plazos."},
+ {"h3": "Políticas de integridad", "p": "Políticas claras y capacitación de los equipos para que se apliquen de verdad."},
+ {"h3": "Monitoreo y reportes", "p": "Indicadores y reportes para que el directorio sepa que el plan se cumple."}
+],
+"faq_h2": "Sobre compliance para empresas",
+"faq": [
+ ["¿Qué es el compliance en una empresa?", "Es el conjunto de políticas, controles y procesos que asegura que la empresa cumpla la normativa que le aplica y prevenga riesgos legales y reputacionales. Incluye diagnosticar, planificar, capacitar y monitorear."],
+ ["¿Por qué importa más el compliance en Chile desde la Ley de Delitos Económicos?", "La Ley 21.595 de Delitos Económicos amplió los delitos por los que puede responder una empresa. Por eso tener un plan de cumplimiento real, y poder demostrarlo, pesa más que antes. Te ayudamos a diagnosticar dónde estás."],
+ ["¿Por dónde parte un plan de cumplimiento?", "Por un diagnóstico: auditamos tu situación actual, mapeamos los riesgos y recién con eso diseñamos el plan, con responsables, plazos e indicadores."],
+ ["¿Capacitan a los equipos?", "Sí. Las políticas de integridad se acompañan de capacitación para que los equipos sepan aplicarlas en su trabajo diario."]
+],
+"relacionados": [
+ ["Asesoría legal empresarial", "asesoria-legal-empresas.html", "Sociedades, accionistas y reorganizaciones."],
+ ["Asesoría Ley REP", "asesoria-ley-rep.html", "Cumplimiento ambiental de la Ley 20.920."],
+ ["Todos los servicios legales", "servicios-legales.html", "Laboral, societario, cobranza e inmobiliario."]
+],
+"cta_h2": "¿Sabes qué riesgos legales tiene hoy tu empresa?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos por dónde partir un plan de cumplimiento en tu caso."
+},
+{
+"slug": "asesoria-ley-rep",
+"title": "Asesoría Ley REP (Ley 20.920) para empresas | Pro-City",
+"desc": "Asesoría en Ley REP y derecho medioambiental: obligaciones de productores, importadores y comercializadores, planes de manejo de residuos y defensa ante la SMA.",
+"servicio": "Asesoría en Ley REP y derecho medioambiental",
+"tipos": ["Asesoría a productores, importadores y comercializadores", "Defensa en procedimientos sancionatorios", "Representación ante el Ministerio del Medio Ambiente y el Tribunal Ambiental", "Gestión de residuos y planes de manejo"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Ley REP · Medioambiente",
+"h1": "Asesoría en Ley REP y derecho medioambiental para empresas",
+"sub": "Cumple la Ley 20.920 y evita sanciones.",
+"lead": "Te ayudamos a entender qué te exige la Ley REP como productor, importador o comercializador, a ordenar la gestión de tus residuos y a defenderte si enfrentas un procedimiento sancionatorio.",
+"cta": "Agenda una asesoría",
+"wa": "Hola%2C%20necesito%20asesor%C3%ADa%20en%20Ley%20REP.",
+"chips": ["Ley 20.920", "Productores e importadores", "Planes de manejo", "Procedimientos sancionatorios", "Tribunal Ambiental"],
+"que_es_h2": "Qué te exige la Ley REP, y cómo cumplirla sin improvisar.",
+"que_es": "La Ley 20.920, conocida como Ley REP (Responsabilidad Extendida del Productor), obliga a quienes introducen ciertos productos al mercado chileno a hacerse cargo de los residuos que generan. Pro-City asesora a productores, importadores y comercializadores para cumplirla y los defiende en procedimientos sancionatorios.",
+"tarjetas": [
+ {"h3": "Asesoría en obligaciones REP", "p": "Qué te aplica según lo que produces, importas o comercializas, y qué tienes que hacer."},
+ {"h3": "Gestión de residuos y planes de manejo", "p": "Ordenamos la gestión de tus residuos y tus planes de manejo."},
+ {"h3": "Defensa en procedimientos sancionatorios", "p": "Te representamos si la autoridad inicia un procedimiento en tu contra."},
+ {"h3": "Representación ambiental", "p": "Ante el Ministerio del Medio Ambiente y el Tribunal Ambiental."}
+],
+"faq_h2": "Sobre la Ley REP",
+"faq": [
+ ["¿Qué es la Ley REP?", "Es la Ley 20.920, Marco para la Gestión de Residuos y Responsabilidad Extendida del Productor. Obliga a los productores de ciertos productos prioritarios a organizar y financiar la gestión de los residuos que esos productos generan."],
+ ["¿Qué productos están afectos a la Ley REP?", "La ley define como productos prioritarios los aceites lubricantes, los aparatos eléctricos y electrónicos, las baterías, los envases y embalajes, los neumáticos y las pilas. Las obligaciones concretas se fijan en decretos para cada producto."],
+ ["¿A quién se considera productor en la Ley REP?", "No solo al fabricante: también a quien importa o introduce por primera vez el producto en el mercado nacional. Te ayudamos a revisar si tu empresa califica y qué obligaciones tiene."],
+ ["¿Qué pasa si no cumplo la Ley REP?", "El incumplimiento puede dar origen a procedimientos sancionatorios. Te asesoramos para cumplir y, si ya enfrentas un procedimiento, te defendemos ante la autoridad y el Tribunal Ambiental."]
+],
+"relacionados": [
+ ["Compliance para empresas", "compliance-empresas.html", "Planes de cumplimiento y mapeo de riesgos."],
+ ["Asesoría legal empresarial", "asesoria-legal-empresas.html", "Sociedades, accionistas y reorganizaciones."],
+ ["Todos los servicios legales", "servicios-legales.html", "Laboral, societario, cobranza e inmobiliario."]
+],
+"cta_h2": "¿Tu empresa está afecta a la Ley REP?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tus productos y te decimos qué obligaciones tienes."
+},
+{
+"slug": "cobranza-judicial",
+"title": "Cobranza judicial y extrajudicial para empresas | Pro-City",
+"desc": "Cobranza judicial y extrajudicial para empresas en Chile: pagarés, cheques, letras, facturas y sentencias. Negociación de acuerdos de pago, embargos y defensas.",
+"servicio": "Cobranza judicial y extrajudicial",
+"tipos": ["Cobranza extrajudicial", "Negociación de acuerdos de pago", "Cobranza judicial de pagarés, cheques, letras, facturas y sentencias", "Embargos, defensas y suspensión de remates"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Cobranza",
+"h1": "Cobranza judicial y extrajudicial para empresas",
+"sub": "Recupera lo que es tuyo sin desgastar tu operación.",
+"lead": "Partimos por la gestión extrajudicial y la negociación de acuerdos de pago. Si no funciona, cobramos judicialmente pagarés, cheques, letras, facturas y sentencias.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20un%20servicio%20de%20cobranza.",
+"chips": ["Pagarés", "Cheques", "Letras", "Facturas", "Sentencias", "Embargos"],
+"que_es_h2": "Del llamado al embargo, con el mismo equipo.",
+"que_es": "El servicio de cobranza de Pro-City recupera deudas de empresas en dos etapas: primero la cobranza extrajudicial, telefónica y presencial, con negociación de acuerdos de pago; y si no hay resultado, la cobranza judicial sobre pagarés, cheques, letras, facturas y sentencias, incluidos embargos.",
+"tarjetas": [
+ {"h3": "Cobranza extrajudicial", "p": "Gestión telefónica y presencial para recuperar sin llegar a tribunales."},
+ {"h3": "Acuerdos de pago", "p": "Negociamos convenios realistas que el deudor sí pueda cumplir."},
+ {"h3": "Cobranza judicial", "p": "Acciones sobre los documentos que respaldan la deuda.", "ul": ["Pagarés y letras de cambio", "Cheques", "Facturas", "Sentencias"]},
+ {"h3": "Embargos y defensas", "p": "Embargos, defensas y suspensión de remates cuando corresponde."}
+],
+"faq_h2": "Sobre la cobranza para empresas",
+"faq": [
+ ["¿Qué diferencia hay entre cobranza judicial y extrajudicial?", "La extrajudicial busca recuperar la deuda sin juicio: llamados, visitas y acuerdos de pago. La judicial se hace ante tribunales con los documentos que respaldan la deuda y puede terminar en embargo de bienes."],
+ ["¿Qué documentos se pueden cobrar judicialmente?", "Entre otros, pagarés, cheques, letras de cambio, facturas y sentencias. Revisamos tus documentos y te decimos cuál es la vía más rápida en cada caso."],
+ ["¿Siempre parten por la cobranza extrajudicial?", "Por lo general sí, porque es más rápida y barata. Si el caso lo requiere, pasamos directo a la vía judicial."],
+ ["¿Pueden defender a mi empresa si me cobran a mí?", "Sí. También hacemos defensas en juicios ejecutivos y gestionamos la suspensión de remates."]
+],
+"relacionados": [
+ ["Asesoría legal empresarial", "asesoria-legal-empresas.html", "Sociedades, accionistas y reorganizaciones."],
+ ["Asesoría inmobiliaria", "asesoria-inmobiliaria.html", "Compraventas, títulos y arriendos."],
+ ["Todos los servicios legales", "servicios-legales.html", "Laboral, societario, compliance y Ley REP."]
+],
+"cta_h2": "¿Tienes cuentas por cobrar que no se mueven?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tus documentos y te decimos cómo recuperarlas."
+},
+{
+"slug": "asesoria-inmobiliaria",
+"title": "Asesoría inmobiliaria y estudio de títulos | Pro-City",
+"desc": "Asesoría legal inmobiliaria para empresas: compraventas, estudios de título, hipotecas, arrendamientos, copropiedad, joint ventures y negociaciones comerciales.",
+"servicio": "Asesoría inmobiliaria y negociaciones comerciales",
+"tipos": ["Compraventas urbanas, rurales, locales y oficinas", "Estudios de título, hipotecas y prendas", "Copropiedad, arrendamientos y litigios", "Joint ventures y asociaciones", "Mandatario en transacciones"],
+"padre": ["Servicios legales", "servicios-legales"],
+"kicker": "Inmobiliario · Comercial",
+"h1": "Asesoría legal inmobiliaria y negociaciones comerciales",
+"sub": "Cada operación revisada antes de firmar.",
+"lead": "Revisamos compraventas, estudios de título, hipotecas y arriendos, y te acompañamos en negociaciones comerciales y asociaciones para que firmes sabiendo exactamente qué estás firmando.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20asesor%C3%ADa%20inmobiliaria.",
+"chips": ["Compraventas", "Estudio de títulos", "Arriendos", "Copropiedad", "Joint ventures"],
+"que_es_h2": "Operaciones inmobiliarias y comerciales sin sorpresas.",
+"que_es": "La asesoría inmobiliaria de Pro-City acompaña a empresas y personas en compraventas de propiedades urbanas, rurales, locales y oficinas, estudios de título, hipotecas, arrendamientos y copropiedad, además de negociaciones comerciales, joint ventures y representación como mandatario.",
+"tarjetas": [
+ {"h3": "Compraventas", "p": "Propiedades urbanas, rurales, locales comerciales y oficinas."},
+ {"h3": "Estudios de título", "p": "Revisión de títulos, hipotecas y prendas antes de comprar o financiar."},
+ {"h3": "Arriendos y copropiedad", "p": "Contratos de arriendo, copropiedad y litigios asociados."},
+ {"h3": "Joint ventures y asociaciones", "p": "Estructuración legal de asociaciones y negocios conjuntos."},
+ {"h3": "Mandatario en transacciones", "p": "Te representamos en la operación para que no tengas que estar en cada paso."}
+],
+"faq_h2": "Sobre la asesoría inmobiliaria",
+"faq": [
+ ["¿Qué es un estudio de títulos?", "Es la revisión legal de la historia de una propiedad para confirmar que quien vende es el dueño, que no hay hipotecas, prohibiciones ni litigios que afecten la compra, y que los papeles están en orden."],
+ ["¿Asesoran compras de oficinas y locales comerciales?", "Sí. Asesoramos compraventas de propiedades urbanas, rurales, locales comerciales y oficinas."],
+ ["¿Revisan contratos de arriendo?", "Sí. Redactamos y revisamos contratos de arriendo y asesoramos en temas de copropiedad y litigios."],
+ ["¿Pueden representarme en una transacción?", "Sí. Actuamos como mandatarios en transacciones inmobiliarias y comerciales."]
+],
+"relacionados": [
+ ["Asesoría legal empresarial", "asesoria-legal-empresas.html", "Sociedades, accionistas y reorganizaciones."],
+ ["Cobranza judicial y extrajudicial", "cobranza-judicial.html", "Recupera tus cuentas por cobrar."],
+ ["Todos los servicios legales", "servicios-legales.html", "Laboral, compliance y Ley REP."]
+],
+"cta_h2": "¿Vas a comprar, vender o arrendar?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos la operación antes de que firmes."
+}
+]}

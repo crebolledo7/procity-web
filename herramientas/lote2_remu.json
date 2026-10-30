@@ -1,0 +1,364 @@
+{"paginas": [
+{
+"slug": "payroll-externalizado",
+"title": "Payroll externalizado: outsourcing de remuneraciones | Pro-City",
+"desc": "Externaliza tus remuneraciones: cálculo y emisión de liquidaciones, pago de nóminas e imposiciones, trámites ante la DT y app de autoconsulta para tus trabajadores.",
+"servicio": "Payroll externalizado",
+"tipos": ["Cálculo y emisión de liquidaciones", "Pago de nóminas y entidades", "Trámites ante la Dirección del Trabajo", "Portal de administración y reportería", "APP de autoconsulta"],
+"kicker": "Payroll externalizado",
+"h1": "Payroll externalizado: externaliza el proceso de remuneraciones de tu empresa",
+"sub": "Que el mes cierre igual, sin depender de una sola persona.",
+"lead": "Nos hacemos cargo del proceso mensual completo de remuneraciones: cálculo, liquidaciones, pagos, entidades y trámites ante la DT. Tú revisas reportes; nosotros respondemos por los números.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20quiero%20externalizar%20mis%20remuneraciones.",
+"chips": ["Liquidaciones", "Previred", "Pago de nóminas", "Trámites DT", "App de autoconsulta"],
+"que_es_h2": "El cierre de remuneraciones, hecho por especialistas cada mes.",
+"que_es": "El payroll externalizado de Pro-City es el servicio de outsourcing de remuneraciones para empresas en Chile: calculamos y emitimos las liquidaciones de sueldo, preparamos el pago de nóminas e imposiciones a las entidades, hacemos los trámites ante la Dirección del Trabajo con RH Connect y te entregamos reportería en tiempo real.",
+"tarjetas": [
+ {"h3": "Cálculo y liquidaciones", "p": "El proceso mensual completo, validado antes de emitir.", "ul": ["Cálculo de remuneraciones", "Emisión de liquidaciones de sueldo", "Finiquitos y casos especiales"]},
+ {"h3": "Pagos y entidades", "p": "Nóminas de pago e imposiciones preparadas a tiempo.", "ul": ["Nómina de pago bancaria", "Imposiciones y entidades previsionales"]},
+ {"h3": "Trámites ante la DT", "p": "Contratos y anexos registrados en la Dirección del Trabajo con RH Connect, nuestra plataforma propia."},
+ {"h3": "Reportería y autoconsulta", "p": "Información para la gerencia y menos consultas para RRHH.", "ul": ["Portal de administración con reportes en tiempo real", "APP de autoconsulta para los trabajadores"]}
+],
+"por_que_h2": "Por qué externalizar con quienes implementan sistemas de remuneraciones.",
+"por_que": [
+ ["Conocemos el sistema por dentro", "Implementamos Buk, Talana y Rex+: sabemos cómo se configura cada ítem y dónde se producen los descuadres."],
+ ["Sin dependencia de una persona", "Si alguien se va de vacaciones o renuncia, el cierre del mes no se detiene."],
+ ["RRHH vuelve a gestionar personas", "Tu equipo deja de procesar nómina todo el mes y se enfoca en las personas."]
+],
+"faq_h2": "Sobre el payroll externalizado",
+"faq": [
+ ["¿Qué es el payroll externalizado?", "Es entregar a una empresa especialista el proceso mensual de remuneraciones: cálculo, liquidaciones, pagos, imposiciones y trámites. La empresa mantiene el control con reportes y aprobaciones, sin tener que procesar la nómina internamente."],
+ ["¿Qué incluye el servicio de Pro-City?", "Cálculo y emisión de liquidaciones, pago de nóminas y entidades, trámites ante la Dirección del Trabajo con RH Connect, portal de administración con reportería en tiempo real y app de autoconsulta para los trabajadores."],
+ ["¿Puedo externalizar solo mientras formo mi equipo?", "Sí. Muchas empresas lo usan como respaldo mientras arman su equipo interno de remuneraciones, y después lo traspasamos."],
+ ["¿En qué sistema se procesan las remuneraciones?", "Trabajamos sobre Buk, Talana o Rex+. Si todavía no tienes sistema, te ayudamos a elegir e implementarlo."]
+],
+"relacionados": [
+ ["Asesoría en remuneraciones", "asesoria-remuneraciones.html", "Un especialista para tus cierres y casos complejos."],
+ ["Gerencia de personas externalizada", "gerencia-personas-externalizada.html", "Gestión de personas, no solo proceso."],
+ ["RH Connect", "rh-connect.html", "Tus documentos al día en la Dirección del Trabajo."]
+],
+"cta_h2": "¿Quieres dejar de procesar la nómina internamente?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu proceso actual y te decimos cómo sería externalizarlo."
+},
+{
+"slug": "confeccion-historicos-remuneraciones",
+"title": "Confección de históricos de remuneraciones | Pro-City",
+"desc": "Confección y carga de históricos de remuneraciones para migrar de sistema en cualquier mes: liquidaciones, acumulados tributarios, impuesto único vs F29 y vacaciones.",
+"servicio": "Confección de históricos de remuneraciones",
+"tipos": ["Carga de liquidaciones históricas", "Acumulados tributarios y previsionales", "Revisión de impuesto único contra F29", "Saldos de vacaciones y antigüedad"],
+"kicker": "Históricos",
+"h1": "Confección de históricos de remuneraciones para migrar de sistema",
+"sub": "Reconstruimos tu historia de remuneraciones para migrar en cualquier mes.",
+"lead": "Cargamos tus liquidaciones históricas, acumulados tributarios y previsionales, y cuadramos el impuesto único contra los F29, para que el sistema nuevo calcule bien desde el primer mes.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20necesito%20confeccionar%20hist%C3%B3ricos%20de%20remuneraciones.",
+"chips": ["Liquidaciones históricas", "Acumulados", "Impuesto único vs F29", "Vacaciones", "Buk · Talana · Rex+"],
+"que_es_h2": "Por qué los históricos deciden si tu migración cuadra.",
+"que_es": "La confección de históricos es reconstruir y cargar en el sistema nuevo la información de remuneraciones de meses anteriores: liquidaciones, acumulados tributarios y previsionales, y saldos de vacaciones y antigüedad. Sin históricos correctos, el sistema nuevo calcula mal el impuesto, las vacaciones y los finiquitos.",
+"tarjetas": [
+ {"h3": "Liquidaciones históricas", "p": "Carga de las liquidaciones de los meses que necesita el sistema nuevo."},
+ {"h3": "Acumulados tributarios y previsionales", "p": "Los montos que el sistema usa para calcular impuesto y topes."},
+ {"h3": "Impuesto único contra F29", "p": "Cruzamos el impuesto de los libros contra los Formularios 29 del SII, mes a mes, hasta que cuadre."},
+ {"h3": "Vacaciones y antigüedad", "p": "Saldos de vacaciones y fechas de antigüedad correctos para cada trabajador."}
+],
+"faq_h2": "Sobre la confección de históricos",
+"faq": [
+ ["¿Qué son los históricos de remuneraciones?", "Son los datos de remuneraciones de meses anteriores que el sistema nuevo necesita para calcular bien: liquidaciones, acumulados tributarios y previsionales, y saldos de vacaciones y antigüedad."],
+ ["¿Cuántos años de históricos hay que cargar al migrar?", "Depende de lo que necesites calcular y consultar en el sistema nuevo. Lo explicamos en detalle en nuestra guía sobre cuántos años de históricos cargar."],
+ ["¿Se puede migrar de sistema a mitad de año?", "Sí, siempre que los históricos del año estén bien cargados. Es justamente lo que permite migrar en cualquier mes sin romper el cálculo anual."],
+ ["¿Qué pasa si el impuesto único no cuadra con el F29?", "Revisamos mes a mes el impuesto de los libros contra los Formularios 29 hasta encontrar desde dónde viene la diferencia, antes de cargar los históricos."]
+],
+"relacionados": [
+ ["Paralelo de remuneraciones", "paralelo-remuneraciones.html", "Mismo mes en ambos sistemas, comparado por RUT y concepto."],
+ ["Migración de remuneraciones", "migracion-remuneraciones.html", "El método completo para cambiar de sistema."],
+ ["Guía: ¿cuántos años de históricos cargar?", "blog-cuantos-anios-de-historicos.html", "Qué conviene cargar y por qué."]
+],
+"cta_h2": "¿Vas a cambiar de sistema de remuneraciones?",
+"cta_p": "Agenda 30 minutos sin costo. Te decimos qué históricos necesitas y cuánto toma prepararlos."
+},
+{
+"slug": "paralelo-remuneraciones",
+"title": "Paralelo de remuneraciones por RUT y concepto | Pro-City",
+"desc": "Paralelo de remuneraciones antes del go-live: el mismo mes en ambos sistemas, comparado por RUT y concepto, con informe de descuadres y acta de cuadratura.",
+"servicio": "Paralelo de remuneraciones",
+"tipos": ["Comparación por RUT y concepto", "Informe de descuadres con causa raíz", "Corrección de parametrización", "Acta de cuadratura"],
+"kicker": "Paralelo",
+"h1": "Paralelo de remuneraciones: valida tu sistema nuevo antes del go-live",
+"sub": "El mismo mes en ambos sistemas, comparado por RUT y concepto.",
+"lead": "Procesamos el mismo mes en tu sistema actual y en el nuevo, comparamos trabajador por trabajador y concepto por concepto, y corregimos la causa de cada diferencia antes de pasar a producción.",
+"cta": "Agenda tu diagnóstico",
+"wa": "Hola%2C%20necesito%20hacer%20un%20paralelo%20de%20remuneraciones.",
+"chips": ["Por RUT y concepto", "Causa raíz", "Acta de cuadratura", "Buk · Talana · Rex+"],
+"que_es_h2": "La única forma de saber que el sistema nuevo calcula bien.",
+"que_es": "Un paralelo de remuneraciones es procesar el mismo mes en el sistema antiguo y en el nuevo y comparar los resultados por RUT y por concepto, siguiendo la cascada días, sueldo base, haberes, descuentos y líquido. Cada diferencia se explica y se corrige en la configuración antes del go-live.",
+"tarjetas": [
+ {"h3": "Comparación en cascada", "p": "Días, sueldo base, haberes, descuentos y líquido: si un nivel no cuadra, el siguiente tampoco."},
+ {"h3": "Informe de descuadres", "p": "Cada diferencia con su causa raíz, no solo el monto."},
+ {"h3": "Corrección en origen", "p": "Se corrige la parametrización, no la liquidación a mano."},
+ {"h3": "Acta de cuadratura", "p": "El go-live se hace con un acta firmada, no con una sensación."}
+],
+"faq_h2": "Sobre el paralelo de remuneraciones",
+"faq": [
+ ["¿Qué es un paralelo de remuneraciones?", "Es procesar el mismo mes en el sistema actual y en el nuevo y comparar los resultados por trabajador y por concepto, para confirmar que el sistema nuevo calcula igual antes de usarlo en producción."],
+ ["¿Cuántos meses de paralelo conviene hacer?", "Al menos uno. Recomendamos dos: el segundo confirma que las correcciones del primero funcionan y que no aparecen diferencias nuevas."],
+ ["¿Qué pasa si el paralelo no cuadra?", "Se busca la causa raíz de cada diferencia, se corrige la configuración y se vuelve a comparar. El go-live no se hace hasta que cuadra."],
+ ["¿Hacen paralelos aunque otra empresa haya implementado el sistema?", "Sí. Podemos hacer solo el paralelo, o rescatar una implementación que no cuadra."]
+],
+"relacionados": [
+ ["Confección de históricos", "confeccion-historicos-remuneraciones.html", "La historia de remuneraciones bien cargada."],
+ ["Guía: ¿qué es un paralelo?", "blog-que-es-un-paralelo-de-remuneraciones.html", "Explicado paso a paso."],
+ ["Migración de remuneraciones", "migracion-remuneraciones.html", "El método completo para cambiar de sistema."]
+],
+"cta_h2": "¿Tu sistema nuevo todavía no cuadra?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu situación y te decimos cómo llegar al acta de cuadratura."
+},
+{
+"slug": "asesoria-remuneraciones",
+"title": "Asesoría en remuneraciones y soporte mensual | Pro-City",
+"desc": "Asesoría en remuneraciones para empresas: acompañamiento en el cierre mensual, resolución de descuadres y ajustes de configuración en Buk, Talana y Rex+.",
+"servicio": "Asesoría en remuneraciones",
+"tipos": ["Acompañamiento en el cierre mensual", "Resolución de descuadres", "Ajustes de configuración y nuevos ítems"],
+"kicker": "Asesoría y soporte",
+"h1": "Asesoría en remuneraciones: un especialista para tus cierres",
+"sub": "Para los meses difíciles y los casos que nadie sabe resolver.",
+"lead": "Te acompañamos en el cierre mensual, resolvemos descuadres puntuales y hacemos los ajustes de configuración que tu sistema necesita, en Buk, Talana o Rex+.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20asesor%C3%ADa%20en%20remuneraciones.",
+"chips": ["Cierre mensual", "Descuadres", "Configuración", "Buk · Talana · Rex+"],
+"que_es_h2": "Tu equipo procesa; nosotros respaldamos.",
+"que_es": "La asesoría en remuneraciones de Pro-City es soporte continuo para empresas que procesan sus remuneraciones internamente: un especialista que acompaña el cierre del mes, resuelve descuadres y ajusta la configuración del sistema cuando cambia la ley o aparece un caso nuevo.",
+"tarjetas": [
+ {"h3": "Cierre mensual acompañado", "p": "Revisamos el proceso con tu equipo antes de emitir y pagar."},
+ {"h3": "Descuadres puntuales", "p": "Encontramos de dónde viene la diferencia y la corregimos en origen."},
+ {"h3": "Ajustes y nuevos ítems", "p": "Configuración de haberes, descuentos y reglas nuevas en tu sistema."}
+],
+"faq_h2": "Sobre la asesoría en remuneraciones",
+"faq": [
+ ["¿En qué casos conviene una asesoría en remuneraciones?", "Cuando tu equipo procesa internamente pero necesita respaldo: cierres complejos, descuadres que no se explican, cambios legales o ítems nuevos que configurar."],
+ ["¿Trabajan con mi sistema actual?", "Sí. Asesoramos sobre Buk, Talana y Rex+."],
+ ["¿Es lo mismo que el payroll externalizado?", "No. En la asesoría tu equipo sigue procesando y nosotros lo respaldamos. En el payroll externalizado nos hacemos cargo del proceso completo."]
+],
+"relacionados": [
+ ["Payroll externalizado", "payroll-externalizado.html", "Nos hacemos cargo del proceso completo."],
+ ["Guía: el impuesto único no cuadra con el F29", "blog-impuesto-unico-no-cuadra-f29.html", "Causas frecuentes y cómo revisarlo."],
+ ["Paralelo de remuneraciones", "paralelo-remuneraciones.html", "Valida tu sistema antes del go-live."]
+],
+"cta_h2": "¿Tienes un cierre complicado este mes?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu caso y te decimos cómo te podemos apoyar."
+},
+{
+"slug": "gerencia-personas-externalizada",
+"title": "Gerencia de personas externalizada | Pro-City",
+"desc": "Gerencia de personas externalizada para empresas: comunicaciones internas, control de asistencia y turnos, mejora continua de procesos y reportería para gerencia.",
+"servicio": "Gerencia de personas externalizada",
+"tipos": ["Comunicaciones internas", "Control de asistencia y turno", "Mejora continua de procesos", "Reportería para gerencia"],
+"kicker": "Gestión de personas",
+"h1": "Gerencia de personas externalizada para tu empresa",
+"sub": "Una capa de gestión, no solo de proceso.",
+"lead": "Para empresas que necesitan gestión de personas sin armar un área completa: comunicaciones internas, control de asistencia y turnos, mejora de procesos y reportes para la gerencia.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20quiero%20saber%20sobre%20la%20gerencia%20de%20personas%20externalizada.",
+"chips": ["Comunicaciones internas", "Asistencia y turnos", "Procesos", "Reportería"],
+"que_es_h2": "Gestión de personas, sin armar el área desde cero.",
+"que_es": "La gerencia de personas externalizada de Pro-City suma a tu empresa una capa de gestión de RRHH: comunicaciones internas, control de asistencia y turnos, mejora continua de procesos y reportería para la gerencia, apoyada en tu sistema de personas.",
+"tarjetas": [
+ {"h3": "Comunicaciones internas", "p": "Que la información llegue a tus equipos de forma clara y a tiempo."},
+ {"h3": "Asistencia y turnos", "p": "Control de asistencia y turnos conectado a las remuneraciones."},
+ {"h3": "Mejora continua", "p": "Procesos de personas revisados y simplificados mes a mes."},
+ {"h3": "Reportería para gerencia", "p": "Indicadores de dotación, ausentismo y costo para decidir."}
+],
+"faq_h2": "Sobre la gerencia de personas externalizada",
+"faq": [
+ ["¿Qué es una gerencia de personas externalizada?", "Es contar con un equipo externo que cumple funciones de gestión de RRHH, como comunicaciones internas, asistencia, procesos y reportería, sin tener que contratar un área completa."],
+ ["¿Se puede combinar con el payroll externalizado?", "Sí. El payroll cubre el proceso de remuneraciones y la gerencia de personas agrega la capa de gestión."],
+ ["¿Para qué tamaño de empresa sirve?", "Para empresas que crecieron y necesitan gestión de personas, pero todavía no justifican un área interna completa."]
+],
+"relacionados": [
+ ["Payroll externalizado", "payroll-externalizado.html", "Remuneraciones procesadas por especialistas."],
+ ["Control de asistencia y turnos", "control-asistencia-turnos.html", "Mallas de turno y marcación por app."],
+ ["Reclutamiento y desarrollo organizacional", "reclutamiento-desarrollo-organizacional.html", "Selección y evaluaciones de desempeño."]
+],
+"cta_h2": "¿Tu empresa creció más rápido que tu área de personas?",
+"cta_p": "Agenda 30 minutos sin costo. Te mostramos cómo funcionaría en tu caso."
+},
+{
+"slug": "control-asistencia-turnos",
+"title": "Control de asistencia y turnos conectado a remuneraciones | Pro-City",
+"desc": "Implementación de control de asistencia y turnos: mallas de turno, reglas de horas extra y marcación por app con geolocalización, conectados a tus remuneraciones.",
+"servicio": "Control de asistencia y turnos",
+"tipos": ["Diseño de mallas de turno", "Reglas de horas extra", "Marcación por app con geolocalización"],
+"kicker": "Asistencia y turnos",
+"h1": "Control de asistencia y turnos conectado a tus remuneraciones",
+"sub": "Que las horas trabajadas lleguen bien a la liquidación.",
+"lead": "Diseñamos tus mallas de turno, configuramos las reglas de horas extra y ponemos en marcha la marcación por app con geolocalización, conectada directamente al cálculo de remuneraciones.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20quiero%20implementar%20control%20de%20asistencia%20y%20turnos.",
+"chips": ["Mallas de turno", "Horas extra", "Marcación por app", "Geolocalización"],
+"que_es_h2": "Asistencia bien configurada, liquidaciones sin ajustes a mano.",
+"que_es": "Pro-City implementa el control de asistencia y turnos de tu empresa en tu plataforma de personas: mallas de turno, reglas de horas extra y marcación por app con geolocalización, para que atrasos, ausencias y horas extra pasen solos y correctos a las remuneraciones.",
+"tarjetas": [
+ {"h3": "Mallas de turno", "p": "Turnos diseñados según tu operación real."},
+ {"h3": "Reglas de horas extra", "p": "Configuradas para que se calculen solas en la liquidación."},
+ {"h3": "Marcación por app", "p": "Marcación con geolocalización desde el celular del trabajador."}
+],
+"faq_h2": "Sobre el control de asistencia y turnos",
+"faq": [
+ ["¿Por qué conectar la asistencia con las remuneraciones?", "Porque así las horas extra, atrasos y ausencias pasan directo al cálculo de la liquidación, sin digitarlos a mano ni cuadrar planillas cada mes."],
+ ["¿Qué es una malla de turnos?", "Es la programación de los turnos de cada trabajador o grupo: días, horarios y descansos. Bien diseñada, permite calcular automáticamente lo que corresponde pagar."],
+ ["¿Funciona la marcación desde el celular?", "Sí. Configuramos la marcación por app con geolocalización."]
+],
+"relacionados": [
+ ["Implementación Talana", "implementacion-talana.html", "Gestión de personas, remuneraciones y firma digital."],
+ ["Implementación BUK", "implementacion-buk.html", "Migración completa con paralelo."],
+ ["Capacitación en Talana y Buk", "capacitacion-talana-buk.html", "Que tu equipo use bien el sistema."]
+],
+"cta_h2": "¿Tus horas extra se siguen calculando en Excel?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos tu operación de turnos y te decimos cómo automatizarla."
+},
+{
+"slug": "carga-documental-firma-digital",
+"title": "Carga documental y firma digital de contratos | Pro-City",
+"desc": "Digitalización de la carpeta del trabajador: carga masiva de documentos PDF, plantillas de contratos y anexos, y enrolamiento de tu equipo en firma digital.",
+"servicio": "Carga documental y firma digital",
+"tipos": ["Carga masiva de documentación PDF", "Plantillas de contratos y anexos", "Enrolamiento en firma digital"],
+"kicker": "Digitalización",
+"h1": "Carga documental masiva y firma digital de contratos",
+"sub": "Saca el papel de en medio.",
+"lead": "Digitalizamos y ordenamos la carpeta de cada trabajador, dejamos tus contratos y anexos como plantillas listas para generar, y enrolamos a tu equipo en firma digital.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20quiero%20digitalizar%20mis%20documentos%20laborales.",
+"chips": ["Carpeta digital", "Carga masiva PDF", "Plantillas", "Firma digital"],
+"que_es_h2": "La carpeta de cada trabajador, ordenada y firmada en digital.",
+"que_es": "El servicio de carga documental y firma digital de Pro-City digitaliza la documentación laboral de tu empresa: carga masiva de PDF a la carpeta de cada trabajador en tu plataforma, plantillas de contratos y anexos estandarizadas y enrolamiento de los trabajadores en firma digital.",
+"tarjetas": [
+ {"h3": "Carga masiva de documentos", "p": "Contratos, anexos y certificados en la carpeta digital de cada trabajador."},
+ {"h3": "Plantillas de contratos y anexos", "p": "Documentos estandarizados, listos para generar sin redactar desde cero."},
+ {"h3": "Enrolamiento en firma digital", "p": "Tu equipo firmando desde el celular, sin imprimir."}
+],
+"faq_h2": "Sobre la carga documental y la firma digital",
+"faq": [
+ ["¿Qué es la carga documental masiva?", "Es subir en lote los documentos laborales existentes, como contratos, anexos y certificados, a la carpeta digital de cada trabajador en tu plataforma de personas, ordenados y fáciles de encontrar."],
+ ["¿Los contratos con firma digital son válidos?", "Sí, la legislación chilena reconoce la firma electrónica en los documentos laborales. Te ayudamos a configurarla y a enrolar a tus trabajadores."],
+ ["¿Esto es lo mismo que registrar los contratos en la DT?", "No. La carga documental ordena los documentos en tu plataforma. El registro en la Dirección del Trabajo lo hace RH Connect, nuestra plataforma para la carga masiva de documentos a la DT."]
+],
+"relacionados": [
+ ["RH Connect", "rh-connect.html", "Carga masiva de documentos a la Dirección del Trabajo."],
+ ["Implementación Talana", "implementacion-talana.html", "Gestión de personas, remuneraciones y firma digital."],
+ ["Capacitación en Talana y Buk", "capacitacion-talana-buk.html", "Incluye lanzamiento de la app."]
+],
+"cta_h2": "¿Tus contratos todavía se imprimen para firmar?",
+"cta_p": "Agenda 30 minutos sin costo. Te mostramos cómo digitalizar tu documentación."
+},
+{
+"slug": "capacitacion-talana-buk",
+"title": "Capacitación en Talana y Buk para equipos de RRHH | Pro-City",
+"desc": "Capacitación en Talana y Buk por módulo, test de usabilidad antes y después, y lanzamiento de la app de autoconsulta para que tus trabajadores la usen de verdad.",
+"servicio": "Capacitación en Talana y Buk",
+"tipos": ["Capacitación por módulo", "Test de usabilidad", "Lanzamiento de APP de autoconsulta"],
+"kicker": "Capacitación y adopción",
+"h1": "Capacitación en Talana y Buk para tu equipo de RRHH",
+"sub": "Que la inversión en el sistema se use.",
+"lead": "Capacitamos a tu equipo por módulo hasta que sea usuario experto, medimos su nivel antes y después con un test de usabilidad, y lanzamos la app para que la liquidación deje de pedirse por correo.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20capacitaci%C3%B3n%20en%20Talana%20o%20Buk.",
+"chips": ["Talana", "Buk", "Rex+", "Test de usabilidad", "App de autoconsulta"],
+"que_es_h2": "Un sistema bien configurado que nadie usa es un costo.",
+"que_es": "Pro-City capacita a equipos de RRHH y remuneraciones en Talana, Buk y Rex+: sesiones intensivas por módulo, en terreno o en línea, con un test de usabilidad antes y después para medir el avance real, y el lanzamiento de la app de autoconsulta para los trabajadores.",
+"tarjetas": [
+ {"h3": "Capacitación por módulo", "p": "Sesiones intensivas hasta que tu equipo sea usuario experto.", "ul": ["Gestión de personas y remuneraciones", "Firma digital y comunicaciones", "Asistencia y turno", "Desarrollo organizacional y selección"]},
+ {"h3": "Test de usabilidad", "p": "Medimos el nivel real de tus usuarios antes y después.", "ul": ["Evaluación inicial por usuario", "Plan según brechas detectadas", "Evaluación final e informe"]},
+ {"h3": "Lanzamiento de la app", "p": "Para que la liquidación deje de pedirse por correo.", "ul": ["Configuración y permisos", "Plan de comunicación interna", "Enrolamiento y seguimiento de adopción"]}
+],
+"por_que_h2": "La capacitación se mide, no se supone.",
+"por_que": [
+ ["Test antes y después", "Sabes cuánto aprendió cada usuario, no solo cuántos asistieron."],
+ ["Capacitación en terreno", "Nuestros clientes destacan que las capacitaciones en terreno son más útiles y rápidas."],
+ ["Implementadores, no solo instructores", "Enseñamos el sistema que configuramos todos los días."]
+],
+"faq_h2": "Sobre la capacitación en Talana y Buk",
+"faq": [
+ ["¿Hacen capacitación en Talana?", "Sí. Capacitamos por módulo: gestión de personas, remuneraciones, firma digital, comunicaciones, asistencia y desarrollo organizacional."],
+ ["¿Hacen capacitación en Buk?", "Sí. Somos Partner de Buk y capacitamos a equipos de RRHH y remuneraciones en la plataforma."],
+ ["¿Qué es el test de usabilidad?", "Es una evaluación de cada usuario antes de capacitar, para detectar brechas, y después, para medir el avance. Termina con un informe."],
+ ["¿Ayudan a que los trabajadores usen la app?", "Sí. Configuramos la app, preparamos el plan de comunicación interna y hacemos el enrolamiento y seguimiento de la adopción."]
+],
+"relacionados": [
+ ["Implementación Talana", "implementacion-talana.html", "Implementaciones en Chile y Perú."],
+ ["Implementación BUK", "implementacion-buk.html", "Somos Partner de Buk."],
+ ["Carga documental y firma digital", "carga-documental-firma-digital.html", "La carpeta del trabajador en digital."]
+],
+"cta_h2": "¿Tu equipo no le está sacando provecho al sistema?",
+"cta_p": "Agenda 30 minutos sin costo. Te proponemos un plan de capacitación medible."
+},
+{
+"slug": "reclutamiento-desarrollo-organizacional",
+"title": "Reclutamiento y desarrollo organizacional | Pro-City",
+"desc": "Apoyo en reclutamiento y desarrollo organizacional: procesos de selección, configuración de módulos de DO y evaluaciones de desempeño en tu plataforma de personas.",
+"servicio": "Reclutamiento y desarrollo organizacional",
+"tipos": ["Procesos de reclutamiento", "Configuración de módulos de desarrollo organizacional", "Evaluaciones de desempeño"],
+"kicker": "Reclutamiento y DO",
+"h1": "Reclutamiento y desarrollo organizacional para tu empresa",
+"sub": "Apoyo en selección y en la estructura de desarrollo de tus equipos.",
+"lead": "Te apoyamos en tus procesos de reclutamiento, configuramos los módulos de desarrollo organizacional de tu plataforma y ponemos en marcha las evaluaciones de desempeño.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20apoyo%20en%20reclutamiento.",
+"chips": ["Reclutamiento", "Selección", "Evaluación de desempeño", "Desarrollo organizacional"],
+"que_es_h2": "Contratar bien y desarrollar a quienes ya están.",
+"que_es": "Pro-City apoya a las empresas en reclutamiento y desarrollo organizacional: procesos de selección, configuración de los módulos de desarrollo organizacional de su plataforma de personas y evaluaciones de desempeño.",
+"tarjetas": [
+ {"h3": "Procesos de reclutamiento", "p": "Apoyo en la búsqueda y selección de personas para tu empresa."},
+ {"h3": "Módulos de desarrollo organizacional", "p": "Configuración de los módulos de DO en tu plataforma de personas."},
+ {"h3": "Evaluaciones de desempeño", "p": "Diseño y puesta en marcha de evaluaciones de desempeño."}
+],
+"faq_h2": "Sobre reclutamiento y desarrollo organizacional",
+"faq": [
+ ["¿Hacen procesos de reclutamiento?", "Sí. Apoyamos procesos de reclutamiento y selección para tu empresa."],
+ ["¿Configuran evaluaciones de desempeño en Talana o Buk?", "Sí. Configuramos los módulos de desarrollo organizacional y las evaluaciones de desempeño en tu plataforma de personas."]
+],
+"relacionados": [
+ ["Gerencia de personas externalizada", "gerencia-personas-externalizada.html", "Gestión de personas sin armar el área."],
+ ["Capacitación en Talana y Buk", "capacitacion-talana-buk.html", "Que tu equipo use bien el sistema."],
+ ["Todos los servicios", "servicios.html", "Migración, payroll, legal y más."]
+],
+"cta_h2": "¿Necesitas apoyo para crecer tu equipo?",
+"cta_p": "Agenda 30 minutos sin costo y conversemos."
+},
+{
+"slug": "integracion-talana-sap-api",
+"title": "Integración de Talana con SAP, ERP y BI vía API | Pro-City",
+"desc": "Integramos Talana, Buk y Rex+ con SAP, tu ERP contable y herramientas de BI vía API: maestro de colaboradores, centros de costo, asientos contables e indicadores.",
+"servicio": "Integración de sistemas de RRHH vía API",
+"tipos": ["Integración SAP con Talana", "Integración con ERP contable", "Informes BI desde la API de Talana", "Estados de pago automatizados"],
+"padre": ["Integraciones y automatización", "integraciones-automatizacion"],
+"kicker": "Integraciones",
+"h1": "Integración de Talana, Buk y Rex+ con SAP, tu ERP y BI vía API",
+"sub": "Que la información fluya una sola vez y llegue igual a todos lados.",
+"lead": "Conectamos tu plataforma de personas con SAP, tu ERP contable y tus tableros de BI, para que nadie tenga que exportar una planilla y volver a digitarla en otro sistema.",
+"cta": "Agenda una reunión",
+"wa": "Hola%2C%20necesito%20integrar%20mi%20sistema%20de%20RRHH.",
+"chips": ["API Talana", "SAP", "ERP contable", "Power BI", "Centralización contable"],
+"que_es_h2": "Integraciones que ya construimos.",
+"que_es": "Pro-City desarrolla integraciones vía API entre plataformas de personas como Talana, Buk y Rex+ y otros sistemas de la empresa: ERP como SAP, contabilidad, BI e inventario. Sincronizamos el maestro de colaboradores, los centros de costo, la estructura de asientos y los indicadores, sin digitación intermedia.",
+"tarjetas": [
+ {"h3": "Integración SAP con Talana", "p": "Arthrex. Sincronización entre el ERP corporativo y la plataforma de personas.", "ul": ["Maestro de colaboradores y centros de costo alineados", "Flujo de datos consistente entre ambos sistemas"]},
+ {"h3": "Informe BI desde la API de Talana", "p": "Dominó. Tablero de indicadores alimentado directamente desde la API.", "ul": ["Extracción automatizada vía API", "Dotación, ausentismo y costo actualizados solos"]},
+ {"h3": "Estados de pago automatizados", "p": "ManpowerGroup. Motor de cálculo conectado a Talana.", "ul": ["Conversión automática de USD a CLP", "Comparación entre pre-cierre y cierre final", "Reglas por cliente sin reprocesos manuales"]},
+ {"h3": "Centralización contable", "p": "Estructura de asientos y centros de costo conectada a tu ERP contable."}
+],
+"faq_h2": "Sobre las integraciones",
+"faq": [
+ ["¿Se puede integrar Talana con SAP?", "Sí. Desarrollamos una integración entre SAP y Talana para Arthrex, que mantiene alineados el maestro de colaboradores y los centros de costo sin digitación intermedia."],
+ ["¿Talana tiene API?", "Sí. Usamos la API de Talana para integraciones con ERP y para alimentar tableros de BI, como el que construimos para Dominó."],
+ ["¿Integran también Buk y Rex+?", "Sí. Conectamos Buk, Talana y Rex+ con ERP contables, BI y otros sistemas vía API."],
+ ["¿Qué es la centralización contable de remuneraciones?", "Es llevar los resultados de remuneraciones a la contabilidad con la estructura de asientos y centros de costo correcta, idealmente de forma automática desde el sistema de personas."]
+],
+"relacionados": [
+ ["Integraciones y automatización", "integraciones-automatizacion.html", "Automatización y sistemas a medida."],
+ ["RH Connect", "rh-connect.html", "Talana conectado con la Dirección del Trabajo."],
+ ["Implementación Talana", "implementacion-talana.html", "Implementaciones en Chile y Perú."]
+],
+"cta_h2": "¿Sigues exportando planillas entre sistemas?",
+"cta_p": "Agenda 30 minutos sin costo. Revisamos qué sistemas tienes y cómo conectarlos."
+}
+]}
