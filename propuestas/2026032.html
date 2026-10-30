@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuesta 2026032 · Motor de cálculo de bonos variables · Papelera Dos S.A. · Pro-City</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,900;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{ --blue:#425CC7; --orange:#E36C09; --white:#FFFFFF; --black:#000000; --ink:#000000;
+    --body:rgba(0,0,0,.66); --soft:rgba(0,0,0,.45); --line:rgba(0,0,0,.12); --bg:#F4F4F6;
+    --font:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif; --max:960px; }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font); font-weight:300; font-size:17px; color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+  a{color:inherit}
+  strong,b{font-weight:500}
+  h1,h2,h3{letter-spacing:-.02em; font-weight:900}
+  h1{font-size:clamp(30px,5vw,46px); line-height:1.08; margin-bottom:16px}
+  h2{font-size:clamp(22px,3vw,30px); line-height:1.15; margin-bottom:24px}
+  h3{font-size:18px; font-weight:500; margin-bottom:8px}
+  p{color:var(--body)}
+  section{padding:56px 0; border-top:1px solid var(--line)}
+  .kicker{display:block; font-size:12px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin-bottom:14px}
+  header.top{background:var(--black); padding:14px 0}
+  header.top .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px}
+  header.top .meta{font-size:12.5px; color:rgba(255,255,255,.7)}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-weight:500; font-size:14.5px; padding:13px 22px; border-radius:4px; border:1.5px solid transparent; text-decoration:none}
+  .btn-primary{background:var(--orange); color:var(--white)}
+  .btn-outline{border-color:rgba(0,0,0,.25); color:var(--ink)}
+  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+  .opciones{display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:18px; margin-top:32px}
+  @media (max-width:760px){ .opciones{grid-template-columns:1fr} }
+  .opcion{border:1.5px solid var(--line); border-radius:8px; padding:24px; position:relative}
+  .opcion.recomendada{border-color:var(--orange); box-shadow:0 8px 24px rgba(227,108,9,.12)}
+  .opcion .sello{position:absolute; top:-12px; left:20px; background:var(--orange); color:var(--white); font-size:11px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; padding:4px 10px; border-radius:3px}
+  .opcion .nom{font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--soft)}
+  .opcion .val{font-size:30px; font-weight:900; color:var(--blue); margin-top:6px; line-height:1.1}
+  .opcion.recomendada .val{color:var(--orange)}
+  .opcion .pie{font-size:13.5px; color:var(--body); margin-top:4px}
+  .opcion ul{margin:14px 0 0 18px; font-size:14.5px; color:var(--body)}
+  .opcion li{margin-bottom:6px}
+  .nota{font-size:14px; margin-top:18px}
+  table{width:100%; border-collapse:collapse; margin-top:8px; font-size:15px}
+  th,td{padding:10px 14px; text-align:right; border-bottom:1px solid var(--line); vertical-align:top}
+  th:first-child, td:first-child{text-align:left}
+  thead th{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--soft); background:var(--bg)}
+  tr.total td{font-weight:900; font-size:16px; border-top:2px solid var(--ink); border-bottom:0}
+  table.izq td, table.izq th{text-align:left}
+  .tabla-scroll{overflow-x:auto}
+  .sub{font-size:19px; font-weight:900; margin:34px 0 10px}
+  .lista{margin:0 0 0 20px; color:var(--body); font-size:15.5px}
+  .lista li{margin-bottom:8px}
+  .riesgo{background:var(--bg); border-left:4px solid var(--orange); border-radius:4px; padding:24px 26px; margin-top:30px}
+  .riesgo h3{font-size:20px; font-weight:900; margin-bottom:10px}
+  .riesgo p, .riesgo li{font-size:15px}
+  .riesgo table{background:var(--white)}
+  .ref{font-size:12.5px; color:var(--soft); margin-top:16px}
+  .cierre{font-size:19px; font-weight:500; color:var(--ink); margin-top:28px; max-width:60ch}
+  .puntos{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:p}
+  @media (max-width:760px){ .puntos{grid-template-columns:1fr} }
+  .punto{border:1px solid var(--line); border-radius:8px; padding:20px}
+  .punto h3{font-size:16px; font-weight:900}
+  .punto h3::before{counter-increment:p; content:counter(p) ". "; color:var(--blue)}
+  .punto p{font-size:14px}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+  .chips span{background:var(--bg); border-radius:99px; padding:6px 12px; font-size:13.5px; color:var(--ink)}
+  .gantt{margin-top:12px; overflow-x:auto}
+  .g-cab, .g-fila{display:grid; grid-template-columns:minmax(220px,1.2fr) 2fr; gap:12px; align-items:center; min-width:640px}
+  .g-cab .g-barras, .g-fila .g-barras{display:grid; grid-template-columns:repeat(13,1fr); gap:2px}
+  .g-cab .sem{font-size:11px; font-weight:700; color:var(--soft); text-align:center}
+  .g-fila{padding:8px 0; border-bottom:1px solid var(--line)}
+  .g-et{font-size:14px}
+  .g-et small{display:block; font-size:12px; color:var(--orange); font-weight:500}
+  .g-barra{height:14px; border-radius:3px; background:var(--blue)}
+  .g-barra.hito{background:var(--orange)}
+  .g-fila.holgura .g-barra{background:repeating-linear-gradient(45deg,#c8cdd8,#c8cdd8 4px,#e3e6ee 4px,#e3e6ee 8px)}
+  .g-fila.holgura .g-et{color:var(--soft)}
+  .tarjetas{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media (max-width:760px){ .tarjetas{grid-template-columns:1fr} }
+  .tarjeta{border:1px solid var(--line); border-radius:8px; padding:22px}
+  .tarjeta p{font-size:14.5px; margin-top:6px}
+  .evoluciona li{list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; padding:12px 0; border-bottom:1px solid var(--line); font-size:15px}
+  .interes-pc{margin-left:auto; font:inherit; font-size:13px; font-weight:500; cursor:pointer; background:var(--white); color:var(--orange); border:1.5px solid var(--orange); border-radius:4px; padding:5px 12px}
+  .interes-pc:hover{background:var(--orange); color:var(--white)}
+  .interes-pc:disabled{cursor:default; background:var(--bg); color:var(--body); border-color:var(--line)}
+  .logos-pc{display:grid; grid-template-columns:repeat(auto-fill, minmax(130px,1fr)); gap:18px 26px; align-items:center}
+  .logos-pc img{width:100%; height:56px; object-fit:contain}
+  details{border-bottom:1px solid var(--line); padding:16px 0}
+  summary{cursor:pointer; font-weight:500; font-size:15.5px; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+ "; color:var(--blue); font-weight:900}
+  details[open] summary::before{content:"– "}
+  details p{margin-top:10px; font-size:14.5px}
+  .pasos{counter-reset:paso; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:20px}
+  @media (max-width:760px){ .pasos{grid-template-columns:1fr 1fr} }
+  .pasos div{border-top:3px solid var(--blue); background:var(--bg); border-radius:4px; padding:14px; font-size:14.5px}
+  .pasos div::before{counter-increment:paso; content:counter(paso); display:block; font-weight:900; color:var(--blue)}
+  .aceptar label{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; cursor:pointer; margin-bottom:12px}
+  .aceptar input{margin-top:3px; width:16px; height:16px; flex-shrink:0}
+  footer{background:var(--black); color:rgba(255,255,255,.6); padding:32px 0; font-size:12.5px}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="data:image/png;base64,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" alt="Pro-City" style="display:block; height:40px; width:auto">
+  <div class="meta">Propuesta 2026032 Rev. 00 · 30 de octubre del 2026 · Propuesta comercial y técnica</div>
+</div></header>
+
+<!-- 1. Portada -->
+<section style="padding-top:64px; border-top:0"><div class="wrap">
+  <span class="kicker">Propuesta comercial y técnica</span>
+  <h1>Motor de cálculo de bonos variables para Papelera Dos S.A.</h1>
+  <p style="max-width:62ch">Que cada trabajador entienda de dónde sale su bono: calculado solo, con los datos directo de sus sistemas y con el desglose en su liquidación.</p>
+  <p style="margin-top:10px">Preparado para Ximena Muñoz Cifuentes y Sandra Carmona.</p>
+  <div class="opciones">
+    <div class="opcion recomendada">
+      <span class="sello">La propuesta</span>
+      <div class="nom">Piloto · Bono de Producción</div>
+      <div class="val">467,5 UF</div>
+      <div class="pie">+ IVA · precio cerrado · ~13 semanas</div>
+      <ul>
+        <li>Parámetros editables por ustedes.</li>
+        <li>Datos directo desde Trim Papel, Power BI, Maestra Energía y BUK.</li>
+        <li>Anexo con el desglose en la liquidación.</li>
+        <li>Paralelo con meses ya pagados antes del go-live.</li>
+      </ul>
+    </div>
+    <div class="opcion">
+      <div class="nom">Operación mensual</div>
+      <div class="val">0,023 UF</div>
+      <div class="pie">+ IVA por persona procesada al mes · mínimo 12 UF</div>
+      <ul>
+        <li>Soporte y mejoras.</li>
+        <li>Nube y ejecución de cada proceso.</li>
+        <li>Parte con 3 meses de marcha blanca contra OC.</li>
+      </ul>
+    </div>
+    <div class="opcion">
+      <div class="nom">Siguientes bonos</div>
+      <div class="val">desde 60 UF</div>
+      <div class="pie">+ IVA por bono · réplica sin costo de desarrollo</div>
+      <ul>
+        <li>43 bonos informados (Corrupac 22, CPP 13, Recupac 8).</li>
+        <li>Mismo motor del piloto.</li>
+        <li>Cada uno se cotiza tras su levantamiento.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="nota">Valores netos en UF + IVA. 40 % al inicio y el resto al finalizar cada etapa. Propuesta válida por 30 días.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://calendar.app.google/4k6nLR3WYzGfWJeJ6" target="_blank" rel="noopener">Agenda la reunión de alineamiento →</a>
+    <a class="btn btn-outline" href="https://wa.me/56937669574?text=Hola%2C%20quiero%20conversar%20la%20propuesta%202026032%20del%20motor%20de%20bonos%20variables." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+  </div>
+</div></section>
+
+<!-- 2. Lo que entendimos -->
+<section><div class="wrap">
+  <span class="kicker">Lo que entendimos</span>
+  <h2>Así se calcula hoy el Bono de Producción</h2>
+  <p style="max-width:64ch">El bono se paga mes vencido: el de octubre se calcula con la información de septiembre y se aplica sobre los haberes del mes anterior. Estos son los indicadores del cuadro "Bono de Desempeño":</p>
+  <div class="tabla-scroll"><table class="izq">
+    <thead><tr><th>Concepto</th><th>Indicador</th><th>Meta</th><th>Operativo</th><th>Supervisión</th></tr></thead>
+    <tbody>
+      <tr><td>Seguridad</td><td>N° de accidentes CTP en el mes</td><td>0</td><td>—</td><td>2 %</td></tr>
+      <tr><td>Seguridad</td><td>Propuestas de mejora de seguridad</td><td>Mín. 2 al mes</td><td>4 % (junto con diálogos)</td><td>—</td></tr>
+      <tr><td>Seguridad</td><td>Diálogos de seguridad</td><td>8 al mes (2 por semana)</td><td>(incluido arriba)</td><td>—</td></tr>
+      <tr><td>Producción</td><td>Producción de 1ª calidad (Ton)</td><td>≤ 5.500 / 5.501–6.500 / 6.501–8.000 / &gt; 8.000</td><td>0 / 3 / 5 / 7 %</td><td>0 / 2 / 3 / 4 %</td></tr>
+      <tr><td>Costo</td><td>Específico energía eléctrica fábrica (MWh/Ton)</td><td>≤ 2,4</td><td>2 %</td><td>2 %</td></tr>
+      <tr><td>Costo</td><td>Específico madera (m³ssc/Ton)</td><td>≤ 2,05</td><td>1 %</td><td>1 %</td></tr>
+      <tr><td>Costo</td><td>Específico vapor (Ton vapor/Ton)</td><td>≤ 4</td><td>1 %</td><td>1 %</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="lista" style="margin-top:18px">
+    <li><b>% final = garantizado + % ganado, con tope.</b> Operativos: 20 % garantizado y 35 % máximo. Supervisión: 15 % y 25 %. En octubre resultó 33 % y 24 %; en agosto, 35 % y 23 %.</li>
+    <li><b>Ajuste por área.</b> En octubre, Máquinas Papeleras quedó en 31 % porque no cumplió las charlas de seguridad.</li>
+    <li><b>Tramos.</b> "Supervisión" son los profesionales, las jefaturas y toda el área de Gerencia de Logística y Abastecimiento; el resto son operativos. El tramo lo define un anexo firmado, no el nombre del cargo.</li>
+    <li><b>Base de cálculo según la fecha de ingreso.</b> Hasta el 31-08-2022: total de haberes con horas extra. Del 01-09-2022 al 31-08-2025: total de haberes sin horas extra. Desde el 01-09-2025: solo sueldo base.</li>
+  </ul>
+
+  <p class="sub">De dónde salen los datos, hoy a mano</p>
+  <div class="tabla-scroll"><table class="izq">
+    <thead><tr><th>Dato</th><th>Fuente actual</th></tr></thead>
+    <tbody>
+      <tr><td>Producción de 1ª calidad</td><td>ERP Trim Papel (Sandra no tiene acceso)</td></tr>
+      <tr><td>Accidentes, propuestas y diálogos</td><td>Informe del área de seguridad, por correo</td></tr>
+      <tr><td>Vapor y madera</td><td>Power BI "Performance de Producción"</td></tr>
+      <tr><td>Energía eléctrica</td><td>Archivo compartido "Maestra Energía" (energía comprada + generada, en kWh)</td></tr>
+      <tr><td>Dotación, haberes y fecha de ingreso</td><td>BUK</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:14px; max-width:64ch">El paso final: Sandra ingresa los % a mano en un Excel, asigna a cada persona su base según la fecha de ingreso, calcula el bono y lo carga en BUK como un monto cerrado. En la liquidación solo aparece "Bono de producción $XXX", sin desglose. El cuadro también se envía a los sindicatos.</p>
+
+  <p class="sub">Lo que viven hoy</p>
+  <ul class="lista">
+    <li><b>Ya hubo una multa de la Dirección del Trabajo</b> en la planta del sur: la liquidación muestra el bono como un monto cerrado y no hay anexo que explique de dónde sale. Se cursó aunque el cuadro se informa a los sindicatos. En otras fiscalizaciones solo dejaron recomendaciones: depende del fiscalizador, así que el riesgo sigue abierto.</li>
+    <li><b>La auditoría del grupo</b> del año pasado fijó como objetivo que cada trabajador entienda por sí solo de qué se compone su bono y cómo se llega al resultado.</li>
+    <li><b>Un proceso que depende de personas:</b> cinco fuentes de datos, correos, un Excel y una carga manual a BUK, sin trazabilidad ni historial de cambios.</li>
+    <li><b>El problema crece con el grupo:</b> son 43 bonos variables en tres empresas. Hacerlos a mano multiplica el riesgo de multas y el trabajo.</li>
+    <li><b>Protección de datos:</b> la nueva Ley 21.719 exige demostrar cómo se trata y se elimina la información.</li>
+  </ul>
+
+  <div class="riesgo">
+    <h3>Lo que está en juego</h3>
+    <p><b>La obligación.</b> El art. 54 bis, inciso 3°, del Código del Trabajo dice que las liquidaciones deben contener un anexo, que es parte integrante de ellas, con el monto de cada comisión, bono, premio u otro incentivo; el detalle de cada operación que le dio origen, y la forma empleada para su cálculo. La Dirección del Trabajo lo reafirmó en el Ord. N° 383 del 01-09-2026, que además señala que cambiar las metas de forma unilateral es contrario a la ley.</p>
+    <p style="margin-top:12px"><b>La multa.</b> Esta obligación no tiene una multa propia: se aplica la escala general del art. 506, según el tamaño de la empresa (pesos con la UTM de octubre 2026, $72.151):</p>
+    <div class="tabla-scroll"><table>
+      <thead><tr><th>Tamaño</th><th>Rango por infracción</th><th>Máximo aproximado</th></tr></thead>
+      <tbody>
+        <tr><td>Micro (1–9 trabajadores)</td><td>1–5 UTM</td><td>~$361 mil</td></tr>
+        <tr><td>Pequeña (10–49)</td><td>1–10 UTM</td><td>~$722 mil</td></tr>
+        <tr><td>Mediana (50–199)</td><td>2–40 UTM</td><td>~$2,9 millones</td></tr>
+        <tr><td>Grande (200 o más)</td><td>3–60 UTM</td><td>~$4,3 millones</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:14px"><b>Las multas se suman.</b> La DT multa cada infracción por separado, y en un bono como este podrían ser tres a la vez: no entregar el anexo de cálculo (art. 54 bis), no tener la fórmula del bono escrita en el contrato (art. 10 N° 4) y cambiar las metas sin un anexo de contrato (art. 11). En una empresa grande, el peor caso son 180 UTM, unos $13 millones por una sola fiscalización.</p>
+    <p style="margin-top:12px"><b>Un caso reciente.</b> En septiembre de 2026, la Corte de Valdivia mantuvo una multa de 40 UTM (~$2,9 millones) por no incluir un bono de producción en el cálculo de la semana corrida.</p>
+    <p style="margin-top:12px"><b>En un juicio, el costo suele ser mayor que la multa:</b></p>
+    <ul class="lista" style="margin-top:6px">
+      <li>El juez ordena pagar el bono con reajustes e intereses (art. 63).</li>
+      <li>Si la cláusula es ambigua, se interpreta en contra de quien la redactó (art. 1566 del Código Civil).</li>
+      <li>Si la empresa no presenta los documentos del cálculo, el juez puede dar por probadas las cifras del trabajador (art. 453 N° 5).</li>
+      <li>El trabajador puede usarlo para un autodespido (art. 171), con un recargo del 50 % en la indemnización.</li>
+    </ul>
+    <p style="margin-top:12px">Si la empresa corrige dentro de los 15 días siguientes a la notificación, la multa baja al menos un 50 % (art. 511). Corregir ayuda, pero no evita la multa ni el riesgo de juicio.</p>
+    <p class="ref">Referencias: art. 54 bis inc. 3°, 10 N° 4, 11, 63, 171, 453 N° 5, 506 y 511 del Código del Trabajo; art. 1566 del Código Civil; Ord. DT N° 383 del 01-09-2026; Corte de Apelaciones de Valdivia, septiembre de 2026. Información referencial, que no reemplaza la revisión del asesor legal de la empresa.</p>
+  </div>
+  <p class="cierre">No se trata solo de ahorrar tiempo en un Excel: hoy el bono no se puede explicar, y eso ya tuvo costo.</p>
+</div></section>
+
+<!-- 3. Lo que cubre -->
+<section><div class="wrap">
+  <span class="kicker">Lo que cubre esta propuesta</span>
+  <h2>Un motor de cálculo configurable por ustedes, conectado a sus sistemas y auditable</h2>
+  <p style="max-width:64ch; margin-bottom:24px">El piloto resuelve el Bono de Producción de Papelera Dos S.A. y deja el motor listo para los demás bonos del grupo.</p>
+  <div class="puntos">
+    <div class="punto"><h3>Levantamiento concepto por concepto</h3><p>Sesiones con Remuneraciones, operaciones y seguridad. Partimos con ventaja: la mayor parte del cálculo ya quedó documentada en la primera reunión. Resultado: una memoria de cálculo validada por ustedes.</p></div>
+    <div class="punto"><h3>Parámetros en sus manos</h3><p>Metas, tramos, %, garantizados y topes, más las asignaciones de cada persona, en un menú editable con registro de quién cambió qué. Cambiar un valor no tiene costo ni depende de un tercero.</p></div>
+    <div class="punto"><h3>Datos directo de la fuente</h3><p>Conexión con ERP Trim Papel, Power BI, Maestra Energía y BUK, más un canal ordenado para los indicadores de seguridad por área. Si TI no tiene la API a tiempo, usamos carga estructurada o extracción automática para no detener el proyecto.</p></div>
+    <div class="punto"><h3>Cada persona clasificada una sola vez</h3><p>Base A/B/C, tramo y área quedan como atributos en BUK, también para quienes entren después.</p></div>
+    <div class="punto"><h3>Cálculo automático y validado</h3><p>Replica exactamente su memoria de cálculo y avisa si faltan datos, si hay valores fuera de rango o variaciones fuertes contra el mes anterior.</p></div>
+    <div class="punto"><h3>El anexo que exige la ley</h3><p>El monto se carga en BUK con un anexo de liquidación con el monto del bono, las operaciones que lo originaron (toneladas, seguridad, energía, madera y vapor) y la forma de cálculo (% por indicador, garantizado + ganado con tope, base y su monto). Es lo que exigió la DT y lo que pidió la auditoría, más un resumen para los sindicatos.</p></div>
+    <div class="punto"><h3>Trazabilidad</h3><p>Historial de cada proceso y de cada cambio de parámetros.</p></div>
+    <div class="punto"><h3>Seguridad de la información</h3><p>El motor procesa la información y la elimina después, con evidencia. Usuarios nominativos con baja al egreso. Antes de salir en vivo pasa por la validación de seguridad de su TI.</p></div>
+    <div class="punto"><h3>Paralelo antes del go-live</h3><p>Recalculamos 2 o 3 meses ya pagados y solo salimos en vivo cuando el resultado cuadra.</p></div>
+  </div>
+  <p class="sub">Lo que reciben</p>
+  <div class="chips">
+    <span>Memoria de cálculo validada</span><span>Menú de configuración</span><span>Integraciones con las cinco fuentes</span>
+    <span>Motor de cálculo con validaciones</span><span>Atributos y plantilla de anexo en BUK</span>
+    <span>Reporte de auditoría y resumen para sindicatos</span><span>Informe del paralelo</span>
+    <span>Manuales de usuario y técnico</span><span>Capacitación a Remuneraciones</span><span>Primer proceso real acompañado</span>
+  </div>
+  <p class="sub">Lo que necesitamos de ustedes</p>
+  <ul class="lista">
+    <li>Acceso a los sistemas y a las API (TI).</li>
+    <li>Disponibilidad de Sandra, operaciones y seguridad para las sesiones.</li>
+    <li>Los cuadros y el Excel de 2 o 3 meses ya pagados, para el paralelo.</li>
+    <li>Validar la memoria de cálculo y el paralelo.</li>
+    <li>Emitir la OC.</li>
+  </ul>
+</div></section>
+
+<!-- 4. Plan de trabajo -->
+<section><div class="wrap">
+  <span class="kicker">Plan de trabajo</span>
+  <h2>Unas 13 semanas hasta el go-live, más 3 meses de marcha blanca</h2>
+  <p style="max-width:64ch">El kick-off se agenda apenas llegue la OC. Tres hitos marcan el avance: memoria de cálculo validada, paralelo cuadrado y go-live.</p>
+  <div class="gantt">
+    <div class="g-cab"><div class="g-et" style="font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--soft)">Etapa · semanas desde el kick-off</div><div class="g-barras"><span class="sem">1</span><span class="sem">2</span><span class="sem">3</span><span class="sem">4</span><span class="sem">5</span><span class="sem">6</span><span class="sem">7</span><span class="sem">8</span><span class="sem">9</span><span class="sem">10</span><span class="sem">11</span><span class="sem">12</span><span class="sem">13</span></div></div>
+<div class="g-fila"><div class="g-et">0 · Levantamiento y validación técnica<small>Memoria de cálculo validada</small></div><div class="g-barras"><span class="g-barra hito" style="grid-column:1 / 4"></span></div></div>
+<div class="g-fila"><div class="g-et">1 · Parametrización y clasificación</div><div class="g-barras"><span class="g-barra" style="grid-column:3 / 6"></span></div></div>
+<div class="g-fila"><div class="g-et">2 · Integraciones de datos<small>Depende de la API de TI</small></div><div class="g-barras"><span class="g-barra" style="grid-column:2 / 6"></span></div></div>
+<div class="g-fila"><div class="g-et">3 · Motor de cálculo y anexo</div><div class="g-barras"><span class="g-barra" style="grid-column:4 / 8"></span></div></div>
+<div class="g-fila holgura"><div class="g-et">Holgura por disponibilidad y vacaciones de verano</div><div class="g-barras"><span class="g-barra" style="grid-column:8 / 10"></span></div></div>
+<div class="g-fila"><div class="g-et">4 · Paralelo con meses reales<small>Paralelo cuadrado</small></div><div class="g-barras"><span class="g-barra hito" style="grid-column:10 / 12"></span></div></div>
+<div class="g-fila"><div class="g-et">5 · Seguridad y documentación</div><div class="g-barras"><span class="g-barra" style="grid-column:7 / 13"></span></div></div>
+<div class="g-fila"><div class="g-et">6 · Puesta en marcha<small>Go-live</small></div><div class="g-barras"><span class="g-barra hito" style="grid-column:12 / 14"></span></div></div>
+  </div>
+  <p class="nota">El go-live es el primer proceso real, calzado con el cierre mensual. Por ejemplo, con el kick-off el 23-11-2026, el go-live cae el 16-02-2027 y la marcha blanca dura hasta mayo de 2027.</p>
+</div></section>
+
+<!-- 5. Inversión -->
+<section id="inversion"><div class="wrap">
+  <span class="kicker">Propuesta económica</span>
+  <h2>Detalle de la inversión del piloto</h2>
+  <div class="tabla-scroll"><table>
+    <thead><tr><th>Etapa</th><th>HH</th><th>Valor (UF + IVA)</th></tr></thead>
+    <tbody>
+<tr><td>0 · Levantamiento y validación técnica</td><td>22</td><td>55,0</td></tr>
+<tr><td>1 · Parametrización y clasificación</td><td>22</td><td>55,0</td></tr>
+<tr><td>2 · Integraciones de datos</td><td>42</td><td>105,0</td></tr>
+<tr><td>3 · Motor de cálculo y anexo</td><td>36</td><td>90,0</td></tr>
+<tr><td>4 · Paralelo con meses reales</td><td>18</td><td>45,0</td></tr>
+<tr><td>5 · Seguridad y documentación</td><td>16</td><td>40,0</td></tr>
+<tr><td>6 · Puesta en marcha</td><td>11</td><td>27,5</td></tr>
+<tr><td>Gestión del proyecto (transversal)</td><td>20</td><td>50,0</td></tr>
+      <tr class="total"><td>Total · precio cerrado</td><td>187</td><td>467,5 UF</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sub">Condiciones de pago</p>
+  <p style="max-width:64ch">40 % al inicio, con la OC, para que el compromiso quede dentro del presupuesto 2026. El 60 % restante se factura al finalizar cada etapa, en proporción a sus HH (la gestión del proyecto va distribuida en esos montos).</p>
+  <div class="tabla-scroll"><table>
+    <thead><tr><th>Se factura</th><th>UF + IVA</th></tr></thead>
+    <tbody>
+<tr><td>Inicio, con la OC (40 %)</td><td>187,00</td></tr>
+<tr><td>Etapa 0 · Levantamiento (memoria de cálculo validada)</td><td>36,95</td></tr>
+<tr><td>Etapa 1 · Parametrización</td><td>36,95</td></tr>
+<tr><td>Etapa 2 · Integraciones</td><td>70,55</td></tr>
+<tr><td>Etapa 3 · Motor y anexo</td><td>60,47</td></tr>
+<tr><td>Etapa 4 · Paralelo (paralelo cuadrado)</td><td>30,23</td></tr>
+<tr><td>Etapa 5 · Seguridad y documentación</td><td>26,87</td></tr>
+<tr><td>Etapa 6 · Puesta en marcha (go-live)</td><td>18,48</td></tr>
+      <tr class="total"><td>Total</td><td>467,50</td></tr>
+    </tbody>
+  </table></div>
+  <p class="nota">Valores netos en UF + IVA · UF del día de facturación · pago a 10 días desde la factura, por transferencia a PRO-CITY SPA.</p>
+  <div class="riesgo" style="margin-top:22px">
+    <p style="color:var(--ink)">Como referencia: una sola fiscalización con las tres infracciones posibles puede llegar a 180 UTM (unos $13 millones) en una empresa grande, sin contar el costo de un juicio.</p>
+  </div>
+  <p class="sub">Fuera del alcance</p>
+  <ul class="lista">
+    <li>El desarrollo o la habilitación de las API por parte de TI.</li>
+    <li>Cambios en la lógica de cálculo durante el proyecto (cambiar valores sí está incluido).</li>
+    <li>Otros bonos distintos del piloto.</li>
+    <li>Cambios que haga BUK como proveedor.</li>
+    <li>Soporte 24/7.</li>
+    <li>Auditorías de seguridad externas.</li>
+  </ul>
+  <p class="nota">Horas adicionales: 2,5 UF + IVA por hora, siempre con aprobación previa de ustedes.</p>
+</div></section>
+
+<!-- 6. Operación mensual y siguientes bonos -->
+<section><div class="wrap">
+  <span class="kicker">Después del piloto</span>
+  <h2>Operación mensual y siguientes bonos</h2>
+  <p class="sub" style="margin-top:0">Operación mensual · 0,023 UF por persona procesada, mínimo 12 UF al mes</p>
+  <p style="max-width:64ch">Incluye una bolsa de soporte de 4 HH al mes (ajustes, caídas, cambios de API en las fuentes o en BUK), el servidor en la nube y la ejecución de cada proceso mensual. Parte con una marcha blanca de 3 meses contra OC; si funciona bien, se firma un contrato corto de 3 a 6 meses, extensible.</p>
+  <p style="margin-top:10px">Por ejemplo: con 520 personas o menos se paga el mínimo de 12 UF; con 900 personas serían 20,7 UF al mes.</p>
+
+  <p class="sub">Los bonos variables del grupo</p>
+  <div class="tabla-scroll"><table style="max-width:420px">
+    <thead><tr><th>Empresa</th><th>N° de bonos</th></tr></thead>
+    <tbody>
+      <tr><td>Corrupac</td><td>22</td></tr><tr><td>CPP</td><td>13</td></tr><tr><td>Recupac</td><td>8</td></tr>
+      <tr class="total"><td>Total</td><td>43</td></tr>
+    </tbody>
+  </table></div>
+  <p style="margin-top:12px; max-width:64ch">Cada bono usa el mismo motor del piloto. El desarrollo se cobra por bono, no por cantidad de personas, y el valor exacto se fija después del levantamiento de cada uno:</p>
+  <div class="tabla-scroll"><table class="izq">
+    <thead><tr><th>Tipo de bono</th><th>Qué lo define</th><th>Valor por bono (UF + IVA)</th></tr></thead>
+    <tbody>
+      <tr><td>Réplica</td><td>El mismo cálculo en otra empresa o con otros filtros</td><td>Sin costo de desarrollo</td></tr>
+      <tr><td>Simple</td><td>Reutiliza el motor, 1 o 2 fuentes de datos y reglas simples</td><td>60 – 100 (24–40 HH)</td></tr>
+      <tr><td>Medio</td><td>Necesita fuentes o reglas nuevas</td><td>100 – 200 (40–80 HH)</td></tr>
+      <tr><td>Complejo</td><td>Parecido al bono de producción</td><td>300 – 425 (120–170 HH)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="nota">Las personas que se sumen solo cambian la mensualidad (0,023 UF por persona).</p>
+
+  <p class="sub">Opciones para evolucionar <span style="font-weight:300; font-size:15px; color:var(--body)">· sin compromiso, se cotizan aparte</span></p>
+  <ul class="evoluciona">
+    <li><span>Ordenar los conceptos que hoy se pagan bajo una misma glosa antes de automatizarlos.</span><button type="button" class="interes-pc" data-interes="Ordenar conceptos bajo una misma glosa">Me interesa</button></li>
+    <li><span>Revisión legal de los bonos: la fórmula escrita en los contratos (art. 10 N° 4), los anexos de contrato cuando cambian las metas (art. 11) y el tratamiento del bono en la semana corrida. Así se cierran las otras infracciones posibles, no solo la del anexo.</span><button type="button" class="interes-pc" data-interes="Revisión legal de los bonos">Me interesa</button></li>
+    <li><span>Matriz de riesgo laboral y prevención de multas.</span><button type="button" class="interes-pc" data-interes="Matriz de riesgo laboral y prevención de multas">Me interesa</button></li>
+  </ul>
+</div></section>
+
+<!-- 7. Sin letra chica -->
+<section><div class="wrap">
+  <span class="kicker">Por qué Pro-City</span>
+  <h2>Sin letra chica</h2>
+  <div class="tarjetas">
+    <div class="tarjeta"><h3>Precio cerrado</h3><p>467,5 UF + IVA es el valor final del alcance descrito. Si en el levantamiento aparece algo nuevo, se cotiza aparte y antes de hacerlo.</p></div>
+    <div class="tarjeta"><h3>No salimos en vivo sin cuadrar</h3><p>Recalculamos 2 o 3 meses ya pagados y el go-live se da solo cuando el resultado cuadra con lo que ustedes pagaron.</p></div>
+    <div class="tarjeta"><h3>Sin amarras</h3><p>Marcha blanca de 3 meses contra OC. Si funciona, firmamos un contrato corto de 3 a 6 meses.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <span class="kicker">Clientes</span>
+  <h2>Empresas que ya confiaron en nosotros</h2>
+  <div class="logos-pc">
+<img src="https://pro-city.cl/img/clientes/airbus.webp" alt="Airbus" title="Airbus" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/manpowergroup.webp" alt="ManpowerGroup" title="ManpowerGroup" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/tvn.webp" alt="TVN" title="TVN" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/arthrex.webp" alt="Arthrex" title="Arthrex" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/assa-abloy.webp" alt="ASSA ABLOY" title="ASSA ABLOY" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/domino.webp" alt="Dominó" title="Dominó" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/aguas-pacifico.webp" alt="Aguas Pacífico" title="Aguas Pacífico" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/club-polo-san-cristobal.webp" alt="Club de Polo y Equitación San Cristóbal" title="Club de Polo y Equitación San Cristóbal" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/fit-food.webp" alt="Fit Food" title="Fit Food" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/delibest.webp" alt="DeliBest" title="DeliBest" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/multiaceros.webp" alt="MultiAceros" title="MultiAceros" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/empresas-jofre.webp" alt="Empresas Jofre" title="Empresas Jofre" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/torre.webp" alt="Torre" title="Torre" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/qatro.webp" alt="QATRO" title="QATRO" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/mutual-capacitacion.webp" alt="Mutual Capacitación" title="Mutual Capacitación" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/fluitek-marco.webp" alt="Fluitek Marco" title="Fluitek Marco" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/molino-puente-alto.webp" alt="Molino Puente Alto" title="Molino Puente Alto" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/alsan.webp" alt="Alsan E-Commerce" title="Alsan E-Commerce" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/cemco-kosangas.webp" alt="Cemco Kosangas" title="Cemco Kosangas" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/comercial-castro.webp" alt="Comercial Castro" title="Comercial Castro" loading="lazy">
+<img src="https://pro-city.cl/img/clientes/grupo-plaenge.webp" alt="Grupo Plaenge" title="Grupo Plaenge" loading="lazy">
+  </div>
+</div></section>
+
+<!-- 8. Preguntas -->
+<section><div class="wrap">
+  <span class="kicker">Preguntas frecuentes</span>
+  <h2>Antes de que preguntes</h2>
+<details><summary>¿Y si TI no alcanza a habilitar la API?</summary><p>El proyecto no se detiene. Mientras TI la prepara, avanzamos con el levantamiento, la configuración y BUK. Si no llega a tiempo, usamos carga estructurada o extracción automática y cambiamos a la API cuando esté lista.</p></details>
+<details><summary>¿Qué exige exactamente la ley?</summary><p>El art. 54 bis inciso 3° del Código del Trabajo pide que la liquidación incluya un anexo con el monto de cada bono, las operaciones que lo originaron y la forma de cálculo. La DT lo reafirmó en el Ord. N° 383 de septiembre de 2026. El anexo que genera el motor trae exactamente esos tres elementos.</p></details>
+<details><summary>¿Podemos cambiar porcentajes, metas o tramos nosotras mismas?</summary><p>Sí. Quedan en un menú de configuración, con registro de cada cambio. Ojo: según la DT, las metas pactadas no se pueden cambiar de forma unilateral, así que un cambio de metas se acuerda y se respalda con un anexo de contrato; el registro del motor les sirve de respaldo. Si cambia la lógica del cálculo, no un valor, lo evaluamos y lo cotizamos aparte.</p></details>
+<details><summary>¿Qué pasa con nuestros datos?</summary><p>El motor procesa la información y la elimina después, con evidencia, en línea con la nueva Ley 21.719 de Protección de Datos Personales. Antes de salir en vivo pasa por la validación de seguridad de su TI.</p></details>
+<details><summary>¿Por qué cobran por bono y no por persona?</summary><p>Porque lo que cuesta es construir el motor de cada bono, no la cantidad de personas. Si el mismo cálculo se replica en otra empresa del grupo, no se vuelve a cobrar el desarrollo. Las personas solo influyen en la mensualidad.</p></details>
+<details><summary>¿Cómo se verá en BUK y en la liquidación?</summary><p>El monto se carga en BUK y cada trabajador recibe un anexo con el desglose: seguridad, producción, costos y el % aplicado sobre su base.</p></details>
+<details><summary>¿Han hecho algo parecido?</summary><p>Sí. Con ManpowerGroup, cliente nuestro desde hace cuatro años, construimos un motor que calcula sus estados de pago, donde un campo define el camino de cálculo de cada cliente: la misma lógica que usaremos con las bases A/B/C. Además, somos partner oficial de BUK.</p></details>
+<details><summary>¿Tenemos que firmar un contrato largo?</summary><p>No. Partimos con marcha blanca contra OC y, si funciona, un contrato corto de 3 a 6 meses.</p></details>
+</div></section>
+
+<!-- 9. ¿Avanzamos? -->
+<section><div class="wrap">
+  <span class="kicker">Siguiente paso</span>
+  <h2>¿Avanzamos?</h2>
+  <p style="max-width:62ch">Si les hace sentido, emiten la OC de marcha blanca y agendamos el kick-off. El 40 % inicial se factura con la OC, así el proyecto queda dentro del presupuesto 2026.</p>
+  <div class="pasos"><div>Validar la propuesta.</div><div>Reunión de alineamiento con Ximena, Sandra y TI.</div><div>OC de marcha blanca.</div><div>Kick-off y Etapa 0.</div></div>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://calendar.app.google/4k6nLR3WYzGfWJeJ6" target="_blank" rel="noopener">Agenda la reunión de alineamiento →</a>
+    <a class="btn btn-outline" href="https://wa.me/56937669574?text=Hola%2C%20quiero%20conversar%20la%20propuesta%202026032%20del%20motor%20de%20bonos%20variables." target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    <a class="btn btn-outline" href="mailto:crebolledo@procity.live">crebolledo@procity.live</a>
+  </div>
+</div></section>
+
+<!-- 10. Aceptación -->
+<section id="aceptacion" style="border-bottom:1px solid var(--line)"><div class="wrap">
+  <span class="kicker">Aceptación</span>
+  <h2>Acepta esta cotización</h2>
+  <div id="bloque-aceptar" class="aceptar">
+    <p style="max-width:64ch; margin-bottom:18px">Se acepta el <b>Piloto Bono de Producción (467,5 UF + IVA)</b> y la <b>operación mensual (0,023 UF por persona al mes, mínimo 12 UF)</b>. Los siguientes bonos son referenciales y se cotizan aparte.</p>
+    <label><input type="checkbox" id="chk-condiciones"> <span>Acepto las condiciones de pago: 40 % al inicio, con la OC, y el resto al finalizar cada etapa.</span></label>
+    <label><input type="checkbox" id="chk-contacto"> <span>Entiendo que los valores son netos, en UF + IVA, con la UF del día de facturación.</span></label>
+    <button type="button" class="btn btn-primary" id="btn-aceptar" disabled style="opacity:.5; cursor:not-allowed; border:none; margin-top:8px">Aceptar cotización →</button>
+  </div>
+  <div id="bloque-confirmado" hidden style="background:var(--bg); border-left:4px solid var(--orange); padding:22px 24px">
+    <p style="color:var(--ink); font-weight:500; margin-bottom:6px">✓ Cotización aceptada</p>
+    <p id="txt-confirmado" style="font-size:14.5px"></p>
+    <div class="cta-row" style="margin-top:16px"><a class="btn btn-primary" id="link-confirmar-correo" href="#">Confirmar por correo →</a></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>Pro-City SpA · RUT 77.205.627-3 · Morandé 835, oficina 518, Santiago · Partner oficial de BUK</div>
+  <div>Propuesta 2026032 Rev. 00 · emitida el 30 de octubre del 2026 · válida por 30 días</div>
+</div></footer>
+
+<script>
+(function () {
+  var BASE = {"token": "pc-j-J__ek-Rl8ksIXBxMjPgmvx", "folio": "2026032", "cliente": "Papelera Dos S.A.", "contacto": "Ximena Muñoz Cifuentes y Sandra Carmona", "email": "xmunoz@coipsa.cl, scarmona@cpp.cl", "sistema": "Motor de bonos variables", "url": "https://pro-city.cl/propuestas/2026032.html", "opciones": {"1": "467,5", "2": "0,023 UF/persona/mes (mín. 12 UF)", "3": ""}, "precio": "Piloto 467,5 UF + IVA · operación 0,023 UF por persona al mes (mínimo 12 UF)"};
+  var URL_SEG = "https://script.google.com/macros/s/AKfycbxnCoriormg_AiaYpqfiifZlXCsNZ4HrudCWof23qqCvf2bOm-0PYLyhA4dSblyj8pS/exec";
+  var chk1 = document.getElementById("chk-condiciones"), chk2 = document.getElementById("chk-contacto"), btn = document.getElementById("btn-aceptar");
+  function actualizar(){ var listo = chk1.checked && chk2.checked; btn.disabled = !listo; btn.style.opacity = listo ? "1" : ".5"; btn.style.cursor = listo ? "pointer" : "not-allowed"; }
+  chk1.addEventListener("change", actualizar); chk2.addEventListener("change", actualizar);
+
+  // solo avisa desde la página publicada y nunca desde el navegador de Pro-City (?interno)
+  var publicada = /^https?:$/.test(location.protocol);
+  var interno = /[?&]interno\b/.test(location.search);
+  try { if (interno) localStorage.setItem("pc_interno", "1"); if (localStorage.getItem("pc_interno")) interno = true; } catch (e) {}
+  function avisar(accion, extra){
+    if (!publicada || interno) return false;
+    var d = {}, k; for (k in BASE) d[k] = BASE[k]; for (k in extra) d[k] = extra[k]; d.accion = accion;
+    var cuerpo = JSON.stringify(d);
+    try { if (navigator.sendBeacon && navigator.sendBeacon(URL_SEG, new Blob([cuerpo], { type: "text/plain;charset=utf-8" }))) return true; } catch (e) {}
+    try { fetch(URL_SEG, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain;charset=utf-8" }, body: cuerpo }); return true; } catch (e) { return false; }
+  }
+  try { var clave = "pc_abierta_" + BASE.folio; if (!sessionStorage.getItem(clave)) { sessionStorage.setItem(clave, "1"); avisar("apertura", {}); } } catch (e) { avisar("apertura", {}); }
+
+  // "Me interesa" en las opciones para evolucionar
+  [].forEach.call(document.querySelectorAll("[data-interes]"), function (b) {
+    b.addEventListener("click", function () {
+      if (b.disabled) return;
+      var ok = avisar("interes", { servicio: b.getAttribute("data-interes"), fecha: new Date().toLocaleString("es-CL") });
+      b.disabled = true;
+      b.textContent = ok ? "✓ Te contactaremos" : (interno ? "Vista interna: no se registró" : "Escríbenos a contacto@procity.live");
+    });
+  });
+
+  function mostrarConfirmado(m){ document.getElementById("bloque-aceptar").hidden = true; document.getElementById("txt-confirmado").textContent = m; document.getElementById("bloque-confirmado").hidden = false; }
+  btn.addEventListener("click", function () {
+    if (btn.disabled) return;
+    var fecha = new Date().toLocaleString("es-CL");
+    var asunto = encodeURIComponent("Acepto la propuesta " + BASE.folio + " - Motor de bonos variables - " + BASE.cliente);
+    var cuerpo = encodeURIComponent("Confirmo la aceptación de la propuesta " + BASE.folio + ": " + BASE.precio + ", con 40 % al inicio y el resto al finalizar cada etapa.\n\nCliente: " + BASE.cliente + "\nFecha: " + fecha);
+    document.getElementById("link-confirmar-correo").href = "mailto:crebolledo@procity.live?subject=" + asunto + "&body=" + cuerpo;
+    if (avisar("aceptar_propuesta", { opcion: "Piloto Bono de Producción + operación mensual", precio: BASE.precio, fecha: fecha })) {
+      mostrarConfirmado("¡Gracias! Registramos su aceptación del piloto y la operación mensual. Los contactaremos para coordinar la OC de marcha blanca y el kick-off. Si quieren, también pueden dejar un respaldo por escrito:");
+    } else {
+      mostrarConfirmado("Para dejar la aceptación confirmada, envíennos el correo con el botón de abajo; ya va redactado." + (interno ? " (Vista interna de Pro-City: esta aceptación no se registró.)" : ""));
+    }
+  });
+})();
+</script>
+</body>
+</html>
