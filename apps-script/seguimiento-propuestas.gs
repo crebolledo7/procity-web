@@ -220,6 +220,49 @@ function armarResumen(ss) {
   r.setColumnWidth(1, 220);
 }
 
+/* ---------- montos en pesos (para el dashboard) ---------- */
+// "181,6" -> 181.6 ; "1.234,5" -> 1234.5 ; números quedan igual; texto sin número -> null
+function aNumero(v) {
+  if (typeof v === "number") return v;
+  const m = String(v == null ? "" : v).replace(/\./g, "").replace(",", ".").match(/-?\d+(\.\d+)?/);
+  return m ? Number(m[0]) : null;
+}
+
+// Valor de la UF de un día, desde mindicador.cl (publica los valores del Banco Central).
+function valorUF(fecha) {
+  const f = Utilities.formatDate(fecha, "America/Santiago", "dd-MM-yyyy");
+  const cache = CacheService.getScriptCache();
+  const guardado = cache.get("uf-" + f);
+  if (guardado) return Number(guardado);
+  const r = JSON.parse(UrlFetchApp.fetch("https://mindicador.cl/api/uf/" + f, { muteHttpExceptions: true }).getContentText());
+  const v = r && r.serie && r.serie[0] && r.serie[0].valor;
+  if (!v) throw new Error("mindicador.cl no tiene la UF del " + f);
+  cache.put("uf-" + f, String(v), 21600);
+  return v;
+}
+
+// Con UF Neto en la fila: pone Fecha UF y Valor UF día (si faltan) y calcula
+// Neto $. forzar = true recalcula aunque ya tenga montos (cuando se acepta).
+function completarMontos(hoja, fila, forzar) {
+  try {
+    const col = n => COLUMNAS.indexOf(n) + 1;
+    const g = n => hoja.getRange(fila, col(n));
+    const ufNeto = aNumero(g("UF Neto").getValue());
+    if (ufNeto === null) return;
+    let fechaUF = g("Fecha UF").getValue();
+    let valor = aNumero(g("Valor UF día").getValue());
+    if (!valor || forzar) {
+      fechaUF = forzar || !(fechaUF instanceof Date) ? new Date() : fechaUF;
+      valor = valorUF(fechaUF);
+      g("Fecha UF").setValue(fechaUF);
+      g("Valor UF día").setValue(valor);
+    }
+    if (forzar || g("Neto $").getValue() === "") g("Neto $").setValue(Math.round(ufNeto * valor));
+  } catch (err) {
+    console.warn("completarMontos fila " + fila + ": " + err);   // sin UF del día no se frena el registro
+  }
+}
+
 /* ---------- arreglos después de unificar (una vez) ---------- */
 // Rev. como "00", fecha de TEK y tildes que llegaron dañadas (�) a la
 // planilla antes de unificar, por registros hechos desde la terminal.
@@ -242,6 +285,12 @@ function ajustesFinales() {
   const folios = hoja.getRange(2, 1, hoja.getLastRow() - 1, 1).getValues().map(r => String(r[0]).trim());
   const iTek = folios.indexOf("2026031");
   if (iTek >= 0 && !hoja.getRange(iTek + 2, col("Fecha")).getValue()) hoja.getRange(iTek + 2, col("Fecha")).setValue(new Date("2026-10-19T12:00:00"));
+  // montos de las propuestas que se registraron sin ellos (opción recomendada)
+  [["2026031", 181.6], ["2026032", 467.5]].forEach(([folio, uf]) => {
+    const i = folios.indexOf(folio);
+    if (i >= 0 && hoja.getRange(i + 2, col("UF Neto")).getValue() === "") hoja.getRange(i + 2, col("UF Neto")).setValue(uf);
+  });
+  folios.forEach((f, i) => completarMontos(hoja, i + 2, false));
   const restantes = hoja.getDataRange().getValues().flat().filter(v => typeof v === "string" && v.indexOf("�") >= 0).length;
   return `Tildes corregidas: ${cambios}. Celdas que siguen con �: ${restantes}.`;
 }
@@ -322,6 +371,11 @@ function aceptar(d) {
   hoja.getRange(fila, col("Opción aceptada")).setValue(d.opcion || "");
   hoja.getRange(fila, col("Precio aceptado (UF)")).setValue(d.precio || "");
   hoja.getRange(fila, col("Fecha aceptación")).setValue(ahora);
+  const aceptado = aNumero(d.precio);
+  if (aceptado !== null) {   // el monto del libro pasa a ser el que el cliente aceptó
+    hoja.getRange(fila, col("UF Neto")).setValue(aceptado);
+    completarMontos(hoja, fila, true);
+  }
 
   MailApp.sendEmail({
     to: CORREO_AVISOS,
@@ -500,6 +554,7 @@ function filaDe(d) {
       hoja.getRange(fila, k).setValue(v);
     }
   });
+  completarMontos(hoja, fila, false);
   return { hoja, fila, col };
 }
 
