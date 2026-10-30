@@ -1,0 +1,228 @@
+{
+ "guias": [
+  {
+   "slug": "blog-registro-anexos-contrato-dt",
+   "title": "Registro de anexos de contrato en la DT: plazo | Pro-City",
+   "desc": "Cómo registrar un anexo de contrato en la DT: plazo de 15 días hábiles, requisito del contrato registrado, paso a paso en Mi DT y qué revisar al terminar.",
+   "h1": "Registro de anexos de contrato en la DT: plazo y cómo hacerlo",
+   "respuesta_corta": "Todo anexo de contrato firmado por la empresa y el trabajador debe registrarse en el sitio de la Dirección del Trabajo (DT) dentro de los 15 días hábiles siguientes a su firma. Se hace en el portal Mi DT, en Registro electrónico laboral, y solo se puede si el contrato original ya está registrado.",
+   "secciones": [
+    {
+     "h2": "¿Qué es un anexo de contrato y por qué se registra en la DT?",
+     "parrafos": [
+      "Un anexo es un documento que cambia o agrega algo al contrato de trabajo que ya existe. Por ejemplo, un cambio de sueldo, de cargo, de jornada o de lugar de trabajo, o la renovación de un contrato a plazo. Debe ir firmado por el trabajador y por la empresa.",
+      "Desde la Ley 21.327, que modernizó la Dirección del Trabajo, los empleadores deben registrar en el sitio de la DT los contratos de trabajo y también sus modificaciones. Esta obligación está en el artículo 9 bis del Código del Trabajo y se detalla en el Decreto Supremo N° 14 de 2023, que regula el Registro Electrónico Laboral. En simple: la DT quiere tener una copia al día de lo que realmente pactaron empresa y trabajador."
+     ]
+    },
+    {
+     "h2": "¿Cuál es el plazo para registrar un anexo?",
+     "parrafos": [
+      "Según la DT y ChileAtiende, el anexo se debe registrar dentro de los 15 días hábiles siguientes a su firma. El plazo corre desde que ambas partes lo suscriben, no desde que el cambio empieza a aplicarse ni desde que RRHH lo archiva.",
+      "En la práctica, el riesgo está en los anexos que se firman en papel o por correo y quedan en una carpeta esperando. Si la empresa firma muchos anexos al mismo tiempo, por ejemplo en un reajuste general de sueldos, conviene planificar la carga desde el día de la firma para no pasarse del plazo."
+     ]
+    },
+    {
+     "h2": "¿Qué necesitas antes de empezar?",
+     "parrafos": [
+      "Las fuentes oficiales piden tres cosas. Si falta la primera, el sistema no te dejará registrar el anexo:"
+     ],
+     "lista": [
+      "Que el contrato de trabajo del trabajador ya esté registrado en el sitio de la DT. Si no lo está, primero hay que registrar el contrato.",
+      "El anexo firmado por ambas partes, trabajador y empleador.",
+      "Si la empresa es persona jurídica, tener habilitado al menos un representante laboral electrónico en el portal Mi DT. Esa persona es quien entra con su ClaveÚnica."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "Paso a paso: cómo registrar un anexo en Mi DT",
+     "parrafos": [
+      "Estos son los pasos que indica la Dirección del Trabajo:"
+     ],
+     "lista": [
+      "El representante laboral electrónico de la empresa entra a Mi DT (midt.dirtrab.cl) con su ClaveÚnica.",
+      "Selecciona el perfil Empleador.",
+      "Hace clic en Registro electrónico laboral y luego en Registro de anexo de contrato de trabajo.",
+      "Elige al trabajador y sigue los pasos que muestra el sistema para ingresar la información del anexo.",
+      "Antes de confirmar, revisa que los datos coincidan con el documento firmado."
+     ],
+     "lista_numerada": true
+    },
+    {
+     "h2": "¿Qué hacer con el comprobante y qué pasa si no se registra?",
+     "parrafos": [
+      "Las fichas oficiales no explican en detalle qué comprobante entrega el sistema al registrar un anexo. Lo prudente es guardar la constancia o pantalla de confirmación que muestre Mi DT, junto con el anexo firmado, en la carpeta del trabajador. Así, si la DT fiscaliza o un trabajador reclama, puedes demostrar qué registraste y cuándo.",
+      "Sobre las consecuencias, las páginas de la DT y ChileAtiende no indican una multa específica para el anexo no registrado. Lo que sí es claro es que se trata de una obligación legal, por lo que no cumplirla puede ser observado en una fiscalización. Además, deja el registro de la DT desactualizado: la DT ve un contrato que ya no refleja la realidad, y eso complica después otros trámites, como el registro del término de contrato.",
+      "Si tienes dudas sobre un caso puntual, la DT atiende consultas en suac.dt.gob.cl y en el 600 450 4000."
+     ]
+    },
+    {
+     "h2": "¿Cómo evitar que se acumulen anexos sin registrar?",
+     "parrafos": [
+      "El problema rara vez es un anexo aislado. Lo común es que, entre contratos nuevos, renovaciones y cambios de sueldo, nadie sepa con certeza qué está registrado en la DT y qué no. Revisar trabajador por trabajador en Mi DT toma mucho tiempo.",
+      "Una buena práctica es cruzar cada mes lo que tienes en tu sistema de remuneraciones con lo que aparece en el Registro Electrónico Laboral. Si tu empresa usa Talana o Buk, RH Connect, el software que desarrollamos en Pro-City, hace esa comparación por ti: muestra qué contratos y anexos faltan o están desactualizados en la DT, y permite subirlos en lote. Tú decides qué se sube, y el sistema guarda el comprobante de cada documento. Si el portal de la DT falla, reintenta y sigue donde quedó. Puedes conocerlo en https://pro-city.cl/rh-connect ."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Cuántos días tengo para registrar un anexo de contrato en la DT?",
+     "Tienes 15 días hábiles desde que el anexo fue firmado por el trabajador y la empresa, según la Dirección del Trabajo."
+    ],
+    [
+     "¿Puedo registrar un anexo si el contrato no está registrado en la DT?",
+     "No. La DT exige que el contrato de trabajo ya esté registrado en su sitio. Primero registra el contrato y después el anexo."
+    ],
+    [
+     "¿Quién puede registrar los anexos de una empresa en Mi DT?",
+     "Si la empresa es persona jurídica, debe hacerlo un representante laboral electrónico habilitado en Mi DT, que entra con su ClaveÚnica y el perfil Empleador."
+    ],
+    [
+     "¿Hay que registrar la renovación de un contrato a plazo fijo?",
+     "La renovación o prórroga suele formalizarse con un anexo que modifica el contrato, y las modificaciones deben registrarse en la DT. Si tienes dudas con un caso puntual, consulta a la DT o a un abogado laboral."
+    ]
+   ],
+   "fuentes": [
+    {
+     "titulo": "Dirección del Trabajo: Registro de anexo de contrato",
+     "url": "https://dt.gob.cl/portal/1626/w3-article-121615.html"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de anexo de contrato",
+     "url": "https://www.chileatiende.gob.cl/fichas/102209-registro-de-anexo-de-contrato"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"
+    },
+    {
+     "titulo": "Dirección del Trabajo: ORD. N° 1074 de 2023 sobre registro de contratos",
+     "url": "https://dt.gob.cl/legislacion/1624/w3-article-124675.html"
+    },
+    {
+     "titulo": "Ley 21.327 sobre modernización de la Dirección del Trabajo (BCN)",
+     "url": "https://www.bcn.cl/leychile/navegar?idNorma=1158983"
+    }
+   ],
+   "linkedin": "¿Firmaste un anexo de contrato y quedó en una carpeta? Tienes 15 días hábiles para registrarlo en la DT.\n\nEn Pro-City vemos esto todos los meses: reajustes de sueldo, cambios de jornada o renovaciones que se firman bien, pero que nunca llegan al Registro Electrónico Laboral de la Dirección del Trabajo. Y hay un detalle que muchos no saben: si el contrato original no está registrado, el sistema no te deja registrar el anexo.\n\nPor eso preparamos una guía simple, pensada para jefaturas de RRHH, con:\n\n1. Qué es un anexo y por qué la DT lo pide.\n2. El plazo de 15 días hábiles y desde cuándo se cuenta.\n3. Qué necesitas antes de entrar a Mi DT.\n4. El paso a paso para registrarlo.\n5. Cómo evitar que se acumulen anexos pendientes.\n\nTodo basado en lo que dicen la DT y ChileAtiende, sin letra chica.\n\nSi en tu empresa no tienen claro cuántos anexos faltan por registrar, esta guía es un buen punto de partida.\n\nLéela aquí: https://pro-city.cl/blog-registro-anexos-contrato-dt\n\n#RecursosHumanos #DireccionDelTrabajo #Remuneraciones"
+  },
+  {
+   "slug": "blog-registrar-termino-contrato-finiquito-dt",
+   "title": "Cómo registrar término y finiquito en la DT | Pro-City",
+   "desc": "Registro del término de contrato, carta de aviso con copia a la Inspección y finiquito electrónico en Mi DT: qué es cada trámite, sus plazos y cómo se hacen.",
+   "h1": "Cómo registrar el término de contrato y el finiquito en la DT",
+   "respuesta_corta": "Cuando termina una relación laboral hay tres trámites distintos ante la Dirección del Trabajo: enviar copia de la carta de aviso de despido a la Inspección, registrar el término del contrato en el Registro Electrónico Laboral y otorgar el finiquito, que puede hacerse en forma electrónica en Mi DT. Cada uno tiene su propio plazo, y el finiquito debe otorgarse y su pago ponerse a disposición dentro de 10 días hábiles desde la separación del trabajador.",
+   "secciones": [
+    {
+     "h2": "¿Cuáles son los trámites ante la DT cuando termina un contrato?",
+     "parrafos": [
+      "Es común pensar que con el finiquito se cierra todo, pero no es así. Son trámites distintos, con plazos distintos, y cumplir uno no reemplaza a los otros:"
+     ],
+     "lista": [
+      "Carta de aviso de término: se entrega al trabajador y se envía copia a la Inspección del Trabajo. Se puede ingresar la copia en Mi DT.",
+      "Registro del término de la relación laboral: se informa en el Registro Electrónico Laboral de la DT que el contrato terminó. Lo exige el artículo 9 bis del Código del Trabajo, incorporado por la Ley 21.327, y es obligatorio desde el 8 de junio de 2023 según ChileAtiende.",
+      "Finiquito: el documento donde se dejan claros los pagos por el término. Debe ratificarse ante un ministro de fe o en forma electrónica en Mi DT."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "¿Cómo se envía la carta de aviso y su copia a la Inspección?",
+     "parrafos": [
+      "Según el artículo 162 del Código del Trabajo y ChileAtiende, la carta se debe entregar al trabajador personalmente o por correo certificado al domicilio que aparece en el contrato. La copia que se ingresa en el sitio de la DT no reemplaza esa entrega al trabajador.",
+      "Los plazos que informa ChileAtiende para la carta son: 3 días hábiles desde la separación para las causales del artículo 159 números 4 y 5 y las del artículo 160; 6 días hábiles en caso fortuito o fuerza mayor; y, para necesidades de la empresa o desahucio, aviso con al menos 30 días de anticipación, o pagar una indemnización sustitutiva equivalente a un mes de remuneración. La copia a la Inspección va dentro del mismo plazo.",
+      "Para ingresar la copia: entra a Mi DT con ClaveÚnica, elige el perfil Empleador, haz clic en Carta electrónica de aviso de despido y sigue las indicaciones."
+     ]
+    },
+    {
+     "h2": "¿Cómo y cuándo registrar el término en el Registro Electrónico Laboral?",
+     "parrafos": [
+      "Requisito clave: el contrato debe estar registrado antes en la DT. Si nunca se registró, primero hay que hacerlo. Los plazos para registrar el término, según ChileAtiende, dependen de la causal:"
+     ],
+     "lista": [
+      "Artículo 159 números 1, 2 y 3 (mutuo acuerdo, renuncia, muerte del trabajador): 10 días hábiles desde el término.",
+      "Artículo 159 números 4 y 5 (vencimiento del plazo, conclusión de la obra) y cualquier causal del artículo 160: 3 días hábiles desde el término.",
+      "Artículo 159 número 6 (caso fortuito o fuerza mayor): 6 días hábiles desde el término.",
+      "Artículo 161 (necesidades de la empresa o desahucio): al mismo tiempo que la carta de aviso.",
+      "Artículo 163 bis (liquidación de la empresa): 6 días hábiles desde la resolución de liquidación."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "Paso a paso para registrar el término en Mi DT",
+     "parrafos": [
+      "ChileAtiende indica que, en caso de autodespido o despido indirecto, el registro se hace una vez que exista sentencia judicial definitiva. Para los demás casos, los pasos son:"
+     ],
+     "lista": [
+      "Verifica que el contrato esté registrado en el sitio de la DT.",
+      "Entra a Mi DT con ClaveÚnica (si la empresa es persona jurídica, debe hacerlo un representante laboral electrónico habilitado).",
+      "Selecciona el perfil Empleador.",
+      "Elige Registro electrónico laboral y luego Registro de término de contrato.",
+      "Selecciona al trabajador y sigue los pasos del sistema.",
+      "Revisa bien los datos antes de confirmar: según ChileAtiende, un registro confirmado no se puede editar ni eliminar.",
+      "Guarda la confirmación que llega a tu correo electrónico."
+     ],
+     "lista_numerada": true
+    },
+    {
+     "h2": "¿Cómo funciona el finiquito electrónico en Mi DT?",
+     "parrafos": [
+      "Según la DT, el finiquito debe otorgarse y su pago ponerse a disposición del trabajador dentro de 10 días hábiles desde su separación (artículo 177 del Código del Trabajo). Puede ratificarse en la Inspección del Trabajo, ante notario u otro ministro de fe, o en forma electrónica en Mi DT.",
+      "Para el finiquito electrónico, la empresa entra a Mi DT, perfil Empleador, Contratos de trabajo y despido, Finiquito laboral electrónico, y genera la propuesta. ChileAtiende pide, entre otros requisitos, tener las cotizaciones pagadas íntegramente vía Previred y cuenta bancaria vigente, y que el trabajador haya sido contratado desde el 1 de enero de 2011 y tenga cuenta bancaria en Chile.",
+      "El trabajador recibe un correo, revisa la propuesta en Mi DT y puede aceptarla, aceptarla con reserva de derechos o rechazarla. Si la rechaza, la empresa debe ponerlo a disposición ante la Inspección, un notario u otro ministro de fe. Si acepta, la empresa tiene 5 días hábiles desde la ratificación para pagar; si no paga, se emite un acta que el trabajador puede cobrar en tribunales."
+     ]
+    },
+    {
+     "h2": "¿Qué errores conviene evitar?",
+     "parrafos": [
+      "El error más frecuente que vemos es dar por cerrado el caso con el finiquito y olvidar el registro del término. El resultado: el trabajador ya no está en la empresa, pero en la DT su contrato sigue vigente. Si usas Talana o Buk, RH Connect, el software de Pro-City, detecta estos finiquitos desalineados (trabajador finiquitado en tu sistema que sigue vigente en la DT), te muestra qué falta y permite subir en lote contratos, anexos y finiquitos, guardando el comprobante de cada uno. Más información en https://pro-city.cl/rh-connect .",
+      "Cada término tiene su causal, su carta y sus plazos, y un error puede terminar en un juicio. Si tienes un despido delicado o un finiquito en disputa, nuestro equipo de abogados laborales puede ayudarte: https://pro-city.cl/abogados-laborales-empresas ."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿El finiquito reemplaza el registro de término de contrato en la DT?",
+     "No. Son trámites distintos. El registro del término se hace en el Registro Electrónico Laboral con su propio plazo, aunque el finiquito se haya firmado o ratificado."
+    ],
+    [
+     "¿Cuántos días tengo para registrar el término de contrato en la DT?",
+     "Depende de la causal: 10, 3 o 6 días hábiles, o al mismo tiempo que la carta de aviso si es por necesidades de la empresa o desahucio. ChileAtiende tiene la tabla completa."
+    ],
+    [
+     "¿Cuál es el plazo para pagar el finiquito?",
+     "El finiquito debe otorgarse y su pago ponerse a disposición dentro de 10 días hábiles desde la separación del trabajador. En el finiquito electrónico, la empresa paga dentro de 5 días hábiles desde la ratificación."
+    ],
+    [
+     "¿Puedo corregir un registro de término mal hecho en Mi DT?",
+     "Según ChileAtiende, una vez confirmado el registro no se puede editar ni eliminar en el sistema, por eso conviene revisar todo antes. Si ya ocurrió, consulta a la DT en suac.dt.gob.cl o al 600 450 4000."
+    ]
+   ],
+   "fuentes": [
+    {
+     "titulo": "ChileAtiende: Registro de término de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99374"
+    },
+    {
+     "titulo": "ChileAtiende: Carta electrónica de aviso de despido",
+     "url": "https://www.chileatiende.gob.cl/fichas/1477-carta-electronica-de-aviso-de-despido"
+    },
+    {
+     "titulo": "ChileAtiende: Ratificación de un finiquito de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/1393-ratificacion-de-un-finiquito-de-trabajo"
+    },
+    {
+     "titulo": "Dirección del Trabajo: plazo para otorgar el finiquito",
+     "url": "https://dt.gob.cl/portal/1628/w3-article-60613.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: ORD. N° 4005 de 2019 sobre comunicación de término de contrato",
+     "url": "https://dt.gob.cl/legislacion/1624/w3-article-117444.html"
+    },
+    {
+     "titulo": "Ley 21.327 sobre modernización de la Dirección del Trabajo (BCN)",
+     "url": "https://www.bcn.cl/leychile/navegar?idNorma=1158983"
+    }
+   ],
+   "linkedin": "Firmar el finiquito no cierra el caso en la DT.\n\nEn Pro-City lo vemos seguido: el trabajador ya se fue, el finiquito está pagado, pero en el Registro Electrónico Laboral de la Dirección del Trabajo su contrato sigue vigente. ¿La razón? Faltó registrar el término de la relación laboral, que es un trámite aparte.\n\nCuando termina un contrato hay tres trámites distintos ante la DT:\n\n1. La carta de aviso, con copia a la Inspección del Trabajo.\n2. El registro del término en el Registro Electrónico Laboral, con plazos que van según la causal.\n3. El finiquito, que hoy se puede ratificar en forma electrónica en Mi DT.\n\nCada uno tiene su propio plazo, y cumplir uno no reemplaza a los otros.\n\nArmamos una guía simple para jefaturas de RRHH que explica cada trámite, sus plazos y el paso a paso, basada solo en lo que dicen la DT y ChileAtiende.\n\nLéela aquí: https://pro-city.cl/blog-registrar-termino-contrato-finiquito-dt\n\n#RecursosHumanos #DireccionDelTrabajo #Finiquito"
+  }
+ ]
+}

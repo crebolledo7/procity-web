@@ -1,0 +1,198 @@
+{"guias":[
+{
+"slug": "blog-portal-dt-caido-que-hacer",
+"title": "Portal de la DT caído: qué hacer a tiempo | Pro-City",
+"desc": "Si el portal de la DT falla y no puedes registrar contratos, anexos o términos, pide el Certificado de Indisponibilidad Técnica. Te contamos cómo y qué guardar.",
+"h1": "El portal de la DT se cayó: qué hacer para no quedar fuera de plazo",
+"respuesta_corta": "Si no puedes entrar al Registro Electrónico Laboral o no te deja registrar por una falla del sitio de la DT, pide el Certificado de Indisponibilidad Técnica en indisponibilidad.dt.gob.cl con tu ClaveÚnica. El certificado sirve como respaldo ante una revisión o fiscalización y dura 24 horas, así que si la falla sigue debes pedir uno nuevo. Apenas el portal vuelva, haz el registro pendiente.",
+"secciones": [
+{
+"h2": "¿Qué es el Certificado de Indisponibilidad Técnica?",
+"parrafos": [
+"Es un documento que entrega la Dirección del Trabajo (DT) cuando el empleador no puede entrar al Registro Electrónico Laboral, o no puede registrar datos, por problemas técnicos del sitio web de la DT. La propia DT lo describe como un certificado de respaldo para eventuales procesos de revisión o fiscalización.",
+"En simple: es tu prueba de que intentaste cumplir y que el problema estaba del lado del portal, no del tuyo. Está regulado en la Resolución Exenta N° 2.604 de 2023 del Ministerio del Trabajo, que fija las condiciones técnicas del Registro Electrónico Laboral, y se apoya en la Ley 21.327, que creó la obligación de registrar contratos en el sitio de la DT (artículo 9 bis del Código del Trabajo).",
+"Ojo con un punto: ni la DT ni ChileAtiende dicen que el certificado alargue el plazo o te libere de registrar. Lo que dicen es que te respalda. Por eso, la regla práctica es pedirlo cuando el portal falla y registrar apenas vuelva a funcionar."
+]
+},
+{
+"h2": "¿Para qué trámites sirve?",
+"parrafos": [
+"Según la DT y ChileAtiende, el certificado se puede pedir cuando falla alguno de estos trámites del Registro Electrónico Laboral:"
+],
+"lista": [
+"Registro de contrato de trabajo.",
+"Registro de modificaciones al contrato de trabajo (anexos).",
+"Registro de término de contrato de trabajo.",
+"Libro de Remuneraciones Electrónico.",
+"Registro de Comité Bipartito de Capacitación.",
+"Registro de Comité Paritario de Higiene y Seguridad."
+],
+"lista_numerada": false
+},
+{
+"h2": "¿Cómo se pide el certificado, paso a paso?",
+"parrafos": [
+"El trámite es en línea y se puede hacer todo el año. Necesitas ClaveÚnica. Estos son los pasos que indica la resolución de la DT:"
+],
+"lista": [
+"Entra a indisponibilidad.dt.gob.cl con tu ClaveÚnica.",
+"Elige de la lista el trámite que te está fallando (por ejemplo, registro de contrato).",
+"Escribe los datos del empleador: nombre o razón social y RUT.",
+"Indica el correo donde quieres recibir el certificado.",
+"Si quieres, agrega un comentario. Conviene anotar qué intentabas registrar y qué error viste.",
+"Presiona el botón para obtener el certificado. Se abre en PDF en tu navegador y además llega a tu correo."
+],
+"lista_numerada": true
+},
+{
+"h2": "¿Cuánto dura y qué pasa si la falla sigue?",
+"parrafos": [
+"El certificado vale 24 horas desde que lo pides. Si el portal sigue caído después de ese tiempo, tienes que pedir uno nuevo. Si la falla dura varios días, vas a tener un certificado por cada día, y eso está bien: muestra que seguiste intentando.",
+"El documento trae un código que permite verificar en el mismo sitio de la DT que es auténtico. Si una fiscalización lo pide, cualquiera puede comprobarlo.",
+"Si tienes dudas sobre el trámite, ChileAtiende atiende en el 101 indicando el código 131122.",
+"Cuando cargas muchos documentos a la vez, una caída a mitad de camino obliga a revisar a mano qué entró y qué no. Por eso en Pro-City desarrollamos RH Connect: si el portal de la DT falla durante una carga, reintenta solo y sigue donde quedó sin duplicar documentos, y guarda el comprobante de cada uno. Funciona con empresas que usan Talana o Buk. Puedes ver más en https://pro-city.cl/rh-connect."
+]
+},
+{
+"h2": "¿Qué guardar como respaldo?",
+"parrafos": [
+"El certificado es lo principal, pero ayuda tener una carpeta ordenada por fecha con todo lo que muestre qué pasó. Te sugerimos guardar:"
+],
+"lista": [
+"Cada Certificado de Indisponibilidad Técnica en PDF y el correo con que llegó.",
+"Una captura de pantalla del error, donde se vea la fecha y la hora.",
+"La lista de trabajadores y documentos que no pudiste registrar ese día.",
+"El comprobante de registro de cada documento una vez que el portal vuelva. La DT indica que los comprobantes quedan en Mi DT, en el historial del Registro Electrónico Laboral, y que también llega un aviso al correo."
+],
+"lista_numerada": false
+},
+{
+"h2": "¿Cómo evitar dejar el registro para el último día?",
+"parrafos": [
+"La mejor defensa contra una caída del portal es tener margen. ChileAtiende indica que contratos y anexos se registran dentro de los 15 días hábiles siguientes a su firma. La resolución de la DT aclara que, para estos plazos, sábados, domingos y festivos no cuentan. Para los términos de contrato los plazos son distintos según la causal, así que revísalos aparte.",
+"Además, el portal recibe documentos todos los días a toda hora, pero lo que subas un día inhábil se considera presentado al primer día hábil siguiente. Algunas buenas prácticas:"
+],
+"lista": [
+"Registra cada contrato o anexo apenas esté firmado, no al final del plazo.",
+"Fija un día fijo a la semana para revisar qué quedó pendiente.",
+"Lleva un control con fecha de firma y fecha límite de cada documento.",
+"Asegúrate de tener al menos un representante laboral electrónico habilitado en Mi DT, y ojalá uno de reemplazo.",
+"Si cargas muchos documentos a la vez, guarda cuáles quedaron listos para no repetirlos si el portal se corta a mitad de camino."
+],
+"lista_numerada": false
+}
+],
+"faq": [
+["¿Qué hago si la página de la Dirección del Trabajo no funciona?", "Pide el Certificado de Indisponibilidad Técnica en indisponibilidad.dt.gob.cl con tu ClaveÚnica, guarda capturas del error y registra el documento apenas el portal vuelva a funcionar."],
+["¿Cuánto dura el certificado de indisponibilidad técnica de la DT?", "Dura 24 horas desde que lo pides. Si la falla continúa, debes pedir uno nuevo."],
+["¿El certificado de indisponibilidad me da más plazo para registrar contratos?", "Las fuentes oficiales lo describen como un respaldo ante revisiones o fiscalizaciones, no como una extensión del plazo. Lo prudente es registrar apenas el portal se restablezca."],
+["¿Dónde veo los comprobantes de los contratos que ya registré en la DT?", "Según la DT, en Mi DT, en la tarjeta Historial de Registro Electrónico Laboral dentro del trámite de Registro de Contrato de Trabajo."]
+],
+"fuentes": [
+{"titulo": "DT: Certificado de Indisponibilidad Técnica (REL)", "url": "https://www.dt.gob.cl/portal/1626/w3-article-127352.html"},
+{"titulo": "ChileAtiende: Certificado de Indisponibilidad Técnica (REL)", "url": "https://www.chileatiende.gob.cl/fichas/131122-certificado-de-indisponibilidad-tecnica-rel"},
+{"titulo": "Diario Oficial: Resolución Exenta N° 2.604 de 2023, Ministerio del Trabajo", "url": "https://www.diariooficial.interior.gob.cl/publicaciones/2023/08/02/43617/01/2353345.pdf"},
+{"titulo": "ChileAtiende: Registro de contrato de trabajo", "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"},
+{"titulo": "ChileAtiende: Registro de anexo de contrato", "url": "https://www.chileatiende.gob.cl/fichas/102209-registro-de-anexo-de-contrato"},
+{"titulo": "DT: Dónde ver los comprobantes de registro de contratos", "url": "https://www.dt.gob.cl/portal/1628/w3-article-121041.html"}
+],
+"linkedin": "¿Qué haces si el portal de la DT se cae justo el día que vence el plazo?\n\nNos lo preguntan seguido y la respuesta existe, pero pocos la conocen: el Certificado de Indisponibilidad Técnica. Lo entrega la propia Dirección del Trabajo cuando no puedes entrar al Registro Electrónico Laboral o no te deja registrar por una falla de su sitio.\n\nSe pide en línea con ClaveÚnica, llega en PDF a tu correo y sirve como respaldo ante una fiscalización. Dura 24 horas, así que si la falla sigue hay que pedir otro.\n\nEn la guía que preparamos explicamos:\n\n1. Para qué trámites sirve.\n2. Cómo pedirlo paso a paso.\n3. Qué guardar en tu carpeta de respaldo.\n4. Cómo organizarte para no llegar al último día.\n\nUn dato clave: el certificado te respalda, pero no reemplaza el registro. Apenas el portal vuelve, hay que registrar.\n\nSi trabajas en RRHH, esta guía te puede ahorrar un mal rato. Léela aquí: https://pro-city.cl/blog-portal-dt-caido-que-hacer\n\n#RecursosHumanos #DireccionDelTrabajo #Chile"
+},
+{
+"slug": "blog-talana-y-la-direccion-del-trabajo",
+"title": "Talana y la DT: cómo cuadrar tus contratos | Pro-City",
+"desc": "Tus contratos viven en Talana y en el Registro Electrónico Laboral de la DT. Te mostramos qué se desalinea, cómo cuadrarlo a mano y cada cuánto revisar.",
+"h1": "Talana y la Dirección del Trabajo: cómo mantener tus contratos al día",
+"respuesta_corta": "La información de tus contratos vive en dos lugares: en Talana y en el Registro Electrónico Laboral de la DT, y no siempre coinciden. Para mantenerlos al día, compara cada cierto tiempo un reporte de trabajadores de Talana con el historial de registros en Mi DT y corrige lo que falte: contratos nuevos, anexos y términos. Hacerlo cada semana evita llegar tarde a los plazos.",
+"secciones": [
+{
+"h2": "¿Por qué tus contratos viven en dos lugares?",
+"parrafos": [
+"Desde la Ley 21.327, que agregó el artículo 9 bis al Código del Trabajo, el empleador debe registrar sus contratos en el sitio web de la Dirección del Trabajo (DT). Ese registro se llama Registro Electrónico Laboral y se usa desde el portal Mi DT.",
+"Al mismo tiempo, tu empresa administra a sus trabajadores en su software de remuneraciones, en este caso Talana. Ahí están las fichas, los contratos, los anexos y las fechas de salida.",
+"El problema es simple: son dos sistemas distintos. Lo que cambias en Talana no aparece solo en la DT, a menos que alguien lo envíe. Y lo que se registra en la DT no se ve en Talana. Con el tiempo, aparecen diferencias.",
+"Según su sitio web, Talana permite acceder a Mi DT desde su plataforma y enviar información de contratos y anexos, de a un trabajador o por grupos. Aun así, que exista el envío no garantiza que todo se haya enviado, ni que lo enviado esté al día. Por eso vale la pena revisar."
+]
+},
+{
+"h2": "¿Qué se desalinea normalmente?",
+"parrafos": [
+"En las empresas que acompañamos, las diferencias suelen repetirse. Estas son las más comunes:"
+],
+"lista": [
+"Ingresos nuevos sin registrar: la persona ya trabaja y está en Talana, pero su contrato no aparece en la DT.",
+"Anexos que no se subieron: hubo un cambio de sueldo, cargo o jornada, el anexo se firmó, pero no se registró como modificación en la DT.",
+"Finiquitados que siguen vigentes: la persona ya salió de la empresa en Talana, pero en la DT no se registró el término y aparece como trabajador activo.",
+"Datos distintos: fechas de inicio, tipo de contrato o razón social que no coinciden entre ambos lados.",
+"Registros en la razón social equivocada, en empresas que tienen varias."
+],
+"lista_numerada": false
+},
+{
+"h2": "¿Cómo cuadrarlo a mano, paso a paso?",
+"parrafos": [
+"No necesitas ninguna herramienta especial para hacer una primera revisión. Necesitas tiempo, una planilla y acceso a Mi DT con ClaveÚnica como representante laboral electrónico de la empresa."
+],
+"lista": [
+"Saca de Talana un reporte de trabajadores con RUT, nombre, razón social, fecha de ingreso, fecha de término (si tiene) y fecha del último anexo.",
+"Entra a Mi DT con el perfil Empleador y abre el Registro Electrónico Laboral. Según la DT, los comprobantes de contratos y anexos están en la tarjeta Historial de Registro Electrónico Laboral, y los términos en Historial de Término de Relación Laboral.",
+"Anota en tu planilla, por cada RUT, si el contrato está registrado, si los anexos están registrados y si el término está registrado.",
+"Marca las diferencias: quién está en Talana y no en la DT, quién salió en Talana pero sigue vigente en la DT, y qué anexos faltan.",
+"Registra lo pendiente, partiendo por lo que tiene el plazo más cerca de vencer.",
+"Descarga y guarda el comprobante de cada registro que hagas."
+],
+"lista_numerada": true
+},
+{
+"h2": "¿Cada cuánto conviene revisar?",
+"parrafos": [
+"Depende de cuánto se mueve tu dotación, pero los plazos ayudan a decidir. ChileAtiende indica que contratos y anexos se registran dentro de los 15 días hábiles siguientes a su firma, y la DT aclara que en esos plazos no cuentan sábados, domingos ni festivos. Para los términos de contrato los plazos son más cortos y dependen de la causal.",
+"Con eso en mente, una buena regla es:"
+],
+"lista": [
+"Revisión semanal de ingresos, anexos y salidas de los últimos días.",
+"Revisión completa una vez al mes, cruzando toda la dotación.",
+"Revisión extra después de procesos grandes: reajustes masivos, cambios de jornada, cierres de faena o temporadas altas de contratación."
+],
+"lista_numerada": false
+},
+{
+"h2": "¿Qué cuidar para que no se vuelva a desordenar?",
+"parrafos": [
+"Cuadrar una vez es útil, pero lo que realmente ayuda es que no se vuelva a desalinear. Algunas prácticas simples:"
+],
+"lista": [
+"Define quién es responsable del registro en la DT y quién lo reemplaza en vacaciones.",
+"Asegura que haya más de un representante laboral electrónico habilitado por razón social.",
+"Mantén completa la ficha del trabajador en Talana: si faltan datos, el envío puede fallar.",
+"Registra cada documento apenas se firma, sin esperar al final del plazo.",
+"Guarda los comprobantes en una carpeta por trabajador o por mes."
+],
+"lista_numerada": false
+},
+{
+"h2": "¿Se puede automatizar la comparación?",
+"parrafos": [
+"Sí. Hacer este cruce a mano funciona, pero con muchos trabajadores o varias razones sociales toma horas y es fácil que se escape algo. Para eso en Pro-City creamos RH Connect, un software chileno que se conecta a Talana y compara los contratos con lo registrado en el Registro Electrónico Laboral de la DT.",
+"La comparación corre de forma programada y muestra qué falta o está desactualizado, incluidos los finiquitos que siguen vigentes en la DT. Tú decides qué se sube, y RH Connect sube en lote contratos, anexos y finiquitos, guardando el comprobante de cada documento. También descarga certificados de la DT con ClaveÚnica y trabaja con varias razones sociales.",
+"Está disponible para cualquier empresa que use Talana o Buk, sea o no cliente de Pro-City. Si tu empresa usa Buk, RH Connect hace la misma comparación. Puedes conocerlo en https://pro-city.cl/rh-connect."
+]
+}
+],
+"faq": [
+["¿Cómo sé si mis contratos están registrados en la Dirección del Trabajo?", "Entra a Mi DT con ClaveÚnica, perfil Empleador, y revisa el Historial de Registro Electrónico Laboral dentro del Registro de Contrato de Trabajo. Ahí la DT muestra los comprobantes de lo registrado."],
+["¿Talana envía los contratos a la DT?", "Según su sitio web, Talana permite enviar información de contratos y anexos a Mi DT desde su plataforma, de forma individual o por grupos. Igual conviene revisar que todo lo enviado aparezca registrado en la DT."],
+["¿Cuánto plazo tengo para registrar un anexo de contrato en la DT?", "Según ChileAtiende, 15 días hábiles desde que se firma, y el contrato original ya debe estar registrado en la DT."],
+["¿Qué pasa si un trabajador finiquitado sigue vigente en la DT?", "Significa que no se registró el término del contrato. Hay que registrarlo en el trámite Registro de Término de Contrato de Trabajo de Mi DT y guardar el comprobante."]
+],
+"fuentes": [
+{"titulo": "ChileAtiende: Registro de contrato de trabajo", "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"},
+{"titulo": "ChileAtiende: Registro de anexo de contrato", "url": "https://www.chileatiende.gob.cl/fichas/102209-registro-de-anexo-de-contrato"},
+{"titulo": "DT: Dónde ver los comprobantes de registro de contratos", "url": "https://www.dt.gob.cl/portal/1628/w3-article-121041.html"},
+{"titulo": "DT: Dónde ver los registros de término de contratos", "url": "https://www.dt.gob.cl/portal/1628/w3-article-121056.html"},
+{"titulo": "Diario Oficial: Resolución Exenta N° 2.604 de 2023, Ministerio del Trabajo", "url": "https://www.diariooficial.interior.gob.cl/publicaciones/2023/08/02/43617/01/2353345.pdf"},
+{"titulo": "Talana: Registro Electrónico Laboral de Mi DT", "url": "https://web.talana.com/mi-dt"}
+],
+"linkedin": "Tus contratos viven en dos lugares, y casi nunca están iguales.\n\nUno es Talana, donde gestionas a tu equipo. El otro es el Registro Electrónico Laboral de la Dirección del Trabajo. Lo que cambias en uno no aparece solo en el otro.\n\nEn las empresas que acompañamos vemos siempre las mismas diferencias:\n\n1. Ingresos nuevos que nunca se registraron en la DT.\n2. Anexos firmados que no se subieron.\n3. Personas finiquitadas que siguen vigentes en la DT.\n\nNinguna es grave si se detecta a tiempo. El problema es enterarse en una fiscalización.\n\nPor eso armamos una guía práctica para jefaturas de RRHH: cómo cruzar un reporte de Talana con el historial de Mi DT, qué revisar primero, cada cuánto hacerlo y qué prácticas ayudan a que no se vuelva a desordenar. También contamos cómo lo automatizamos con RH Connect, para quienes tienen muchas personas o varias razones sociales.\n\nLéela aquí: https://pro-city.cl/blog-talana-y-la-direccion-del-trabajo\n\n#RecursosHumanos #Talana #DireccionDelTrabajo"
+}
+]}

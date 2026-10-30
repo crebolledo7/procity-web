@@ -1,0 +1,259 @@
+{
+ "guias": [
+  {
+   "slug": "blog-como-subir-contratos-a-la-dt",
+   "title": "Cómo subir contratos a la DT paso a paso | Pro-City",
+   "desc": "Guía simple para registrar contratos de trabajo en Mi DT: quién lo hace, ClaveÚnica, representante laboral electrónico, plazo, datos que pide y errores comunes.",
+   "h1": "Cómo subir contratos a la Dirección del Trabajo, paso a paso",
+   "respuesta_corta": "Los contratos de trabajo se registran en el portal Mi DT, entrando con ClaveÚnica al perfil Empleador, luego a Registro Electrónico Laboral y a Registro de contrato de trabajo. Si la empresa es persona jurídica, lo hace un representante laboral electrónico. Según la DT y ChileAtiende, el plazo es de 15 días hábiles desde que se firma el contrato.",
+   "secciones": [
+    {
+     "h2": "¿Quién tiene que registrar los contratos en la DT?",
+     "parrafos": [
+      "Desde la Ley 21.327 de Modernización de la Dirección del Trabajo, el Código del Trabajo (artículo 9 bis) obliga al empleador a registrar sus contratos de trabajo en el sitio web de la DT. Ese registro forma parte del Registro Electrónico Laboral, conocido como REL, que está dentro del portal Mi DT.",
+      "Ojo con una idea muy común: en este trámite no se sube el PDF firmado. Lo que se hace es llenar un formulario con los datos del contrato. Por eso conviene tener el contrato a mano, ya firmado por ambas partes, antes de empezar.",
+      "Hay dos casos. Si el empleador es persona natural o empresario individual, entra con su propia ClaveÚnica. Si es una empresa (persona jurídica), el trámite lo hace un representante laboral electrónico, que también entra con su ClaveÚnica. Según la DT, las personas naturales y empresarios individuales no pueden actuar a través de un representante."
+     ]
+    },
+    {
+     "h2": "¿Cómo se nombra al representante laboral electrónico?",
+     "parrafos": [
+      "Este paso se hace una sola vez y suele ser el que más atrasa a las empresas. Según la resolución de la DT que fija las condiciones del Registro Electrónico Laboral, el representante se designa en el Gestor de Representantes Laborales Electrónicos de Mi DT, entrando con la Clave Tributaria del SII de la empresa.",
+      "Un consejo práctico: nombre a más de una persona del equipo de RRHH. Así el registro no se detiene si alguien está de vacaciones o deja la empresa."
+     ]
+    },
+    {
+     "h2": "Paso a paso para registrar un contrato en Mi DT",
+     "parrafos": [
+      "Estos son los pasos que describen la DT y ChileAtiende:"
+     ],
+     "lista": [
+      "Entre a Mi DT con su RUN y ClaveÚnica. Si no tiene ClaveÚnica, puede pedirla en ChileAtiende.",
+      "Elija el perfil Empleador. Si es su primera vez, actualice los datos que le pida el portal.",
+      "Vaya a Registro Electrónico Laboral y luego a Registro de contrato de trabajo, opción individual.",
+      "Complete las cuatro partes del formulario: identificación de las partes, funciones y lugar de trabajo, remuneraciones, y jornada y otras estipulaciones. El botón Siguiente avanza y guarda lo ingresado.",
+      "Al final, active la declaración jurada de que los datos son verdaderos y presione Finalizar.",
+      "El contrato queda en estado vigente. Llega una confirmación al correo y el comprobante se descarga desde Mi DT."
+     ],
+     "lista_numerada": true
+    },
+    {
+     "h2": "¿Qué datos pide el formulario?",
+     "parrafos": [
+      "La DT pide los datos de las partes y las cláusulas mínimas que exige el artículo 10 del Código del Trabajo. En la práctica, según la guía rápida de la DT, tenga listos estos datos:"
+     ],
+     "lista": [
+      "Datos del trabajador: RUT, contacto, domicilio y correo personal. Si es extranjero sin cédula chilena, se ingresan a mano DNI o pasaporte, nombre, nacionalidad, fecha de nacimiento y sexo.",
+      "Datos de la empresa: el portal trae algunos desde el SII, como representante legal, domicilio y código de actividad económica (CAE). Hay que revisarlos.",
+      "Cargo y funciones: el cargo se elige de una lista ligada al CAE y las funciones se escriben en un campo de hasta 300 caracteres.",
+      "Si hay subcontratación o empresa de servicios transitorios, los datos de la empresa principal o usuaria.",
+      "Remuneraciones: sueldo base, haberes imponibles y no imponibles, gratificación, forma y período de pago, AFP y salud.",
+      "Jornada: duración, horarios, turnos, colación, y si incluye domingos y festivos.",
+      "Tipo de contrato (indefinido, plazo fijo u obra o faena) y fecha de inicio."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "¿Cuál es el plazo y dónde queda el comprobante?",
+     "parrafos": [
+      "El artículo 9 bis habla de 15 días desde que se celebra el contrato. La DT y ChileAtiende lo explican como 15 días hábiles. Para no correr riesgos, lo mejor es registrar apenas el contrato esté firmado. Si se pasa el plazo, la DT indica que el empleador está incumpliendo una obligación legal y puede ser sancionado.",
+      "Los anexos también se registran en Mi DT, en Registro de anexo de contrato de trabajo, y según ChileAtiende tienen el mismo plazo de 15 días hábiles desde que se firman. Para registrar un anexo, el contrato base debe estar registrado antes.",
+      "Los comprobantes quedan guardados en Mi DT, en la tarjeta Historial de Registro Electrónico Laboral. Ahí verá cada trabajador, el estado del contrato (vigente, terminado o no vigente) y su versión, y podrá descargarlo. Igual recomendamos guardar una copia en la carpeta de cada trabajador.",
+      "Si el portal de la DT falla y no puede registrar, la DT permite pedir un certificado de indisponibilidad técnica con ClaveÚnica. Guárdelo, porque sirve para respaldar que intentó cumplir a tiempo."
+     ]
+    },
+    {
+     "h2": "Errores comunes y cómo evitarlos",
+     "lista": [
+      "Dejar el representante laboral electrónico para el final. Desígnelo antes de la primera contratación.",
+      "Registrar datos distintos a los del contrato firmado. Revise sueldo, jornada y cargo contra el documento.",
+      "No revisar el CAE y el domicilio que vienen del SII. La DT pide confirmar que el CAE corresponda al cargo del trabajador.",
+      "Escribir mal el correo personal del trabajador. La DT pide especial cuidado con este dato.",
+      "Querer corregir un registro con error. La DT señala que no se puede modificar: hay que eliminarlo e ingresarlo de nuevo.",
+      "Registrar un anexo sin que el contrato original esté registrado."
+     ],
+     "lista_numerada": false,
+     "parrafos": [
+      "Si su empresa contrata a muchas personas al mes, hacer esto uno por uno toma tiempo y es fácil que algo quede atrás. En ese caso le puede servir nuestra guía sobre carga masiva de contratos a la DT, donde comparamos las opciones disponibles, incluida RH Connect, la herramienta que desarrollamos en Pro-City para empresas que usan Talana o Buk."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "cuanto tiempo tengo para subir un contrato a la dt",
+     "La ley habla de 15 días desde que se firma el contrato y la DT y ChileAtiende lo explican como 15 días hábiles. Lo más seguro es registrarlo apenas esté firmado."
+    ],
+    [
+     "se sube el pdf del contrato a mi dt",
+     "No. El registro de contrato en Mi DT consiste en llenar un formulario con los datos del contrato firmado, como partes, funciones, remuneraciones y jornada."
+    ],
+    [
+     "como registro un contrato en la dt si soy empresa",
+     "Una empresa (persona jurídica) registra a través de un representante laboral electrónico, que entra a Mi DT con su ClaveÚnica. Ese representante se designa antes en el Gestor de Representantes de Mi DT con la Clave Tributaria del SII."
+    ],
+    [
+     "puedo corregir un contrato mal registrado en la dt",
+     "Según la DT, un registro con errores no se puede modificar. Hay que eliminarlo e ingresarlo de nuevo con los datos correctos."
+    ]
+   ],
+   "fuentes": [
+    {
+     "titulo": "ChileAtiende: Registro de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de anexo de contrato",
+     "url": "https://www.chileatiende.gob.cl/fichas/102209"
+    },
+    {
+     "titulo": "Dirección del Trabajo: cómo registrar un contrato de trabajo en el sitio web",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-121036.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: Guía rápida Registro de Contrato de Trabajo (versión 07.09.22)",
+     "url": "https://www.dt.gob.cl/portal/1628/articles-121013_recurso_1.pdf"
+    },
+    {
+     "titulo": "Dirección del Trabajo: preguntas frecuentes sobre Registro de contrato de trabajo",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-propertyvalue-181482.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: modificaciones ante errores en un registro de contrato",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-121040.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: qué pasa si no se registra en 15 días hábiles",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-121039.html"
+    },
+    {
+     "titulo": "Diario Oficial: Resolución exenta N° 2.604 de 2023 de la DT, condiciones del Registro Electrónico Laboral",
+     "url": "https://www.diariooficial.interior.gob.cl/publicaciones/2023/08/02/43617/01/2353345.pdf"
+    },
+    {
+     "titulo": "BCN Ley Chile: Ley 21.327 de Modernización de la Dirección del Trabajo",
+     "url": "https://www.bcn.cl/leychile/navegar?idNorma=1158069"
+    }
+   ],
+   "linkedin": "Registrar un contrato en la DT no es subir un PDF. Es llenar un formulario con todos sus datos.\n\nEn Pro-City vemos seguido a equipos de RRHH que se enteran de esto el día que vence el plazo. Por eso armamos una guía paso a paso, en simple y basada en lo que dicen la Dirección del Trabajo y ChileAtiende.\n\nAhí explicamos:\n\n- Quién debe hacer el registro y por qué una empresa necesita un representante laboral electrónico.\n- Cómo se nombra ese representante en Mi DT.\n- Los pasos dentro del Registro Electrónico Laboral.\n- Qué datos pide el formulario, para que los tengas listos antes de empezar.\n- El plazo de 15 días hábiles y dónde queda el comprobante.\n- Los errores más comunes, como intentar corregir un registro (la DT pide eliminarlo e ingresarlo de nuevo).\n\nSi trabajas en RRHH o remuneraciones, te puede ahorrar más de un dolor de cabeza. Léela aquí: https://pro-city.cl/blog-como-subir-contratos-a-la-dt\n\n#RecursosHumanos #DireccionDelTrabajo #Remuneraciones"
+  },
+  {
+   "slug": "blog-carga-masiva-contratos-dt",
+   "title": "Carga masiva de contratos a la DT: opciones | Pro-City",
+   "desc": "Si registras muchos contratos en la DT, compara las opciones: uno por uno en Mi DT, la planilla de carga masiva, tu software de remuneraciones y RH Connect.",
+   "h1": "Carga masiva de contratos a la DT: qué opciones hay",
+   "respuesta_corta": "Para registrar muchos contratos en la DT hay tres caminos: hacerlo uno por uno en Mi DT, usar la carga masiva con planilla CSV que la DT habilitó en 2022, o enviarlos desde un software de remuneraciones o una herramienta conectada como RH Connect. La mejor opción depende de cuántos contratos registra al mes y de qué sistema usa.",
+   "secciones": [
+    {
+     "h2": "¿Por qué la carga masiva es un tema para RRHH?",
+     "parrafos": [
+      "Desde la Ley 21.327, cada contrato de trabajo debe quedar registrado en el Registro Electrónico Laboral de la DT. Según la DT y ChileAtiende, hay 15 días hábiles desde la firma, y lo mismo para los anexos. Además, el artículo 9 bis pide registrar los términos de contrato.",
+      "Para una empresa con pocas contrataciones, esto se resuelve en Mi DT sin problema. Pero si contrata decenas de personas al mes, tiene varias razones sociales o mucha rotación, el registro uno por uno se vuelve una tarea pesada y es fácil que un contrato quede fuera de plazo."
+     ]
+    },
+    {
+     "h2": "Opción 1: registrar uno por uno en Mi DT",
+     "parrafos": [
+      "Es la vía oficial y gratuita. Se entra con ClaveÚnica al perfil Empleador, se va a Registro Electrónico Laboral y se llena el formulario del contrato en cuatro partes. Si la empresa es persona jurídica, lo hace un representante laboral electrónico. Lo explicamos en detalle en nuestra guía sobre cómo subir contratos a la DT.",
+      "Ventajas: no requiere nada extra y sirve para cualquier caso. Por ejemplo, la DT indica que los contratos de niños, niñas y adolescentes solo se pueden registrar de forma individual.",
+      "Desventajas: hay que digitar a mano datos que ya están en el sistema de remuneraciones, lo que toma tiempo y abre la puerta a errores. Y si un registro queda mal, la DT señala que no se puede editar: hay que eliminarlo e ingresarlo de nuevo."
+     ]
+    },
+    {
+     "h2": "Opción 2: la planilla de carga masiva de la DT",
+     "parrafos": [
+      "En 2022 la DT publicó un Instructivo de Registro Masivo de Contratos de Trabajo. Ese documento describe una opción dentro de Mi DT para subir una planilla CSV con varios contratos a la vez. Según ese instructivo (versión de abril de 2022), las condiciones eran estas:"
+     ],
+     "lista": [
+      "Un archivo por cargo y por código de actividad económica (CAE): todos los trabajadores del archivo deben tener el mismo cargo.",
+      "Máximo 1.000 filas y 5 MB por archivo, en formato CSV separado por punto y coma.",
+      "Los contratos con más de cinco tipos de remuneraciones (sin contar sueldo base y gratificación) o más de cinco comunas de trabajo deben registrarse uno por uno.",
+      "Si hay más de un turno pactado, solo se informa uno.",
+      "Después de subir el archivo, la DT valida los datos y avisa por correo. El instructivo indica que ese proceso podía tardar hasta 7 días."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "¿Sigue disponible la carga masiva de la DT?",
+     "parrafos": [
+      "Aquí hay que ser cuidadosos. El instructivo es de 2022 y no encontramos en las páginas actuales de la DT o de ChileAtiende información que confirme si esta opción sigue igual. La resolución de la DT de 2023 que fija las condiciones del Registro Electrónico Laboral menciona expresamente la carga masiva solo para el Libro de Remuneraciones Electrónico, no para contratos.",
+      "Nuestra recomendación: antes de armar planillas, entre a Mi DT y revise si aparece la opción de registro masivo en Registro de contrato de trabajo, o consulte a la DT al 600 450 4000. Si la usa, tenga en cuenta que sigue siendo trabajo manual: hay que llenar la planilla con el formato exacto, separarla por cargo y revisar los errores que devuelva la DT."
+     ]
+    },
+    {
+     "h2": "Opción 3: enviar desde tu software de remuneraciones o una herramienta conectada",
+     "parrafos": [
+      "Varios software de remuneraciones ofrecen enviar contratos y anexos a la DT directamente desde su plataforma, usando los datos que ya están cargados y las credenciales del representante laboral electrónico. Cada proveedor tiene sus propios requisitos y costos, así que conviene preguntarle directamente qué documentos envía y qué casos no cubre. No encontramos en el sitio de la DT un servicio público documentado para que las empresas conecten sus sistemas, por lo que cada solución funciona a su manera.",
+      "En Pro-City desarrollamos RH Connect, un software chileno que se conecta a Talana o Buk y compara los contratos de la empresa con lo que está registrado en el Registro Electrónico Laboral de la DT. Muestra qué falta o está desactualizado y permite subir en lote contratos, anexos y finiquitos; el usuario siempre decide qué se sube. Guarda el comprobante de cada documento y, si el portal de la DT falla, reintenta y sigue donde quedó. También descarga certificados de la DT con ClaveÚnica y sirve para varias razones sociales.",
+      "Lo que hay que saber: RH Connect funciona con Talana y con Buk, y está disponible para cualquier empresa que use alguno de los dos, sea o no cliente de Pro-City. Más información en https://pro-city.cl/rh-connect."
+     ]
+    },
+    {
+     "h2": "¿Qué opción conviene según tu caso?",
+     "lista": [
+      "Pocas contrataciones al mes: Mi DT uno por uno suele bastar. Es gratis y oficial.",
+      "Muchos contratos del mismo cargo: la planilla de la DT puede ayudar, si confirma que sigue disponible y acepta armar los archivos.",
+      "Ya tiene un software de remuneraciones con envío a la DT: revise qué incluye antes de buscar otra cosa.",
+      "Usa Talana o Buk, tiene mucho volumen o varias razones sociales, y necesita saber qué falta registrar: RH Connect está pensado para ese caso."
+     ],
+     "lista_numerada": false,
+     "parrafos": [
+      "Sea cual sea la opción, guarde siempre el comprobante de cada registro y revise de vez en cuando que lo registrado en la DT coincida con sus contratos vigentes."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "se puede hacer carga masiva de contratos en la dt",
+     "La DT publicó en 2022 un instructivo de registro masivo con planilla CSV dentro de Mi DT. No encontramos confirmación oficial reciente de que siga igual, así que conviene revisarlo en Mi DT o consultar a la DT."
+    ],
+    [
+     "cuantos contratos se pueden subir en la carga masiva de la dt",
+     "Según el instructivo de la DT de 2022, cada archivo CSV admitía hasta 1.000 filas y 5 MB, con trabajadores de un mismo cargo y código de actividad económica."
+    ],
+    [
+     "mi software de remuneraciones puede subir contratos a la dt",
+     "Algunos software ofrecen enviar contratos y anexos a la DT desde su plataforma. Consulte con su proveedor qué documentos incluye y qué requisitos pide."
+    ],
+    [
+     "rh connect funciona con buk",
+     "Sí. RH Connect funciona con Talana y con Buk."
+    ]
+   ],
+   "fuentes": [
+    {
+     "titulo": "Dirección del Trabajo: Instructivo de Registro Masivo de Contratos de Trabajo (versión 21.04.22)",
+     "url": "https://www.dt.gob.cl/portal/1626/articles-121013_recurso_2.pdf"
+    },
+    {
+     "titulo": "Dirección del Trabajo: registro de contratos de niños, niñas y adolescentes solo es individual",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-120406.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: cómo registrar un contrato de trabajo en el sitio web",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-121036.html"
+    },
+    {
+     "titulo": "Dirección del Trabajo: modificaciones ante errores en un registro de contrato",
+     "url": "https://www.dt.gob.cl/portal/1628/w3-article-121040.html"
+    },
+    {
+     "titulo": "Diario Oficial: Resolución exenta N° 2.604 de 2023 de la DT, condiciones del Registro Electrónico Laboral",
+     "url": "https://www.diariooficial.interior.gob.cl/publicaciones/2023/08/02/43617/01/2353345.pdf"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de anexo de contrato",
+     "url": "https://www.chileatiende.gob.cl/fichas/102209"
+    },
+    {
+     "titulo": "BCN Ley Chile: Ley 21.327 de Modernización de la Dirección del Trabajo",
+     "url": "https://www.bcn.cl/leychile/navegar?idNorma=1158069"
+    }
+   ],
+   "linkedin": "¿Cuántos contratos registró tu equipo en la DT este mes? Si la respuesta es \"muchos\", esta guía es para ti.\n\nEn Pro-City trabajamos todos los días con equipos de RRHH que deben registrar contratos y anexos en el Registro Electrónico Laboral dentro de 15 días hábiles. Con poco volumen, Mi DT basta. Con mucho, el registro uno por uno se transforma en un cuello de botella.\n\nPor eso escribimos una guía que compara, con honestidad, las opciones que existen:\n\n- Registrar uno por uno en Mi DT.\n- La planilla de carga masiva que publicó la DT en 2022, sus límites y por qué conviene confirmar si sigue igual.\n- El envío desde el software de remuneraciones.\n- RH Connect, la herramienta que desarrollamos para empresas que usan Talana o Buk.\n\nLa idea es que puedas elegir lo que mejor calza con tu empresa, uses lo que uses.\n\nLee la guía completa aquí: https://pro-city.cl/blog-carga-masiva-contratos-dt\n\n#RecursosHumanos #DireccionDelTrabajo #Talana #Buk"
+  }
+ ]
+}

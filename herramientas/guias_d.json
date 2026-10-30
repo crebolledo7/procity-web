@@ -1,0 +1,113 @@
+{
+ "guias": [
+  {
+   "slug": "blog-buk-y-la-direccion-del-trabajo",
+   "title": "Buk y la Dirección del Trabajo: contratos al día | Pro-City",
+   "desc": "Cómo cuadrar los contratos, anexos y finiquitos de Buk con el Registro Electrónico Laboral de Mi DT: qué se desalinea, cómo revisarlo y cada cuánto hacerlo.",
+   "h1": "Buk y la Dirección del Trabajo: cómo mantener tus contratos al día",
+   "respuesta_corta": "Tus contratos viven en dos lugares: en Buk y en el Registro Electrónico Laboral de la Dirección del Trabajo, en el portal Mi DT. Buk permite enviar contratos, anexos y términos a Mi DT, pero igual conviene comparar ambos lados con regularidad, porque basta un anexo sin subir o un finiquito sin registrar para que no cuadren. Contratos y anexos se registran dentro de 15 días hábiles.",
+   "secciones": [
+    {
+     "h2": "¿Por qué tus contratos están en dos lugares?",
+     "parrafos": [
+      "En Buk tienes la ficha de cada trabajador, sus contratos, anexos y finiquitos. Pero la ley también exige que el empleador registre esos documentos en el sitio de la Dirección del Trabajo, dentro del Registro Electrónico Laboral, al que se entra desde el portal Mi DT con Clave Única.",
+      "Según la DT y ChileAtiende, el contrato debe registrarse dentro de los 15 días hábiles siguientes a su firma, y el anexo dentro de los 15 días hábiles siguientes a su suscripción. El término de contrato tiene plazos distintos según la causal: por ejemplo, 10 días hábiles para renuncia, mutuo acuerdo o vencimiento del plazo, y 3 días hábiles para varias otras causales.",
+      "Como son dos sistemas distintos, lo que pasa en Buk no queda reflejado solo en la DT. Alguien tiene que enviarlo, y alguien tiene que revisar que haya llegado."
+     ]
+    },
+    {
+     "h2": "¿Qué se desalinea normalmente entre Buk y la DT?",
+     "parrafos": [
+      "En la práctica, los descuadres se repiten bastante. Estos son los más comunes:"
+     ],
+     "lista": [
+      "Anexos que se firmaron en Buk pero nunca se registraron en la DT, como cambios de sueldo, cargo o jornada.",
+      "Personas finiquitadas en Buk que en la DT siguen apareciendo como vigentes porque no se registró el término.",
+      "Ingresos nuevos que ya están trabajando y cuyo contrato no se ha registrado en la DT.",
+      "Envíos que dieron error y nadie volvió a intentar.",
+      "Documentos firmados fuera de Buk, o antes de usar Buk, que nunca se subieron."
+     ],
+     "lista_numerada": false
+    },
+    {
+     "h2": "¿Qué hace Buk para registrar en la DT?",
+     "parrafos": [
+      "Según lo que Buk publica en su página de Registros DT, desde Buk se puede enviar información de contratos, anexos y términos de contrato al portal Mi DT sin salir de la plataforma, también de forma masiva. Si un envío da error, Buk muestra el detalle para corregir y volver a intentar, y guarda un historial de las subidas y de los intentos fallidos.",
+      "Esto resuelve una parte importante: subir sin tener que descargar archivos y cargarlos a mano. Lo que Buk no describe en esa página es una comparación completa entre todo lo que tienes en Buk y todo lo que ya está en la DT. Por eso, aunque envíes desde Buk, vale la pena revisar de vez en cuando que ambos lados digan lo mismo. Si tienes dudas sobre cómo activar esta función en tu cuenta, lo mejor es consultarlo con Buk o con tu partner de implementación."
+     ]
+    },
+    {
+     "h2": "Cómo cuadrar Buk con Mi DT a mano",
+     "parrafos": [
+      "Si quieres revisarlo tú mismo, estos son los pasos:"
+     ],
+     "lista": [
+      "Saca desde Buk un reporte de trabajadores con su estado (vigente o finiquitado), fecha de ingreso, fecha de término y los anexos firmados en el período.",
+      "Entra a Mi DT con Clave Única, elige el perfil Empleador y luego Registro Electrónico Laboral.",
+      "Abre la tarjeta Historial de Registro Electrónico Laboral. Ahí ves, por RUT, los contratos y anexos registrados, su estado (vigente, terminado o no vigente) y puedes descargar el comprobante de cada uno.",
+      "Abre la tarjeta Historial de Término de Relación Laboral para ver los términos registrados.",
+      "Cruza ambos listados por RUT y marca tres cosas: quién está en Buk y no en la DT, quién está finiquitado en Buk y sigue vigente en la DT, y qué anexos faltan.",
+      "Registra lo pendiente, desde Buk o directo en Mi DT, y guarda los comprobantes."
+     ],
+     "lista_numerada": true
+    },
+    {
+     "h2": "¿Cada cuánto conviene revisar?",
+     "parrafos": [
+      "Como el plazo para contratos y anexos es de 15 días hábiles, una buena regla es revisar al menos cada dos semanas, así alcanzas a corregir antes de que se venza. Si tu empresa contrata o desvincula mucho, por ejemplo por temporadas, conviene hacerlo cada semana.",
+      "Además, haz una revisión completa cada mes, cerca del cierre de remuneraciones, y otra antes de una fiscalización o auditoría. Antes de registrar un término, revisa bien los datos: según ChileAtiende, una vez confirmado no se puede editar ni eliminar."
+     ]
+    },
+    {
+     "h2": "¿Cómo automatizar la revisión con RH Connect?",
+     "parrafos": [
+      "Hacer este cruce a mano funciona, pero toma tiempo y es fácil que se escape algo cuando hay muchas personas o varias razones sociales. Para eso en Pro-City desarrollamos RH Connect (https://pro-city.cl/rh-connect), un software chileno que se conecta a Buk o Talana con las credenciales de tu empresa y compara tus contratos con lo registrado en el Registro Electrónico Laboral de la DT.",
+      "La comparación corre de forma programada y te muestra qué falta o está desactualizado, incluidos los finiquitos desalineados. Tú decides qué se sube, y RH Connect carga en lote contratos, anexos y finiquitos, guardando el comprobante de cada documento. Si el portal de la DT falla a mitad de una carga, reintenta solo y sigue donde quedó sin duplicar. También descarga certificados de la DT con Clave Única y funciona con varias razones sociales.",
+      "Si ya envías desde Buk, RH Connect suma la parte de comparar y detectar lo que falta. Está disponible para cualquier empresa que use Buk o Talana, sea o no cliente nuestro. Y si estás implementando Buk, como Partner de Buk te podemos ayudar a dejarlo bien configurado desde el inicio (https://pro-city.cl/implementacion-buk)."
+     ]
+    }
+   ],
+   "faq": [
+    [
+     "¿Cuánto plazo hay para registrar un contrato en la Dirección del Trabajo?",
+     "Según la DT y ChileAtiende, 15 días hábiles desde que se firma. Los anexos también tienen 15 días hábiles desde su suscripción."
+    ],
+    [
+     "¿Buk sube los contratos a la DT?",
+     "Según Buk, su plataforma permite enviar contratos, anexos y términos de contrato al portal Mi DT, incluso de forma masiva, y guarda un historial de subidas e intentos con error."
+    ],
+    [
+     "¿Dónde veo los contratos registrados en Mi DT?",
+     "En Mi DT, perfil Empleador, Registro Electrónico Laboral, tarjeta Historial de Registro Electrónico Laboral. Los términos están en la tarjeta Historial de Término de Relación Laboral."
+    ],
+    [
+     "¿RH Connect funciona con Buk?",
+     "Sí. RH Connect se conecta a Buk o Talana con las credenciales de tu empresa, compara tus contratos con lo registrado en la DT y te muestra qué falta o está desactualizado."
+    ]
+   ],
+   "fuentes": [
+    {
+     "titulo": "ChileAtiende: Registro de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99236-registro-de-contrato-de-trabajo"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de anexo de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/102209"
+    },
+    {
+     "titulo": "ChileAtiende: Registro de término de contrato de trabajo",
+     "url": "https://www.chileatiende.gob.cl/fichas/99374"
+    },
+    {
+     "titulo": "Dirección del Trabajo: Guía rápida Registro de Contrato de Trabajo",
+     "url": "https://www.dt.gob.cl/portal/1626/articles-121013_recurso_1.pdf"
+    },
+    {
+     "titulo": "Buk: Registros DT",
+     "url": "https://www.buk.cl/productos/administracion/registros-dt"
+    }
+   ],
+   "linkedin": "¿Tus contratos en Buk dicen lo mismo que la Dirección del Trabajo?\n\nEn muchas empresas que acompañamos, la respuesta es no del todo. Un anexo de cambio de sueldo que nunca se registró. Una persona finiquitada hace meses que en Mi DT sigue vigente. Un ingreso nuevo que ya lleva semanas trabajando sin contrato registrado.\n\nLa información vive en dos lugares, Buk y el Registro Electrónico Laboral de la DT, y no se cuadra sola. Buk permite enviar contratos, anexos y términos a Mi DT, lo que ayuda mucho. Pero igual hay que revisar que ambos lados coincidan, sobre todo considerando que contratos y anexos tienen 15 días hábiles para registrarse.\n\nPor eso escribimos una guía práctica, sin jerga, para jefaturas de RRHH: qué se desalinea normalmente, cómo comparar a mano un reporte de Buk con los historiales de Mi DT, cada cuánto conviene revisar y cómo automatizarlo.\n\nLéela aquí: https://pro-city.cl/blog-buk-y-la-direccion-del-trabajo\n\n#RRHH #Buk #DireccionDelTrabajo"
+  }
+ ]
+}
