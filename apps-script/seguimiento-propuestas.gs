@@ -72,6 +72,15 @@ const ESTADOS = [
 // El libro unificado se arma desde este archivo (exportado del Excel antiguo
 // con procity-cotizador/scripts/exportar-historico.py).
 const ID_HISTORICO = "1-HoObenFaCOnJBLopNb_y--yACzESW1f";
+// Columnas que tenía "Propuestas" antes de unificar (para leerla aunque
+// alguien haya corrido configurar() y le haya cambiado los títulos).
+const COLUMNAS_ANTIGUAS = [
+  "Folio", "Cliente", "Contacto", "Correo", "Sistema",
+  "Opción 1 mes (UF)", "Opción 2 meses (UF)", "Opción 3 meses (UF)",
+  "Link", "Estado", "Aperturas", "Primera apertura", "Última apertura",
+  "Opción aceptada", "Precio aceptado (UF)", "Fecha aceptación",
+  "Próximo seguimiento", "Notas", "Interesado en"
+];
 
 /* ---------- instalación: hoja, encabezados, colores ---------- */
 function configurar() {
@@ -147,19 +156,25 @@ function unificarLibros() {
   // 2. libro único: 2026 del Excel + lo que ya registró el seguimiento
   const porFolio = {};
   datos.propuestas2026.forEach(p => { porFolio[String(p.Folio)] = Object.assign({}, p); });
-  let anterior = ss.getSheetByName(HOJA);
-  if (anterior && anterior.getRange(1, 2).getValue() === "Cliente") {   // formato antiguo, sin unificar
-    const valores = anterior.getDataRange().getValues();
-    const enc = valores[0];
-    valores.slice(1).forEach(f => {
+  const anterior = ss.getSheetByName(HOJA);
+  if (ss.getSheetByName("Propuestas (antes de unificar)")) throw new Error("Los libros ya están unificados.");
+  if (anterior) {
+    // la hoja de antes siempre tuvo COLUMNAS_ANTIGUAS, aunque configurar() le haya cambiado los títulos
+    const enc = COLUMNAS_ANTIGUAS;
+    const ultima = anterior.getLastRow();
+    const valores = ultima >= 2 ? anterior.getRange(2, 1, ultima - 1, enc.length).getValues() : [];
+    valores.forEach(f => {
       const folio = String(f[0]).trim();
       if (!folio) return;
       const p = porFolio[folio] || (porFolio[folio] = { Folio: folio });
       enc.forEach((c, i) => { if (f[i] !== "" && f[i] !== null) p[c] = f[i]; });
     });
+    // el respaldo queda como era: sus títulos, sin listas ni colores del formato nuevo
+    anterior.getRange(1, 1, 1, anterior.getMaxColumns()).clearContent();
+    anterior.getRange(1, 1, 1, enc.length).setValues([enc]);
+    anterior.getDataRange().clearDataValidations();
+    anterior.clearConditionalFormatRules();
     anterior.setName("Propuestas (antes de unificar)");
-  } else if (anterior) {
-    throw new Error("La hoja Propuestas ya está unificada.");
   }
   const hoja = ss.insertSheet(HOJA, 0);
   const folios = Object.keys(porFolio).sort((a, b) => (/^\d+$/.test(a) ? 0 : 1) - (/^\d+$/.test(b) ? 0 : 1) || a.localeCompare(b));
