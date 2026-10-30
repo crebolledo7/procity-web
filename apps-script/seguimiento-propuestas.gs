@@ -101,6 +101,7 @@ function formatearPropuestas(hoja) {
   hoja.setFrozenRows(1);
   hoja.setFrozenColumns(4);
   hoja.getRange(1, col("Folio"), hoja.getMaxRows(), 1).setNumberFormat("@");   // folio como texto
+  hoja.getRange(2, col("Rev."), hoja.getMaxRows() - 1, 1).setNumberFormat("00"); // 0 se ve como 00
   COL_FECHA.forEach(n => hoja.getRange(2, col(n), hoja.getMaxRows() - 1, 1).setNumberFormat("dd-mm-yyyy"));
   COL_FECHA_HORA.forEach(n => hoja.getRange(2, col(n), hoja.getMaxRows() - 1, 1).setNumberFormat("dd-mm-yyyy hh:mm"));
 
@@ -217,6 +218,32 @@ function armarResumen(ss) {
   r.getRange(1, 1, 1, filas[0].length).setFontWeight("bold").setBackground("#1E2761").setFontColor("#FFFFFF");
   r.getRange(2, 6, filas.length - 1, 1).setNumberFormat("0%");
   r.setColumnWidth(1, 220);
+}
+
+/* ---------- arreglos después de unificar (una vez) ---------- */
+// Rev. como "00", fecha de TEK y tildes que llegaron dañadas (�) a la
+// planilla antes de unificar, por registros hechos desde la terminal.
+function ajustesFinales() {
+  const hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(HOJA);
+  formatearPropuestas(hoja);
+  const col = n => COLUMNAS.indexOf(n) + 1;
+  const reemplazos = [["Crist�bal", "Cristóbal"], ["Mu�oz", "Muñoz"], ["m�n.", "mín."],
+                      ["MIGRACI�N LIMPIA �", "MIGRACIÓN LIMPIA —"]];
+  const rango = hoja.getDataRange();
+  const valores = rango.getValues();
+  let cambios = 0;
+  valores.forEach((f, i) => f.forEach((v, j) => {
+    if (typeof v !== "string" || v.indexOf("�") < 0) return;
+    let nuevo = v;
+    reemplazos.forEach(([a, b]) => { nuevo = nuevo.split(a).join(b); });
+    if (nuevo !== v) { hoja.getRange(i + 1, j + 1).setValue(nuevo); cambios++; }
+  }));
+  // TEK se publicó el 19-10-2026 (no tenía fecha en ninguno de los dos libros)
+  const folios = hoja.getRange(2, 1, hoja.getLastRow() - 1, 1).getValues().map(r => String(r[0]).trim());
+  const iTek = folios.indexOf("2026031");
+  if (iTek >= 0 && !hoja.getRange(iTek + 2, col("Fecha")).getValue()) hoja.getRange(iTek + 2, col("Fecha")).setValue(new Date("2026-10-19T12:00:00"));
+  const restantes = hoja.getDataRange().getValues().flat().filter(v => typeof v === "string" && v.indexOf("�") >= 0).length;
+  return `Tildes corregidas: ${cambios}. Celdas que siguen con �: ${restantes}.`;
 }
 
 /* ---------- próximo folio (lo pide el cotizador) ---------- */
