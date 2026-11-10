@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esta página cambió de dirección | Pro-City</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/marca/favicon.png">
+<!-- Rutas absolutas a propósito: esta página se muestra en cualquier dirección
+     (por ejemplo /nosotros/), así que "estilos.css" relativo no cargaría. -->
+<link rel="stylesheet" href="/estilos.css?v=20261030b">
+<script>
+/* GitHub Pages muestra este archivo para toda dirección que no existe.
+   El sitio antiguo (WordPress) usaba direcciones con "/" al final
+   (pro-city.cl/nosotros/) y Google todavía las muestra. Aquí se busca la
+   página nueva que corresponde y se redirige al tiro:
+     1. alias conocidos del sitio antiguo;
+     2. misma dirección sin "/" ni ".html"/".php", si existe en el sitemap;
+     3. la página del sitemap que comparte más palabras con la dirección
+        (para artículos del blog antiguo con otro nombre);
+   si nada calza, se queda este mensaje con enlaces. */
+(function () {
+  var CALENDARIO = 'https://calendar.app.google/4k6nLR3WYzGfWJeJ6';
+  var ALIAS = {
+    '': '/', 'inicio': '/', 'home': '/', 'index': '/', 'contacto': '/', 'contactanos': '/', 'contactenos': '/',
+    'agenda': CALENDARIO, 'agendar': CALENDARIO, 'reunion': CALENDARIO,
+    'quienes-somos': '/nosotros', 'nosotros-2': '/nosotros', 'equipo': '/nosotros',
+    'servicio': '/servicios', 'nuestros-servicios': '/servicios', 'implementacion': '/servicios', 'implementaciones': '/servicios',
+    'plan': '/planes', 'precios': '/planes', 'tarifas': '/planes',
+    'rhconnect': '/rh-connect', 'rh-connect-dt': '/rh-connect', 'carga-dt': '/rh-connect',
+    'legal': '/servicios-legales', 'servicios-legal': '/servicios-legales', 'abogados': '/servicios-legales',
+    'payroll': '/payroll-externalizado', 'integraciones': '/integraciones-automatizacion',
+    'blog': '/blog', 'noticias': '/blog', 'category': '/blog', 'categoria': '/blog', 'tag': '/blog'
+  };
+  function ir(url) { location.replace(url + (url.indexOf('http') === 0 ? '' : location.search + location.hash)); }
+
+  var partes = location.pathname.toLowerCase().replace(/\/+$/, '').replace(/\.(html?|php)$/, '').split('/').filter(Boolean);
+  var completo = partes.join('/');
+  var ultimo = partes.length ? partes[partes.length - 1] : '';
+  if (ALIAS.hasOwnProperty(completo)) return ir(ALIAS[completo]);
+  if (ALIAS.hasOwnProperty(ultimo) && partes.length === 1) return ir(ALIAS[ultimo]);
+
+  var aviso = document.getElementById('buscando');
+  if (aviso) aviso.hidden = false;
+  fetch('/sitemap.xml', { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (xml) {
+    var paginas = (xml.match(/<loc>https:\/\/pro-city\.cl\/([^<]*)<\/loc>/g) || [])
+      .map(function (l) { return l.replace(/<\/?loc>/g, '').replace('https://pro-city.cl/', '').replace(/\/$/, ''); })
+      .filter(Boolean);
+    if (paginas.indexOf(ultimo) >= 0) return ir('/' + ultimo);
+    // palabras de 4+ letras en común con cada página; gana la que comparte más (mínimo 2)
+    var palabras = ultimo.split(/[-_]+/).filter(function (p) { return p.length >= 4; });
+    var mejor = null, puntaje = 1;
+    paginas.forEach(function (pag) {
+      var suyas = pag.split('-');
+      var n = palabras.filter(function (p) { return suyas.indexOf(p) >= 0; }).length;
+      if (n > puntaje) { mejor = pag; puntaje = n; }
+    });
+    if (mejor) return ir('/' + mejor);
+    if (partes[0] === 'blog' || /^\d{4}$/.test(partes[0] || '')) return ir('/blog');
+    if (aviso) aviso.hidden = true;
+  }).catch(function () { if (aviso) aviso.hidden = true; });
+})();
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="Pro-City · Inicio"><img src="/img/marca/logo-header.png" alt="Pro-City" width="150" height="57"></a>
+  </div>
+</header>
+<main>
+  <div class="hero" style="padding:80px 0 72px">
+    <div class="wrap">
+      <span class="kicker on-dark">Pro-City</span>
+      <h1 style="font-size:clamp(1.9rem,3.8vw,3rem)">Esta página cambió de dirección</h1>
+      <p class="hero-sub" id="buscando" hidden>Te estamos llevando a la nueva…</p>
+      <p class="lead">Renovamos el sitio y algunas direcciones cambiaron. Elige a dónde quieres ir:</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/">Ir al inicio</a>
+        <a class="btn btn-outline-light" href="/servicios">Ver servicios</a>
+        <a class="btn btn-outline-light" href="/rh-connect">RH Connect</a>
+        <a class="btn btn-outline-light" href="/blog">Blog</a>
+      </div>
+      <p class="hero-note">¿Buscabas algo puntual? Escríbenos por <a href="https://api.whatsapp.com/send/?phone=56937669574" style="color:#fff;text-decoration:underline">WhatsApp</a> o a <a href="mailto:contacto@procity.live" style="color:#fff;text-decoration:underline">contacto@procity.live</a>.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>
