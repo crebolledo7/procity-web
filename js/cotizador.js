@@ -756,6 +756,8 @@
         trackEvent('calendario_click', { href: href, source: sourceOf(a) });
       } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
         trackEvent('whatsapp_click', { href: href, source: sourceOf(a) });
+      } else if (href.indexOf('mailto:') === 0) {
+        trackEvent('correo_click', { href: href, source: sourceOf(a) });
       }
     });
   }

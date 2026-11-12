@@ -198,3 +198,33 @@
     observadorHero.observe(hero);
   }
 })();
+
+/* ---------- 4. contactos que salen del sitio (todas las páginas) ------ */
+
+// WhatsApp, calendario y correo son los botones principales del sitio, pero
+// esos contactos no pasan por la planilla: se cuentan en Analytics como
+// whatsapp_click, calendario_click y correo_click (marcados como eventos
+// clave). Va fuera del bloque de arriba a propósito: ese se corta si el
+// navegador no anima, y esto tiene que contar igual. En inicio y planes ya
+// lo hace js/cotizador.js, así que ahí no se repite.
+(function () {
+  'use strict';
+  if (document.querySelector('script[src*="js/cotizador.js"]')) return;
+  function zona(a) {
+    if (a.closest('.wa-float')) return 'wa_float';
+    if (a.closest('header')) return 'header';
+    if (a.closest('footer')) return 'footer';
+    if (a.closest('.cta, .cta-outer')) return 'cta_final';
+    if (a.closest('.hero')) return 'hero';
+    return 'contenido';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || typeof window.gtag !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    var evento = href.indexOf('calendar.app.google') !== -1 ? 'calendario_click'
+      : (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) ? 'whatsapp_click'
+      : href.indexOf('mailto:') === 0 ? 'correo_click' : null;
+    if (evento) window.gtag('event', evento, { source: zona(a), pagina: location.pathname });
+  });
+})();

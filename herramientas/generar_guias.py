@@ -61,7 +61,9 @@ for g in datos["guias"]:
 
     palabras = len(" ".join([g["respuesta_corta"]] + [" ".join(s.get("parrafos", []) + s.get("lista", [])) for s in g["secciones"]]).split())
     minutos = max(3, math.ceil(palabras / 200))
-    cuerpo = [f'        <p class="lead" style="font-weight:500">{con_enlaces(g["respuesta_corta"])}</p>\n']
+    cuerpo = [f'        <p class="lead" style="font-weight:500">{con_enlaces(g["respuesta_corta"])}</p>\n',
+              '        <p class="note">¿Tienes muchos contratos, anexos o finiquitos que registrar? '
+              '<a href="#demo"><strong>RH Connect los carga a la DT por ti &rarr;</strong></a></p>\n']
     for s in g["secciones"]:
         cuerpo.append(f'        <h2>{esc(s["h2"])}</h2>\n')
         for p in s.get("parrafos", []):
@@ -94,6 +96,24 @@ for g in datos["guias"]:
     <div class="wrap">
       <div class="post-body">
 {"".join(cuerpo)}      </div>
+      <div class="panel" id="demo" style="margin-top:48px">
+        <span class="kicker">RH Connect</span>
+        <h3>¿Muchos documentos para la DT? Te mostramos cómo cargarlos sin hacerlo uno por uno</h3>
+        <p>RH Connect compara lo que tienes en Talana o Buk con lo que tiene registrado la Dirección del Trabajo, te muestra qué falta y lo sube por ti. Ya lleva más de 150.000 documentos cargados. Déjanos tus datos y te agendamos una demo de 30 minutos.</p>
+        <form data-demo-rhc novalidate>
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Tu nombre" aria-label="Tu nombre" required autocomplete="name">
+            <input type="text" name="empresa" placeholder="Empresa" aria-label="Empresa" required autocomplete="organization">
+          </div>
+          <div class="form-row" style="margin-top:10px">
+            <input type="email" name="email" placeholder="tu@empresa.cl" aria-label="Correo electrónico" required autocomplete="email" inputmode="email">
+            <input type="tel" name="telefono" placeholder="Teléfono (opcional)" aria-label="Teléfono" autocomplete="tel">
+            <button class="btn btn-primary" type="submit">Quiero una demo</button>
+          </div>
+          <input type="text" name="website" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        </form>
+        <p data-demo-estado aria-live="polite" style="font-size:.9rem;margin-top:14px"></p>
+      </div>
       <div class="post-nav">
         <a class="btn btn-primary" href="blog.html">&larr; Volver al blog</a>
         <a class="btn btn-ghost" href="rh-connect.html">Conoce RH Connect</a>
@@ -105,5 +125,7 @@ for g in datos["guias"]:
     i = h.index("<main>")
     j = h.index("</main>") + len("</main>")
     h = h[:i] + main + h[j:]
+    if "js/demo-rhc.js" not in h:
+        h = h.replace("</body>", '<script src="js/demo-rhc.js?v=20261112" defer></script>\n</body>', 1)
     open(os.path.join(SITIO, g["slug"] + ".html"), "w", encoding="utf8", newline="").write(h)
     print("creada:", g["slug"] + ".html", "|", palabras, "palabras |", minutos, "min")
